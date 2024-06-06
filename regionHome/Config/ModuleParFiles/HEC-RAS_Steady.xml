@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameters version="1.5" xmlns="http://www.wldelft.nl/fews/PI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews/PI http://fews.wldelft.nl/schemas/version1.0/pi-schemas/pi_modelparameters.xsd">
+<!--	<modifierType>Steady_parameters</modifierType>-->
+	<group id="Section1" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/106.78/102.6103</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section2" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/102.6103/101.1009</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section3" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/101.1009/96.6463</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section4" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/96.6463/89.0139</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section5" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/89.0139/85.6364</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section6" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/85.6364/76.1407</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section7" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/76.1407/67.5911</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section8" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/67.5911/59.3467</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section9" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/59.3467/50.9305</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section10" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/50.9305/39.2649</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section11" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/39.2649/38.5732</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section12" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/38.5732/36.1221</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section13" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/36.1221/33.1572</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section14" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/33.1572/32.001</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section15" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/32.001/29.9779</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+	<group id="Section16" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/29.9779/25.0521</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+		<parameter id="Ice Jam Chan">
+			<description>Ice Jam Chan</description>
+			<stringValue>n</stringValue>
+		</parameter>
+		<parameter id="Max Velocity">
+			<description>Max Velocity</description>
+			<stringValue>1.2</stringValue>
+		</parameter>
+		<parameter id="Fixed Mann n">
+			<description>Fixed Mann n</description>
+			<stringValue>n</stringValue>
+		</parameter>
+	</group>
+</parameters>

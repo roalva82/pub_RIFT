@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>Q_MMH20_perc90</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc090</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_MMH20_perc80</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc080</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_MMH20_perc50</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc050</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_MMH20_perc20</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc020</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_MMH20_perc10</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc010</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_MMH20_perc90_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc090</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_MMH20_perc80_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc080</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_MMH20_perc50_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc050</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_MMH20_perc20_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc020</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_MMH20_perc10_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc010</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_inputs_m0</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+			<ensembleMemberId>0</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_inputs_m1</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+			<ensembleMemberId>1</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_inputs_m2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+			<ensembleMemberId>2</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_inputs_m3</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+			<ensembleMemberId>3</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_inputs_m4</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+			<ensembleMemberId>4</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_inputs_all</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_023402</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_023422</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023422</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_023429</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023429</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_023402_shift</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>temp1</qualifierId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_LI_BVA</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_LI-BVA</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_ULI</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_ULI</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="Interpolate_Q90">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Q_MMH20_perc90</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Q_MMH20_perc90_1hr</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Interpolate_Q80">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Q_MMH20_perc80</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Q_MMH20_perc80_1hr</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Interpolate_Q50">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Q_MMH20_perc50</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Q_MMH20_perc50_1hr</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Interpolate_Q20">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Q_MMH20_perc20</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Q_MMH20_perc20_1hr</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Interpolate_Q10">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Q_MMH20_perc10</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Q_MMH20_perc10_1hr</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Q_inputs_m0">
+		<user>
+			<simple>
+				<expression>Q_MMH20_perc90_1hr</expression>
+				<outputVariable>
+					<variableId>Q_inputs_m0</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_inputs_m1">
+		<user>
+			<simple>
+				<expression>Q_MMH20_perc80_1hr</expression>
+				<outputVariable>
+					<variableId>Q_inputs_m1</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_inputs_m2">
+		<user>
+			<simple>
+				<expression>Q_MMH20_perc50_1hr</expression>
+				<outputVariable>
+					<variableId>Q_inputs_m2</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_inputs_m3">
+		<user>
+			<simple>
+				<expression>Q_MMH20_perc20_1hr</expression>
+				<outputVariable>
+					<variableId>Q_inputs_m3</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_inputs_m4">
+		<user>
+			<simple>
+				<expression>Q_MMH20_perc10_1hr</expression>
+				<outputVariable>
+					<variableId>Q_inputs_m4</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Shift_023402">
+		<timeShift>
+			<constant>
+				<inputVariable>
+					<variableId>Q_023402</variableId>
+				</inputVariable>
+				<direction>backward</direction>
+				<numberOfTimeSteps>@Shift@</numberOfTimeSteps>
+				<outputVariable>
+					<variableId>Q_023402_shift</variableId>
+				</outputVariable>
+			</constant>
+		</timeShift>
+	</transformation>
+	<transformation id="Fill_Shift_023402">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>Q_023402_shift</variableId>
+				</inputVariable>
+				<defaultValue>0</defaultValue>
+				<outputVariable>
+					<variableId>Q_023402_shift</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="LI-BVA">
+		<user>
+			<simple>
+				<expression>if( (Q_023402_shift-Q_023422-Q_023429)*Weight &gt;0, (Q_023402_shift-Q_023422-Q_023429)*Weight, 0)</expression>
+				<coefficientSetFunctions>
+					<coefficient id="Weight" value="@Weight@"/>
+				</coefficientSetFunctions>
+				<outputVariable>
+					<variableId>Q_LI_BVA</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="ULI">
+		<user>
+			<simple>
+				<expression>if( (Q_023402_shift-Q_023422-Q_023429)*Weight &gt; 0, (Q_023402_shift-Q_023422-Q_023429)*Weight, 0)</expression>
+				<coefficientSetFunctions>
+					<coefficient id="Weight" value="@Weight@"/>
+				</coefficientSetFunctions>
+				<outputVariable>
+					<variableId>Q_ULI</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Min_Q_ULI">
+		<user>
+			<simple>
+				<expression>if(Q_ULI &gt;0.5,Q_ULI,0.5)</expression>
+				<outputVariable>
+					<variableId>Q_ULI</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Min_Q_LI_BVA">
+		<user>
+			<simple>
+				<expression>if(Q_LI_BVA &gt;0.5,Q_LI_BVA,0.5)</expression>
+				<outputVariable>
+					<variableId>Q_LI_BVA</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Min_Q_Inputs">
+		<user>
+			<simple>
+				<expression>if(Q_inputs_all &gt;0.5,Q_inputs_all,0.5)</expression>
+				<outputVariable>
+					<variableId>Q_inputs_all</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

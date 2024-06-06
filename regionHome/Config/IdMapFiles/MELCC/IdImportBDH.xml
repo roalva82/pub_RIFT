@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<location internal="RIFT_023401" external="023401"/>
+	<location internal="RIFT_023402" external="023402"/>
+	<location internal="RIFT_023422" external="023422"/>
+	<location internal="RIFT_023427" external="023427"/>
+	<location internal="RIFT_023428" external="023428"/>
+	<location internal="RIFT_023429" external="023429"/>
+	<location internal="RIFT_023432" external="023432"/>
+	<location internal="RIFT_023448" external="023448"/>
+	<location internal="RIFT_023449" external="023449"/>
+	<location internal="RIFT_023450" external="023450"/>
+	<location internal="RIFT_023451" external="023451"/>
+	<enableOneToOneMapping/>
+</idMap>

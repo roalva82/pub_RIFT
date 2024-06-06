@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>$IMPORT_FOLDER$/Climato</folder>
+			<fileNamePatternFilter>CLIMATO_Horaires*</fileNamePatternFilter>
+			<table>
+				<locationColumn name="NoClimato"/>
+				<dateTimeColumn name="Date_Heure" pattern="yyyy-MM-dd HH:mm:ss"/>
+				<valueColumn name="TempMin_degC" parameterId="TempMin_degC" unit="DEGC"/>
+				<valueColumn name="TempMax_degC" parameterId="TempMax_degC" unit="DEGC"/>
+				<valueColumn name="TempMoy_degC" parameterId="TempMoy_degC" unit="DEGC"/>
+				<valueColumn name="PrecipTotale_mm" parameterId="PrecipTotale_mm" unit="mm"/>
+				<valueColumn name="PrecipLiquide_mm" parameterId="PrecipLiquide_mm" unit="mm"/>
+				<valueColumn name="PrecipSolide_mm" parameterId="PrecipSolide_mm" unit="mm"/>
+				<valueColumn name="PrecipTotale2_mm" parameterId="PrecipTotale2_mm" unit="mm"/>
+			</table>
+			<idMapId>IdImportCLIMATO</idMapId>
+			<missingValue>-999.0</missingValue>
+			<importTimeZone>
+				<timeZoneName>EST</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmean.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<qualifierId>liquid</qualifierId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<qualifierId>solid</qualifierId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<qualifierId>total</qualifierId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by AppsPortables.com (AppsPortables.com) -->
+<timeSeriesExportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesExportRun.xsd">
+	<export>
+		<general>
+			<exportTypeStandard>pi 1.31</exportTypeStandard>
+			<folder>$EXPORT_FOLDER$/$FORECAST$/</folder>
+			<exportFileName>
+				<name>$FORECAST$Forecast_</name>
+				<suffix>
+					<timeZeroFormattingString>yyyyMMdd'.xml'</timeZeroFormattingString>
+				</suffix>
+			</exportFileName>
+			<idMapId>IdExport</idMapId>
+		</general>
+<!--
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPos_$FORECAST$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+-->
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_Forecast$FORECAST$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_Forecast$FORECAST$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.sim</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR_ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</export>
+</timeSeriesExportRun>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>GEPS_P_complete</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGEPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>GEPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>GEPS_T_complete</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGEPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>GEPS</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>GEPS_P_trimmed</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ReduceGridSizeGEPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>GEPS_Chaudiere</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>GEPS_T_trimmed</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ReduceGridSizeGEPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>GEPS_Chaudiere</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="Trim_P">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>GEPS_P_complete</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>GEPS_P_trimmed</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Trim_T">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>GEPS_T_complete</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>GEPS_T_trimmed</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+</transformationModule>

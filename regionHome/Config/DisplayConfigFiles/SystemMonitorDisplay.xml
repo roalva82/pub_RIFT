@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<systemMonitorDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/systemMonitorDisplay.xsd">
+    <importStatus>
+        <tabName>Import Status</tabName>
+        <defaultTimeThreshold>
+            <timeThreshold>
+                <periodLength value="0" unit="second"/>
+                <color>green</color>
+            </timeThreshold>
+            <timeThreshold>
+                <periodLength value="48" unit="hour"/>
+                <color>yellow</color>
+            </timeThreshold>
+            <timeThreshold>
+                <periodLength value="120" unit="hour"/>
+                <color>red</color>
+            </timeThreshold>
+        </defaultTimeThreshold>
+    </importStatus>    
+</systemMonitorDisplay>

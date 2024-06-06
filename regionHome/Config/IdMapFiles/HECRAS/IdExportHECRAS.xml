@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<!--Mapping for HEC-RAS Uruguay bajo-->
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/106.78" internalParameter="QR.obs" internalLocation="RIFT_023429"/>
+	<map externalParameter="Lateral Inflow Hydrograph" externalLocation="Chaudiere_aval 1/101.3963" internalParameter="QR.obs" internalLocation="RIFT_023422"/>
+	<map externalParameter="Lateral Inflow Hydrograph" externalLocation="Chaudiere_aval 1/78.6772" internalParameter="QR.obs" internalLocation="RIFT_LI-BVA"/>
+	<map externalParameter="Uniform Lateral Inflow Hydrograph" externalLocation="Chaudiere_aval 1/73.402/28.176" internalParameter="QR.obs" internalLocation="RIFT_ULI"/>
+
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/106.78" internalParameter="QR.sim" internalLocation="RIFT_023429"/>
+	<map externalParameter="Lateral Inflow Hydrograph" externalLocation="Chaudiere_aval 1/101.3963" internalParameter="QR.sim" internalLocation="RIFT_023422"/>
+	<map externalParameter="Lateral Inflow Hydrograph" externalLocation="Chaudiere_aval 1/78.6772" internalParameter="QR.sim" internalLocation="RIFT_LI-BVA"/>
+	<map externalParameter="Uniform Lateral Inflow Hydrograph" externalLocation="Chaudiere_aval 1/73.402/28.176" internalParameter="QR.sim" internalLocation="RIFT_ULI"/>
+
+</idMap>

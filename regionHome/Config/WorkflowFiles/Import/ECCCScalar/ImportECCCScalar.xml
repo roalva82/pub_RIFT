@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<properties>
+<!--Currently only 4 days of history are offered-->
+		<int key="STARTTIME" value="-4"/>
+		<int key="ENDTIME" value="0"/>
+	</properties>
+	<activity>
+		<properties>
+			<string key="REGION" value="ON"/>
+			<string key="LOCATIONSET" value="ECCCStationsON"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="QC"/>
+			<string key="LOCATIONSET" value="ECCCStationsQC"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="MB"/>
+			<string key="LOCATIONSET" value="ECCCStationsMB"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessECCCScalar</moduleInstanceId>
+	</activity>
+</workflow>

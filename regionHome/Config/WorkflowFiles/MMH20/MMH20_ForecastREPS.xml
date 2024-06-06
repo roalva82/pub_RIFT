@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<properties>
+		<string key="NWP" value="REPS"/>
+	</properties>
+	<activity>
+		<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+	</activity>
+	<activity>
+		<moduleInstanceId>ForecastLenghtEstimatorREPS</moduleInstanceId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="BASIN" value="023402"/>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+		<moduleConfigFileName>MMH20_forecast_ensemble</moduleConfigFileName>
+		<ensemble>
+			<ensembleId>REPS</ensembleId>
+			<runInLoop>true</runInLoop>
+		</ensemble>
+	</activity>
+	<activity>
+		<properties>
+			<string key="BASIN" value="023422"></string>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+		<moduleConfigFileName>MMH20_forecast_ensemble</moduleConfigFileName>
+		<ensemble>
+			<ensembleId>REPS</ensembleId>
+			<runInLoop>true</runInLoop>
+		</ensemble>
+	</activity>
+	<activity>
+		<properties>
+			<string key="BASIN" value="023429"></string>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+		<moduleConfigFileName>MMH20_forecast_ensemble</moduleConfigFileName>
+		<ensemble>
+			<ensembleId>REPS</ensembleId>
+			<runInLoop>true</runInLoop>
+		</ensemble>
+	</activity>
+	<activity>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+	</activity>
+</workflow>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>Q_inputs_1hr_BDH</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ProcessBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-360" end="120" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_inputs_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-360" end="120" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_023402</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-360" end="120" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_023422</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationId>RIFT_023422</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-360" end="120" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_023429</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationId>RIFT_023429</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-360" end="120" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	
+	<variable>
+		<variableId>LI_Estimate</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_EstimatePos</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>LI_Estimate_extrapolate</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_EstimatePos</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>temp1</qualifierId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="48" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	
+	<variable>
+		<variableId>LI_Estimate_shift</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>temp1</qualifierId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_LI_BVA</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationId>RIFT_LI-BVA</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-360" end="120" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_ULI</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationId>RIFT_ULI</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-360" end="120" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+<!--	<variable>
+		<variableId>N_023402_15min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.obs</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>N_023402_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.obs</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+-->
+	<transformation id="Copy_BDH">
+		<user>
+			<simple>
+				<expression>Q_inputs_1hr_BDH</expression>
+				<outputVariable>
+					<variableId>Q_inputs_1hr</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Extrapolate_LI">
+		<interpolationSerial>
+			<extrapolateConstant>
+				<inputVariable>
+					<variableId>LI_Estimate</variableId>
+				</inputVariable>
+				<extrapolateDirection>both</extrapolateDirection>
+				<outputVariable>
+					<variableId>LI_Estimate_extrapolate</variableId>
+				</outputVariable>
+			</extrapolateConstant>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Shift_LI">
+		<timeShift>
+			<constant>
+				<inputVariable>
+					<variableId>LI_Estimate_extrapolate</variableId>
+				</inputVariable>
+				<direction>backward</direction>
+				<numberOfTimeSteps>@Shift@</numberOfTimeSteps>
+				<outputVariable>
+					<variableId>LI_Estimate_shift</variableId>
+				</outputVariable>
+			</constant>
+		</timeShift>
+	</transformation>
+	<transformation id="Fill_Shift_LI">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>LI_Estimate_shift</variableId>
+				</inputVariable>
+				<defaultValue>0</defaultValue>
+				<outputVariable>
+					<variableId>LI_Estimate_shift</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
+	</transformation>
+	<!--<transformation id="LI-BVA">
+		<user>
+			<simple>
+				<expression>if( (LI_Estimate_shift)*Weight &gt;0, ((LI_Estimate_shift)*Weight, 0)</expression>
+				<coefficientSetFunctions>
+					<coefficient id="Weight" value="@Weight@"/>
+				</coefficientSetFunctions>
+				<outputVariable>
+					<variableId>Q_LI_BVA</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="ULI">
+		<user>
+			<simple>
+				<expression>if( ((LI_Estimate_shift)*Weight &gt; 0, ((LI_Estimate_shift)*Weight, 0)</expression>
+				<coefficientSetFunctions>
+					<coefficient id="Weight" value="@Weight@"/>
+				</coefficientSetFunctions>
+				<outputVariable>
+					<variableId>Q_ULI</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>-->
+	
+	<transformation id="LI-BVA">
+    <user>
+        <simple>
+            <expression>if((LI_Estimate_shift)*Weight &gt;0, ((LI_Estimate_shift)*Weight), 0)</expression>
+            <coefficientSetFunctions>
+                <coefficient id="Weight" value="@Weight@"/>
+            </coefficientSetFunctions>
+            <outputVariable>
+                <variableId>Q_LI_BVA</variableId>
+            </outputVariable>
+        </simple>
+    </user>
+</transformation>
+<transformation id="ULI">
+    <user>
+        <simple>
+            <expression>if(((LI_Estimate_shift)*Weight) &gt; 0, ((LI_Estimate_shift)*Weight), 0)</expression>
+            <coefficientSetFunctions>
+                <coefficient id="Weight" value="@Weight@"/>
+            </coefficientSetFunctions>
+            <outputVariable>
+                <variableId>Q_ULI</variableId>
+            </outputVariable>
+        </simple>
+    </user>
+</transformation>
+
+	
+<!--	<transformation id="Convert_Level_1hr">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>N_023402_15min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>N_023402_1hr</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+-->	<transformation id="Min_Q_ULI">
+		<user>
+			<simple>
+				<expression>if(Q_ULI &gt;0,Q_ULI,0)</expression>
+				<outputVariable>
+					<variableId>Q_ULI</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Min_Q_LI_BVA">
+		<user>
+			<simple>
+				<expression>if(Q_LI_BVA &gt;0,Q_LI_BVA,0)</expression>
+				<outputVariable>
+					<variableId>Q_LI_BVA</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+<!--	<transformation id="Min_Q_Inputs">
+		<user>
+			<simple>
+				<expression>if(Q_inputs_1hr &gt;0.5,Q_inputs_1hr,0.5)</expression>
+				<outputVariable>
+					<variableId>Q_inputs_1hr</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+--></transformationModule>

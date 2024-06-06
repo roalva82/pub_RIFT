@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<!-- For Historic Data Imports -->
+	<parameter internal="TAmax.obs" external="Max Temp (°C)"/>
+	<parameter internal="TAmin.obs" external="Min Temp (°C)"/>
+	<parameter internal="TAmean.obs" external="Mean Temp (°C)"/>
+	<parameter internal="PC.obs" external="Total Precip (mm)"/>
+
+	<location internal="RIFT_233010" external="233010"/>
+	<location internal="RIFT_234011" external="234011"/>
+	<location internal="RIFT_234015" external="234015"/>
+	<location internal="RIFT_234020" external="234020"/>
+	<location internal="RIFT_234025" external="234025"/>
+	<location internal="RIFT_234030" external="234030"/>
+	<location internal="RIFT_234032" external="234032"/>
+	<location internal="RIFT_234035" external="234035"/>
+	<location internal="RIFT_234036" external="234036"/>
+	<location internal="RIFT_234040" external="234040"/>
+	<location internal="RIFT_234060" external="234060"/>
+	<location internal="RIFT_234070" external="234070"/>
+	<location internal="RIFT_236510" external="236510"/>
+	<location internal="RIFT_240020" external="240020"/>
+	<location internal="RIFT_302050" external="302050"/>
+	<location internal="RIFT_302060" external="302060"/>
+	<location internal="RIFT_7020567" external="7020567"/>
+	<location internal="RIFT_7020M48" external="7020M48"/>
+	<location internal="RIFT_7021949" external="7021949"/>
+	<location internal="RIFT_7022010" external="7022010"/>
+	<location internal="RIFT_7023130" external="7023130"/>
+	<location internal="RIFT_7023285" external="7023285"/>
+	<location internal="RIFT_7023677" external="7023677"/>
+	<location internal="RIFT_7023681" external="7023681"/>
+	<location internal="RIFT_7024250" external="7024250"/>
+	<location internal="RIFT_7024320" external="7024320"/>
+	<location internal="RIFT_7026942" external="7026942"/>
+	<location internal="RIFT_7027083" external="7027083"/>
+	<location internal="RIFT_7027200" external="7027200"/>
+	<location internal="RIFT_7027283" external="7027283"/>
+	<location internal="RIFT_7027315" external="7027315"/>
+	<location internal="RIFT_7027516" external="7027516"/>
+	<location internal="RIFT_7027537" external="7027537"/>
+	<location internal="RIFT_7027656" external="7027656"/>
+	<location internal="RIFT_7027660" external="7027660"/>
+	<location internal="RIFT_7027725" external="7027725"/>
+	<location internal="RIFT_7027733" external="7027733"/>
+	<location internal="RIFT_7027750" external="7027750"/>
+	<location internal="RIFT_7027840" external="7027840"/>
+	<location internal="RIFT_7028441" external="7028441"/>
+	<location internal="RIFT_7028442" external="7028442"/>
+	<location internal="RIFT_7028676" external="7028676"/>
+	<location internal="RIFT_7028754" external="7028754"/>
+	<location internal="RIFT_702FR15" external="702FR15"/>
+	<location internal="RIFT_702K553" external="702K553"/>
+	<location internal="RIFT_7050241" external="7050241"/>
+	<location internal="RIFT_7052554" external="7052554"/>
+	<location internal="RIFT_7056930" external="7056930"/>
+	<enableOneToOneMapping/>
+</idMap>

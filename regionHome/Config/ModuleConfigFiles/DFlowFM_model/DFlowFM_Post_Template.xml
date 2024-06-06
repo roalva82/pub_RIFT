@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<!--VARIABLES-->
+	<!--Fix waterlevels-->
+	<variable>
+		<variableId>HG.sim_grid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>HG.sim</parameterId>
+			<locationId>DFlowFM_$RIVER$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE_OUTPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>$READWRITEMODE_POST$</readWriteMode>
+			<expiryTime unit="day" multiplier="$EXPIRYTIME_D_SCALAR$"/>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>D.sim_grid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>D.sim</parameterId>
+			<locationId>DFlowFM_$RIVER$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE_OUTPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>$READWRITEMODE_POST$</readWriteMode>
+			<expiryTime unit="day" multiplier="$EXPIRYTIME_D_SCALAR$"/>
+		</timeSeriesSet>
+	</variable>
+	<!--TRANSFORMATIONS-->
+	<!--Fix waterlevels-->
+	<transformation id="Filter only bedlevels">
+		<user>
+			<simple>
+				<expression>if(D.sim_grid &lt; 0.01, 1/0, HG.sim_grid)</expression>
+				<outputVariable>
+					<variableId>HG.sim_grid</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

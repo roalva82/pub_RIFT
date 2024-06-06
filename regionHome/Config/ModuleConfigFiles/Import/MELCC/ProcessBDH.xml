@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+
+	<variable>
+		<variableId>Level_BDH_15min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.obs</parameterId>
+			<locationSetId>RIFT_BDH</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Discharge_BDH_15min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>RIFT_BDH</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Level_BDH_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ProcessBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.obs</parameterId>
+			<locationSetId>RIFT_BDH</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Discharge_BDH_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ProcessBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>RIFT_BDH</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Sartigan_3hrEST</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationId>RIFT_023429</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Sartigan_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ProcessBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationId>RIFT_023429</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="Interpolate_Level">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>Level_BDH_15min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Level_BDH_1hr</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+	<transformation id="Interpolate_Discharge">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>Discharge_BDH_15min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Discharge_BDH_1hr</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+	<transformation id="Interpolate_Sartigan">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Sartigan_3hrEST</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Sartigan_1hr</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+</transformationModule>

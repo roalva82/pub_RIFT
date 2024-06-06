@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>Q_inputs_3hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_ForecastPos_$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_inputs_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_023402</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_023422</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023422</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_023429</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023429</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_023402_shift</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>temp1</qualifierId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_LI_BVA</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_LI-BVA</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_ULI</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_ULI</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_ULI_RED</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>RIFT_ULI_RED</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_Sartigan</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023429</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_Famine</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023422</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_SS_1</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_SS_1</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_SS_2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_SS_2</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_SS_3</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_SS_3</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_LI_BVA</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_LI-BVA</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_SS_4</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_SS_4</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_SS_5</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_SS_5</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_SS_6</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_SS_6</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_SS_7</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_SS_7</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_SS_8</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_SS_8</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_SS_9</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_SS_9</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_Sartigan</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_023429</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_Famine</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_023422</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_SS_1</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_SS_1</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_SS_2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_SS_2</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_SS_3</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_SS_3</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_LI_BVA</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_LI-BVA</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_SS_4</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_SS_4</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_SS_5</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_SS_5</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_SS_6</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_SS_6</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_SS_7</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_SS_7</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_SS_8</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_SS_8</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc_SS_9</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationId>RIFT_SS_9</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_ULI_RED_6hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>RIFT_ULI_RED</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="EST_6hourly"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_1hr_acc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationSetId>HEC-RAS_Steady_inputs</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_6hr_acc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationSetId>HEC-RAS_Steady_inputs</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="EST_6hourly"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Q_6hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_Steady_inputs</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="EST_6hourly"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="Q_inputs_1hr">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Q_inputs_3hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Q_inputs_1hr</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Shift_023402">
+		<timeShift>
+			<constant>
+				<inputVariable>
+					<variableId>Q_023402</variableId>
+				</inputVariable>
+				<direction>backward</direction>
+				<numberOfTimeSteps>@Shift@</numberOfTimeSteps>
+				<outputVariable>
+					<variableId>Q_023402_shift</variableId>
+				</outputVariable>
+			</constant>
+		</timeShift>
+	</transformation>
+	<transformation id="Fill_Shift_023402">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>Q_023402_shift</variableId>
+				</inputVariable>
+				<defaultValue>0</defaultValue>
+				<outputVariable>
+					<variableId>Q_023402_shift</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="LI-BVA">
+		<user>
+			<simple>
+				<expression>if( (Q_023402_shift-Q_023422-Q_023429)*Weight &gt;0, (Q_023402_shift-Q_023422-Q_023429)*Weight, 0)</expression>
+				<coefficientSetFunctions>
+					<coefficient id="Weight" value="@Weight@"/>
+				</coefficientSetFunctions>
+				<outputVariable>
+					<variableId>Q_LI_BVA</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="ULI">
+		<user>
+			<simple>
+				<expression>if( (Q_023402_shift-Q_023422-Q_023429)*Weight &gt; 0, (Q_023402_shift-Q_023422-Q_023429)*Weight, 0)</expression>
+				<coefficientSetFunctions>
+					<coefficient id="Weight" value="@Weight@"/>
+				</coefficientSetFunctions>
+				<outputVariable>
+					<variableId>Q_ULI</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Min_Q_ULI">
+		<user>
+			<simple>
+				<expression>if(Q_ULI &gt;0.5,Q_ULI,0.5)</expression>
+				<outputVariable>
+					<variableId>Q_ULI</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Min_Q_LI_BVA">
+		<user>
+			<simple>
+				<expression>if(Q_LI_BVA &gt;0.5,Q_LI_BVA,0.5)</expression>
+				<outputVariable>
+					<variableId>Q_LI_BVA</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Min_Q_Inputs">
+		<user>
+			<simple>
+				<expression>if(Q_inputs_1hr &gt;0.5,Q_inputs_1hr,0.5)</expression>
+				<outputVariable>
+					<variableId>Q_inputs_1hr</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Redistribute_ULI">
+		<user>
+			<simple>
+				<expression>Q_ULI*Weight</expression>
+				<coefficientSetFunctions>
+					<coefficient id="Weight" value="@Weight@"/>
+				</coefficientSetFunctions>
+				<outputVariable>
+					<variableId>Q_ULI_RED</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_Sartigan">
+		<user>
+			<simple>
+				<expression>Q_1hr_Sartigan</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_Sartigan</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_Famine">
+		<user>
+			<simple>
+				<expression>Q_1hr_acc_Sartigan+Q_1hr_Famine</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_Famine</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_SS_1">
+		<user>
+			<simple>
+				<expression>Q_1hr_acc_Famine+Q_1hr_SS_1</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_SS_1</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_SS_2">
+		<user>
+			<simple>
+				<expression>Q_1hr_acc_SS_1+Q_1hr_SS_2</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_SS_2</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_SS_3">
+		<user>
+			<simple>
+				<expression>Q_1hr_acc_SS_2+Q_1hr_SS_3</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_SS_3</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_LI-BVA">
+		<user>
+			<simple>
+				<expression>Q_1hr_acc_SS_3+Q_1hr_LI_BVA</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_LI_BVA</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_SS_4">
+		<user>
+			<simple>
+				<expression>Q_1hr_acc_LI_BVA+Q_1hr_SS_4</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_SS_4</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_SS_5">
+		<user>
+			<simple>
+				<expression>Q_1hr_acc_SS_4+Q_1hr_SS_5</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_SS_5</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_SS_6">
+		<user>
+			<simple>
+				<expression>Q_1hr_acc_SS_5+Q_1hr_SS_6</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_SS_6</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_SS_7">
+		<user>
+			<simple>
+				<expression>Q_1hr_acc_SS_6+Q_1hr_SS_7</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_SS_7</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_SS_8">
+		<user>
+			<simple>
+				<expression>Q_1hr_acc_SS_7+Q_1hr_SS_8</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_SS_8</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q_SS_9">
+		<user>
+			<simple>
+				<expression>Q_1hr_acc_SS_8+Q_1hr_SS_9</expression>
+				<outputVariable>
+					<variableId>Q_1hr_acc_SS_9</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Steady_6hr">
+		<aggregation>
+			<instantaneous>
+				<inputVariable>
+					<variableId>Q_1hr_acc</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Q_6hr_acc</variableId>
+				</outputVariable>
+			</instantaneous>
+		</aggregation>
+	</transformation>
+	<transformation id="Steady_6hr_acc">
+		<user>
+			<simple>
+				<expression>Q_6hr_acc</expression>
+				<outputVariable>
+					<variableId>Q_6hr</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<folder>$IMPORT_FOLDER_EO_DATA$\Sentinel-1\processed\$REGION$</folder>
+			<fileNamePatternFilter>*$LOOP_LOCATION_ID$.nc</fileNamePatternFilter>
+			<fileNameObservationDateTimePattern>'S1?_IW_GRDH_1SDV_'yyyyMMdd'T'HHmmss'?'</fileNameObservationDateTimePattern>
+			<deleteImportedFiles>true</deleteImportedFiles>
+			<idMapId>IdImportSentinel1</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+			<!-- <skipMissingValues>true</skipMissingValues> -->
+			<dataFeedId>Sentinel-1</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSentinel1</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Gamma0_VV</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$SENTINEL_EXPIRY_DAYS$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSentinel1</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Gamma0_VV_dB</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$SENTINEL_EXPIRY_DAYS$"/>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

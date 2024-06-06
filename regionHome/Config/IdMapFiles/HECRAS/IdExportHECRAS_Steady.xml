@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/106.78" internalParameter="QR.obs" internalLocation="RIFT_023429"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/101.3963" internalParameter="QR.obs" internalLocation="RIFT_023422"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/100.965" internalParameter="QR.obs" internalLocation="RIFT_SS_1"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/94.6641" internalParameter="QR.obs" internalLocation="RIFT_SS_2"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/87.9237" internalParameter="QR.obs" internalLocation="RIFT_SS_3"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/78.9856" internalParameter="QR.obs" internalLocation="RIFT_LI-BVA"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/70.8375" internalParameter="QR.obs" internalLocation="RIFT_SS_4"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/66.7498" internalParameter="QR.obs" internalLocation="RIFT_SS_5"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/60.2138" internalParameter="QR.obs" internalLocation="RIFT_SS_6"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/54.9688" internalParameter="QR.obs" internalLocation="RIFT_SS_7"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/50.0789" internalParameter="QR.obs" internalLocation="RIFT_SS_8"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/47.5845" internalParameter="QR.obs" internalLocation="RIFT_SS_9"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/106.78" internalParameter="QR.sim" internalLocation="RIFT_023429"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/101.3963" internalParameter="QR.sim" internalLocation="RIFT_023422"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/100.965" internalParameter="QR.sim" internalLocation="RIFT_SS_1"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/94.6641" internalParameter="QR.sim" internalLocation="RIFT_SS_2"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/87.9237" internalParameter="QR.sim" internalLocation="RIFT_SS_3"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/78.9856" internalParameter="QR.sim" internalLocation="RIFT_LI-BVA"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/70.8375" internalParameter="QR.sim" internalLocation="RIFT_SS_4"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/66.7498" internalParameter="QR.sim" internalLocation="RIFT_SS_5"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/60.2138" internalParameter="QR.sim" internalLocation="RIFT_SS_6"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/54.9688" internalParameter="QR.sim" internalLocation="RIFT_SS_7"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/50.0789" internalParameter="QR.sim" internalLocation="RIFT_SS_8"/>
+	<map externalParameter="Flow Hydrograph" externalLocation="Chaudiere_aval 1/47.5845" internalParameter="QR.sim" internalLocation="RIFT_SS_9"/>
+	<enableOneToOneMapping/>
+</idMap>

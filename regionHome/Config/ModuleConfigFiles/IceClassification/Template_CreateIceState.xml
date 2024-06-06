@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>InGrid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>DFlowFM_Chaudiere_Update</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.area.fraction</parameterId>
+			<locationId>DFlowFM_Chaudiere_river_ice</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-14" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>IceFraction_backup</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>DFlowFM_Chaudiere_Update</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.area.fraction</parameterId><qualifierId>backup</qualifierId>
+			<locationId>DFlowFM_Chaudiere_river_ice</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-14" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+		<variable>
+		<variableId>IceThickness_backup</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>DFlowFM_Chaudiere_Update</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.thickness</parameterId><qualifierId>backup</qualifierId>
+			<locationId>DFlowFM_Chaudiere_river_ice</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-14" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+		<variable>
+		<variableId>IceFraction_single</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>DFlowFM_Chaudiere_Update</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.area.fraction</parameterId><qualifierId>$LOCID$</qualifierId>
+			<locationId>DFlowFM_Chaudiere_river_ice</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-14" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+		<variable>
+		<variableId>IceThickness_single</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>DFlowFM_Chaudiere_Update</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.thickness</parameterId><qualifierId>$LOCID$</qualifierId>
+			<locationId>DFlowFM_Chaudiere_river_ice</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-14" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>IceFraction</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>DFlowFM_Chaudiere_Update</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.area.fraction</parameterId>
+			<locationId>DFlowFM_Chaudiere_river_ice</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-14" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+		<variable>
+		<variableId>IceThickness</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>DFlowFM_Chaudiere_Update</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.thickness</parameterId>
+			<locationId>DFlowFM_Chaudiere_river_ice</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-14" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Calculate backup-->
+	<transformation id="IceFraction_backup">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>IceFraction_backup</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+		<transformation id="IceThickness_backup">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>IceThickness_backup</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<!--Sample fraction and calculate thickness-->
+	<transformation id="example">
+		<sample>
+			<sampleSingleTimeStep>
+				<inputVariable>
+					<variableId>InGrid</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>IceFraction_single</variableId>
+				</outputVariable>
+			</sampleSingleTimeStep>
+		</sample>
+	</transformation>
+	<transformation id="Ice_backup">
+		<user>
+			<simple>
+				<expression>if(IceFraction_single &lt;= 0.3, 0, 1)</expression>
+				<outputVariable>
+					<variableId>IceThickness_single</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<!--Merge timeseries-->
+	<transformation id="Merge ice">
+   <merge>
+      <simple>
+         <inputVariable>
+            <variableId>IceThickness_single</variableId>
+         </inputVariable>
+                  <inputVariable>
+            <variableId>IceThickness</variableId>
+         </inputVariable>
+         <inputVariable>
+            <variableId>IceThickness_backup</variableId>
+         </inputVariable>
+         <outputVariable>
+            <variableId>IceThickness</variableId>
+         </outputVariable>
+      </simple>
+   </merge>
+</transformation>
+	<transformation id="Merge">
+   <merge>
+      <simple>
+         <inputVariable>
+            <variableId>IceFraction_single</variableId>
+         </inputVariable>
+                  <inputVariable>
+            <variableId>IceFraction</variableId>
+         </inputVariable>
+         <inputVariable>
+            <variableId>IceFraction_backup</variableId>
+         </inputVariable>
+         <outputVariable>
+            <variableId>IceFraction</variableId>
+         </outputVariable>
+      </simple>
+   </merge>
+</transformation>
+</transformationModule>

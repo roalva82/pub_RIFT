@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameters version="1.5" xmlns="http://www.wldelft.nl/fews/PI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews/PI http://fews.wldelft.nl/schemas/version1.0/pi-schemas/pi_modelparameters.xsd">
+<!--	<modifierType>Unsteady_parameters</modifierType>-->
+	<!--
+    <group id="hec-ras run parameters" name="hec-ras run parameters">
+        <parameter id="ComputationInterval" name="ComputationInterval">
+            <description>Computation interval in minutes. Does not change interval of output data.</description>
+            <intValue>60</intValue>
+        </parameter>
+    </group>
+-->
+	<group id="Sartigan-Beauceville" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/106.78/87.2696</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+	</group>
+	<group id="Beauceville-St.Joseph" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/87.2696/71.2774</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+	</group>
+	<group id="St.Joseph-Val.Junction" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/71.2774/62.5149</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+	</group>
+	<group id="Val.Junction-St.Marie" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/62.5149/51.8378</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+	</group>
+	<group id="St.Marie-St.Lambert" name="hec-ras ice cover parameters">
+		<parameter id="River_Reach_upRS_dnRS">
+			<description>Range of Cross-sections to update</description>
+			<stringValue>Chaudiere_aval 1/51.8378/25.0521</stringValue>
+		</parameter>
+		<parameter id="Ice Thickness">
+			<description>Ice Thickness</description>
+			<stringValue>0.2,0.2,0.2</stringValue>
+		</parameter>
+		<parameter id="Ice Mann n">
+			<description>Ice Mann n</description>
+			<stringValue>0.025,0.025,0.025</stringValue>
+		</parameter>
+	</group>
+</parameters>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- START CHAUDIERE WORKFLOW -->
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="RAW_OR_PROCESSED" value="raw"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderRCM</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="RAW_OR_PROCESSED" value="processed"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderRCM</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderRCM</moduleConfigFileName>
+	</activity>
+	<!-- RETRIEVE AND IMPORT 30M DATA - CHAUDIERE -->
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="DOWNLOAD_TYPE" value="acquisition"/>
+			<string key="PRODUCT" value="30M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveRCM</moduleInstanceId>
+		<moduleConfigFileName>RetrieveRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="30M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderRCM_work</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderRCM_work</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="30M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessRCM</moduleInstanceId>
+		<moduleConfigFileName>PreprocessRCM</moduleConfigFileName>
+		<loopLocationSetId>RS_Tiles_Chaudiere</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="30M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RenameRCM</moduleInstanceId>
+		<moduleConfigFileName>RenameRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="30M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportRCM</moduleInstanceId>
+		<moduleConfigFileName>ImportRCM</moduleConfigFileName>
+		<loopLocationSetId>RCM_Tiles_Chaudiere</loopLocationSetId>
+	</activity>
+	<!-- RETRIEVE AND IMPORT 16M DATA - CHAUDIERE -->
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="DOWNLOAD_TYPE" value="acquisition"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveRCM</moduleInstanceId>
+		<moduleConfigFileName>RetrieveRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderRCM_work</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderRCM_work</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessRCM</moduleInstanceId>
+		<moduleConfigFileName>PreprocessRCM</moduleConfigFileName>
+		<loopLocationSetId>RS_Tiles_Chaudiere</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RenameRCM</moduleInstanceId>
+		<moduleConfigFileName>RenameRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportRCM</moduleInstanceId>
+		<moduleConfigFileName>ImportRCM</moduleConfigFileName>
+		<loopLocationSetId>RCM_Tiles_Chaudiere</loopLocationSetId>
+	</activity>
+	<!-- RETRIEVE AND IMPORT 16M DATA - SAINTEANNE -->
+	<activity>
+		<properties>
+			<string key="REGION" value="SainteAnne"/>
+			<string key="DOWNLOAD_TYPE" value="acquisition"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveRCM</moduleInstanceId>
+		<moduleConfigFileName>RetrieveRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="SainteAnne"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderRCM_work</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderRCM_work</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="SainteAnne"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessRCM</moduleInstanceId>
+		<moduleConfigFileName>PreprocessRCM</moduleConfigFileName>
+		<loopLocationSetId>RS_Tiles_SainteAnne</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="SainteAnne"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RenameRCM</moduleInstanceId>
+		<moduleConfigFileName>RenameRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="SainteAnne"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportRCM</moduleInstanceId>
+		<moduleConfigFileName>ImportRCM</moduleConfigFileName>
+		<loopLocationSetId>RCM_Tiles_SainteAnne</loopLocationSetId>
+	</activity>
+	<!-- RETRIEVE AND IMPORT 16M DATA - SAINTFRANCOIS -->
+	<activity>
+		<properties>
+			<string key="REGION" value="SaintFrancois"/>
+			<string key="DOWNLOAD_TYPE" value="acquisition"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveRCM</moduleInstanceId>
+		<moduleConfigFileName>RetrieveRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="SaintFrancois"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderRCM_work</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderRCM_work</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="SaintFrancois"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessRCM</moduleInstanceId>
+		<moduleConfigFileName>PreprocessRCM</moduleConfigFileName>
+		<loopLocationSetId>RS_Tiles_SaintFrancois</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="SaintFrancois"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RenameRCM</moduleInstanceId>
+		<moduleConfigFileName>RenameRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="SaintFrancois"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportRCM</moduleInstanceId>
+		<moduleConfigFileName>ImportRCM</moduleConfigFileName>
+		<loopLocationSetId>RCM_Tiles_SaintFrancois</loopLocationSetId>
+	</activity>
+	<!-- Remove raw images to save storage space -->
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="RAW_OR_PROCESSED" value="raw"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER_EO_OPERATIONAL$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderRCM</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderRCM</moduleConfigFileName>
+	</activity>
+</workflow>

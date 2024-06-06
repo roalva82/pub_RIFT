@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.8</piVersion>
+		<rootDir>%REGION_HOME%/Modules/pyscripts</rootDir>
+		<workDir>%ROOT_DIR%/work</workDir>
+		<exportDir>$IMPORT_FOLDER$/RDPA</exportDir>
+		<importDir>$IMPORT_FOLDER$/RDPA</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%/work</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/work/get_ec_forecasts_log.xml</diagnosticFile>
+		<convertDatum>false</convertDatum>
+	</general>
+	<activities>
+			<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/work/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+			<exportActivities>
+			<exportRunFileActivity>
+				<exportFile>%WORK_DIR%/get_ec_forecasts_run.xml</exportFile>
+				<properties>
+					<string key="destinationDir" value="$IMPORT_FOLDER$/RDPA" />
+				</properties>
+			</exportRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>				
+				<command>
+					<executable>%ROOT_DIR%/bin/get_RDPA.exe</executable>
+				</command>
+				<arguments>
+			       	<argument>-r</argument>
+					<argument>%WORK_DIR%/get_ec_forecasts_run.xml</argument>
+					<argument>--num_days</argument>
+					<argument>7</argument>
+					<argument>--delay</argument>
+					<argument>12</argument>
+				</arguments>
+				<timeOut>3600000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

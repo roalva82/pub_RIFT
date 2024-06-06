@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="RAW_OR_PROCESSED" value="processed"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderRCM</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="30M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderRCM_work</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderRCM_work</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="30M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessRCM</moduleInstanceId>
+		<moduleConfigFileName>PreprocessRCM</moduleConfigFileName>
+		<loopLocationSetId>RS_Tiles_Chaudiere</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="30M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RenameRCM</moduleInstanceId>
+		<moduleConfigFileName>RenameRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="30M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportRCM</moduleInstanceId>
+		<moduleConfigFileName>ImportRCM</moduleConfigFileName>
+		<loopLocationSetId>RCM_Tiles_Chaudiere</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderRCM_work</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderRCM_work</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessRCM</moduleInstanceId>
+		<moduleConfigFileName>PreprocessRCM</moduleConfigFileName>
+		<loopLocationSetId>RS_Tiles_Chaudiere</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RenameRCM</moduleInstanceId>
+		<moduleConfigFileName>RenameRCM</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="PRODUCT" value="16M"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportRCM</moduleInstanceId>
+		<moduleConfigFileName>ImportRCM</moduleConfigFileName>
+		<loopLocationSetId>RCM_Tiles_Chaudiere</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="REGION" value="Chaudiere"/>
+			<string key="RAW_OR_PROCESSED" value="raw"/>
+			<string key="IMPORT_FOLDER_EO_DATA" value="$IMPORT_FOLDER$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PurgeFolderRCM</moduleInstanceId>
+		<moduleConfigFileName>PurgeFolderRCM</moduleConfigFileName>
+	</activity>
+</workflow>

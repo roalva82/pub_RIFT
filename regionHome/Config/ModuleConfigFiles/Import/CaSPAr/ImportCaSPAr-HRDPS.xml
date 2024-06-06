@@ -1,0 +1,21 @@
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<folder>$IMPORT_FOLDER$/CaSPAr/HRDPS</folder>
+			<idMapId>IdImportCaSPAr</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<gridStartPoint>NW</gridStartPoint>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCaSPAr-HRDPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>CaSPAr-HRDPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="m" cumulativeSum="true"/>
+	</import>
+</timeSeriesImportRun>

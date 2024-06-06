@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<!--Boundary conditions-->
+	<variable>
+		<variableId>Qin</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID_FOR_OBS$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>DFlowFM_$RIVER$_QBC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="hour" start="0" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Qout</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>DFlowFM_$RIVER$_QBC</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE_INPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Hin</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID_FOR_OBS$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationSetId>DFlowFM_$RIVER$_HBC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="hour" start="0" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Hout</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationSetId>DFlowFM_$RIVER$_HBC</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE_INPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--River ice-->
+	<variable>
+		<variableId>River_ice_area_fraction_dummy_polygons</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>River_ice.area.fraction</parameterId>
+			<locationSetId>DFlowFM_$RIVER$_river_ice_dummy_polygons</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Model_grid_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.area.fraction</parameterId>
+			<locationId>DFlowFM_$RIVER$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>River_ice_area_fraction_temp_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.area.fraction</parameterId>
+			<qualifierId>Observed</qualifierId>
+			<locationId>DFlowFM_$RIVER$_river_ice</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>River_ice_area_fraction_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.area.fraction</parameterId>
+			<locationId>DFlowFM_$RIVER$_river_ice</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>River_ice_area_fraction</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.area.fraction</parameterId>
+			<locationId>DFlowFM_$RIVER$_river_ice</locationId>
+			<timeSeriesType>$TIMESERIESTYPE_INPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>River_ice_thickness</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_ice.thickness</parameterId>
+			<locationId>DFlowFM_$RIVER$_river_ice</locationId>
+			<timeSeriesType>$TIMESERIESTYPE_INPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" end="$ENDTIME_FORECAST$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Boundary conditions-->
+	<transformation id="Merge_Q">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Qin</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Qout</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="Interpolate_Q">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Qout</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Qout</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Extrapolate_Q">
+		<interpolationSerial>
+			<extrapolateConstant>
+				<inputVariable>
+					<variableId>Qout</variableId>
+				</inputVariable>
+				<extrapolateDirection>both</extrapolateDirection>
+				<outputVariable>
+					<variableId>Qout</variableId>
+				</outputVariable>
+			</extrapolateConstant>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Merge_H">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Hin</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Hout</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="Interpolate_H">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Hout</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Hout</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Extrapolate_H">
+		<interpolationSerial>
+			<extrapolateConstant>
+				<inputVariable>
+					<variableId>Hout</variableId>
+				</inputVariable>
+				<extrapolateDirection>both</extrapolateDirection>
+				<outputVariable>
+					<variableId>Hout</variableId>
+				</outputVariable>
+			</extrapolateConstant>
+		</interpolationSerial>
+	</transformation>
+	<!--River ice-->
+	<transformation id="Fill_river_ice_dummy_polygons_temp">
+		<user>
+			<simple>
+				<expression>AREA_FRACTION</expression>
+				<coefficientSetFunctions>
+					<coefficient id="AREA_FRACTION" value="@AREA_FRACTION@"/>
+				</coefficientSetFunctions>
+				<outputVariable>
+					<variableId>River_ice_area_fraction_dummy_polygons</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Interpolate_polygons_to_river_ice_grid">
+		<interpolationSpatial>
+			<inverseDistance>
+				<inputVariable>
+					<variableId>River_ice_area_fraction_dummy_polygons</variableId>
+				</inputVariable>
+				<searchRadius>100000000</searchRadius>
+				<distanceGeoDatum>EPSG:32187</distanceGeoDatum>
+				<inverseDistancePower>3</inverseDistancePower>
+				<numberOfPoints>8</numberOfPoints>
+				<outputVariable>
+					<variableId>River_ice_area_fraction_temp</variableId>
+				</outputVariable>
+			</inverseDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Fill_model_grid_temp">
+		<user>
+			<simple>
+				<expression>1</expression>
+				<outputVariable>
+					<variableId>Model_grid_temp</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Interpolate_model_grid_to_river_ice_grid">
+		<interpolationSpatial>
+			<containingPolygon>
+				<inputVariable>
+					<variableId>Model_grid_temp</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>River_ice_area_fraction_temp_temp</variableId>
+				</outputVariable>
+			</containingPolygon>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="River_ice_grid_clip_to_model_grid">
+		<user>
+			<simple>
+				<expression>if(River_ice_area_fraction_temp_temp == 1, River_ice_area_fraction_temp, 1/0)</expression>
+				<outputVariable>
+					<variableId>River_ice_area_fraction</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Default_thickness">
+		<user>
+			<simple>
+				<expression>if(River_ice_area_fraction_temp_temp == 1, DEFAULT, 1/0)</expression>
+				<coefficientSetFunctions>
+					<coefficient id="DEFAULT" value="0.4"/>
+				</coefficientSetFunctions>
+				<outputVariable>
+					<variableId>River_ice_thickness</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>Input</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_forecast$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Output_20perc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_ForecastPos_$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc020</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Output_33perc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_ForecastPos_$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc033</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Output_50perc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_ForecastPos_$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc050</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Output_66perc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_ForecastPos_$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc066</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Output_80perc</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_ForecastPos_$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc080</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>M0</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_ForecastPos_$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+			<ensembleMemberId>0</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>M1</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_ForecastPos_$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+			<ensembleMemberId>1</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>M2</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_ForecastPos_$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+			<ensembleMemberId>2</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>M3</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_ForecastPos_$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+			<ensembleMemberId>3</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>M4</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20Ens_ForecastPos_$FOR$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$FOR$</ensembleId>
+			<ensembleMemberId>4</ensembleMemberId>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="Perc20">
+		<statisticsEnsemble>
+			<percentileNonExceedence>
+				<inputVariable>
+					<variableId>Input</variableId>
+				</inputVariable>
+				<value>20</value>
+				<outputVariable>
+					<variableId>Output_20perc</variableId>
+				</outputVariable>
+			</percentileNonExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Perc33">
+		<statisticsEnsemble>
+			<percentileNonExceedence>
+				<inputVariable>
+					<variableId>Input</variableId>
+				</inputVariable>
+				<value>33</value>
+				<outputVariable>
+					<variableId>Output_33perc</variableId>
+				</outputVariable>
+			</percentileNonExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Perc50">
+		<statisticsEnsemble>
+			<mean>
+				<inputVariable>
+					<variableId>Input</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Output_50perc</variableId>
+				</outputVariable>
+			</mean>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Perc66">
+		<statisticsEnsemble>
+			<percentileNonExceedence>
+				<inputVariable>
+					<variableId>Input</variableId>
+				</inputVariable>
+				<value>66</value>
+				<outputVariable>
+					<variableId>Output_66perc</variableId>
+				</outputVariable>
+			</percentileNonExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="Perc80">
+		<statisticsEnsemble>
+			<percentileNonExceedence>
+				<inputVariable>
+					<variableId>Input</variableId>
+				</inputVariable>
+				<value>80</value>
+				<outputVariable>
+					<variableId>Output_80perc</variableId>
+				</outputVariable>
+			</percentileNonExceedence>
+		</statisticsEnsemble>
+	</transformation>
+
+	<transformation id="M0">
+		<user>
+			<simple>
+				<expression>Output_20perc</expression>
+				<outputVariable>
+					<variableId>M0</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="M1">
+		<user>
+			<simple>
+				<expression>Output_33perc</expression>
+				<outputVariable>
+					<variableId>M1</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="M2">
+		<user>
+			<simple>
+				<expression>Output_50perc</expression>
+				<outputVariable>
+					<variableId>M2</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="M3">
+		<user>
+			<simple>
+				<expression>Output_66perc</expression>
+				<outputVariable>
+					<variableId>M3</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="M4">
+		<user>
+			<simple>
+				<expression>Output_80perc</expression>
+				<outputVariable>
+					<variableId>M4</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+
+</transformationModule>

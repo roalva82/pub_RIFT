@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>%REGION_HOME%/Import/CEHQ/</folder>
+			<table>
+				<dateTimeColumn name="Date" pattern="yyyy-MM-dd"/>
+				<locationColumn name="Station"/>
+				<valueColumn name="Débit (m³/s)" unit="m3/s" parameterId="QR.obs"/>
+				<valueColumn name="Niveau (m)" unit="m" parameterId="HG.obs"/>
+			</table>
+			<idMapId>IdImportCEHQScalarHistoric</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+			<skipFirstLinesCount>0</skipFirstLinesCount>
+		</general>
+		<tolerance timeUnit="hour" unitCount="1" parameterId="HG.obs"/>
+		<tolerance timeUnit="hour" unitCount="1" parameterId="QR.obs"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCEHQ</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>CEHQStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCEHQ</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationSetId>CEHQStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

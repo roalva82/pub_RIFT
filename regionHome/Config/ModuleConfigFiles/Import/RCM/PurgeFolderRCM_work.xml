@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.8</piVersion>
+		<rootDir>$IMPORT_FOLDER_EO_DATA$</rootDir>
+		<workDir>%REGION_HOME%\modules\snap_gpt\work\RCM\</workDir>
+		<exportDir>$EXPORT_FOLDER$</exportDir>
+		<exportDataSetDir>%WORK_DIR%</exportDataSetDir>
+		<importDir>$IMPORT_FOLDER_EO_DATA$</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%WORK_DIR%</dumpDir>
+		<diagnosticFile>%WORK_DIR%\diag.xml</diagnosticFile>
+		<convertDatum>false</convertDatum>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%WORK_DIR%\$REGION$\$PRODUCT$\*</filter>
+			</purgeActivity>
+		</startUpActivities>
+	</activities>
+</generalAdapterRun>

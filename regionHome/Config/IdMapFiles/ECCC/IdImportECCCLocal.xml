@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+<!-- For Historic Data Imports -->
+	<parameter internal="TA.obs" internalQualifier="max" external="Max Temp (°C)"/>
+	<parameter internal="TA.obs" internalQualifier="min" external="Min Temp (°C)"/>
+	<parameter internal="TA.obs" external="Mean Temp (°C)"/>
+	<parameter internal="PC.obs" external="Total Precip (mm)"/>
+	<enableOneToOneMapping/>
+</idMap>

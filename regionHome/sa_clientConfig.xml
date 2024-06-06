@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clientConfiguration xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/clientConfig.xsd">
+	<clientType>Stand alone</clientType>
+	<jvmOption>-Xmx8192m</jvmOption> 
+	<jvmOption>-DautoRollingBarrel=false</jvmOption>
+	<autoExportModuleDataSet name="HEC-RAS_Adapter" exportDir="Modules"/>
+	<autoExportModuleDataSet name="HEC-RAS_Software" exportDir="Modules"/>
+	<autoExportModuleDataSet name="MMH20" exportDir="Modules"/>
+	<autoExportModuleDataSet name="MMH20Ens" exportDir="Modules"/>
+	<autoExportModuleDataSet name="pyscripts" exportDir="Modules"/>
+	<autoExportModuleDataSet name="SNAP_GPT" exportDir="Modules/snap_gpt"/>
+
+	<autoExportModuleDataSet name="SnowDownload" exportDir="Modules"/>
+<!--
+	<autoExportModuleDataSet name="jcef" exportDir="Modules"/>
+	<autoExportModuleDataSet name="dimr_bin_Windows" exportDir="Modules/DIMR"/>
+-->
+
+</clientConfiguration>

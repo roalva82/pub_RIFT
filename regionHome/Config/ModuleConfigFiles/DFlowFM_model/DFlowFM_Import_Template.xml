@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<!--<import>
+		<general>
+			<importType>NETCDF-CF_TIMESERIES</importType>
+			<folder>%REGION_HOME%/Modules/DFlowFM/$RIVER$/results</folder>
+			<fileNamePatternFilter>$RIVER$_0000_his.nc</fileNamePatternFilter>
+			<deleteImportedFiles>false</deleteImportedFiles>
+			<idMapId>DFlowFM_Import</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-999</missingValue>
+			<missingValue>999</missingValue>
+			<missingValue>9.969209968386869e+36</missingValue>
+			<disableDataFeedInfo/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>D.$SUBPARAMETER$d</parameterId>
+			<locationSetId>DFlowFM_output</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE_OUTPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$EXPIRYTIME_D_SCALAR$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.sim</parameterId>
+			<locationSetId>DFlowFM_output</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE_OUTPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$EXPIRYTIME_D_SCALAR$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>DFlowFM_output</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE_OUTPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$EXPIRYTIME_D_SCALAR$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>V.sim</parameterId>
+			<locationSetId>DFlowFM_output</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE_OUTPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$EXPIRYTIME_D_SCALAR$"/>
+		</timeSeriesSet>
+	</import>-->
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<folder>%REGION_HOME%/Modules/DFlowFM/$RIVER$/results</folder>
+			<fileNamePatternFilter>$RIVER$_merged_map.nc</fileNamePatternFilter>
+			<deleteImportedFiles>false</deleteImportedFiles>
+			<idMapId>DFlowFM_Import</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-999</missingValue>
+			<missingValue>999</missingValue>
+			<missingValue>9.969209968386869e+36</missingValue>
+			<disableDataFeedInfo/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>HG.sim</parameterId>
+			<locationId>DFlowFM_$RIVER$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE_OUTPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$EXPIRYTIME_D_GRID$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>D.sim</parameterId>
+			<locationId>DFlowFM_$RIVER$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE_OUTPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$EXPIRYTIME_D_GRID$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>V.v.sim</parameterId>
+			<locationId>DFlowFM_$RIVER$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE_OUTPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$EXPIRYTIME_D_GRID$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>V.u.sim</parameterId>
+			<locationId>DFlowFM_$RIVER$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE_OUTPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$EXPIRYTIME_D_GRID$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Pressure.river_ice.sim</parameterId>
+			<locationId>DFlowFM_$RIVER$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE_OUTPUT$</timeSeriesType>
+			<timeStep unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$EXPIRYTIME_D_GRID$"/>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!--Define Properties for Templates-->
+	<properties>
+		<string key="INPUTMODULEINSTANCE" value="ImportREPS"/>
+		<string key="INPUTGRID" value="REPS"/>
+		<string key="TIMESTEP" value="3"/>
+		<string key="STARTTIME" value="-1"/>
+		<string key="ENDTIME" value="3"/>
+		<string key="ENSEMBLE" value="REPS"/>
+	</properties>
+	<!-- Retrieve NWP grids from Environment Canada -->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveREPS</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportREPS</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ReduceGridSizeREPS</moduleInstanceId>
+	</activity>
+</workflow>

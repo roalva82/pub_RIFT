@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forecastLengthEstimator xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/forecastLengthEstimator.xsd">
+	<externalForecastTimeSeries>
+		<moduleInstanceId>ImportREPS</moduleInstanceId>
+		<valueType>grid</valueType>
+		<parameterId>PC.nwp</parameterId>
+		<locationId>REPS</locationId>
+		<timeSeriesType>external forecasting</timeSeriesType>
+		<timeStep unit="hour" multiplier="3"/>
+		<readWriteMode>read complete forecast</readWriteMode>
+		<ensembleId>REPS</ensembleId>
+	</externalForecastTimeSeries>
+	<externalForecastTimeSeries>
+		<moduleInstanceId>ImportCaSPAr-REPS</moduleInstanceId>
+		<valueType>grid</valueType>
+		<parameterId>PC.nwp</parameterId>
+		<locationId>CaSPAr-REPS</locationId>
+		<timeSeriesType>external forecasting</timeSeriesType>
+		<timeStep unit="hour" multiplier="1"/>
+		<readWriteMode>read complete forecast</readWriteMode>
+		<ensembleId>REPS</ensembleId>
+	</externalForecastTimeSeries>
+	<simulatedForecastTimeSeries>
+		<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+		<valueType>scalar</valueType>
+		<parameterId>PC.sim</parameterId>
+		<locationSetId>RIFT_Basins</locationSetId>
+		<timeSeriesType>simulated forecasting</timeSeriesType>
+		<timeStep id="3HR_EST"/>
+		<readWriteMode>read complete forecast</readWriteMode>
+		<ensembleId>REPS</ensembleId>
+	</simulatedForecastTimeSeries>
+	<minForecastLength unit="day" multiplier="1"/>
+</forecastLengthEstimator>

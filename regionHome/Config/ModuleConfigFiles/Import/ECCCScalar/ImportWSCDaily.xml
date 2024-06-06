@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<serverUrl>https://dd.weather.gc.ca/hydrometric/csv/$REGION$/daily/$REGION$_$LOOP_LOCATION_ID$_daily_hydrometric.csv</serverUrl>
+			<table>
+				<locationColumn/>
+				<dateTimeColumn pattern="yyyy-MM-dd'T'HH:mm:ss'-05:00'"/>
+				<valueColumn unit="m" parameterId="HG.obs"/>
+				<skippedColumn/>
+				<skippedColumn/>
+				<skippedColumn/>
+				<valueColumn unit="m3/s" parameterId="QR.obs"/>
+				<skippedColumn/>
+				<skippedColumn/>
+				<skippedColumn/>
+			</table>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+			<dataFeedId>WSC_daily_server</dataFeedId>
+			<expiryTime unit="day" multiplier="365"/>
+			<skipFirstLinesCount>1</skipFirstLinesCount>
+			<columnSeparator>,</columnSeparator>
+			<decimalSeparator>.</decimalSeparator>
+		</general>
+		<tolerance timeUnit="minute" unitCount="1" parameterId="HG.obs"/>
+		<tolerance timeUnit="minute" unitCount="1" parameterId="QR.obs"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationSetId>WSCStations$REGION$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>WSCStations$REGION$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

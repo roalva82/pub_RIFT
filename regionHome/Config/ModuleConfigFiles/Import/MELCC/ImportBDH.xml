@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>$IMPORT_FOLDER$/BDH</folder>
+			<fileNamePatternFilter>023429*</fileNamePatternFilter>
+			<table>
+				<locationColumn name="Station"/>
+				<dateTimeColumn name="Date" pattern="dd.MM.yyyy HH:mm"/>
+				<valueColumn name="Discharge" parameterId="Q.obs" unit="mcs"/>
+			</table>
+			<idMapId>IdImportBDH</idMapId>
+			<missingValue>-999.0</missingValue>
+			<importTimeZone>
+				<timeZoneName>EST</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>BDH - Données hydrométriques</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>RIFT_BDH</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>$IMPORT_FOLDER$/BDH</folder>
+			<fileNamePatternFilter>*BDH_DonneesHydro*</fileNamePatternFilter>
+			<table>
+				<locationColumn name="NoBDH"/>
+				<dateTimeColumn name="Date_Heure" pattern="yyyy-MM-dd HH:mm:ss"/>
+				<valueColumn name="Niveau_m" parameterId="N.obs" unit="m"/>
+				<valueColumn name="Debit_mcs" parameterId="Q.obs" unit="mcs"/>
+				<valueColumn name="Correction_pcent" parameterId="Refoulement" unit="%"/>
+			</table>
+			<idMapId>IdImportBDH</idMapId>
+			<missingValue>-999.0</missingValue>
+			<importTimeZone>
+				<timeZoneName>EST</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>BDH - Données hydrométriques</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.obs</parameterId>
+			<locationSetId>RIFT_BDH</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>RIFT_BDH</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Refoulement</parameterId>
+			<locationSetId>RIFT_BDH</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>$IMPORT_FOLDER$/BDH</folder>
+			<fileNamePatternFilter>*BDH_Jaugeages*</fileNamePatternFilter>
+			<table>
+				<locationColumn name="NoBDH"/>
+				<dateTimeColumn name="Date" pattern="yyyy-MM-dd"/>
+				<valueColumn name="Debit_mcs" parameterId="Q.jau" unit="mcs"/>
+			</table>
+			<missingValue>-999.0</missingValue>
+			<importTimeZone>
+				<timeZoneName>EST</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>BDH - jaugeages</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.jau</parameterId>
+			<locationSetId>RIFT_BDH</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

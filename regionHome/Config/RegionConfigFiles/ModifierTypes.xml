@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modifierTypes xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/modifierTypes.xsd">
+	<rollbackOverlappingModifiers>false</rollbackOverlappingModifiers>
+	<timeSeriesModifier id="Precipitation" name="Precipitation">
+		<timeSeries>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<parameterId>PC.obs</parameterId>
+			<timeStep id="3HR_EST"/>
+		</timeSeries>
+		<defaultStartTime>time zero</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>true</resolveInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="MaxTemperature" name="Max Temperature">
+		<timeSeries>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<parameterId>TAmax.obs</parameterId>
+			<timeStep id="3HR_EST"/>
+		</timeSeries>
+		<defaultStartTime>time zero</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>true</resolveInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="MinTemperature" name="Min Temperature">
+		<timeSeries>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<parameterId>TAmin.obs</parameterId>
+			<timeStep id="3HR_EST"/>
+		</timeSeries>
+		<defaultStartTime>time zero</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>true</resolveInPlots>
+	</timeSeriesModifier>
+	
+	<timeSeriesModifier id="Unsteady_Estimate_inflows" name="Input time series">
+		<timeSeries>
+			<moduleInstanceId>HEC-RAS_EstimatePre</moduleInstanceId>
+			<!--<moduleInstanceId>HEC-RAS_ForecastPre</moduleInstanceId>-->
+			<parameterId>QR.obs</parameterId>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_Estimate_inputs_QR</locationSetId>
+			<timeStep unit="hour" multiplier="1"/>
+		</timeSeries>
+		<defaultStartTime>start run</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>true</resolveInPlots>
+	</timeSeriesModifier>
+	
+	<timeSeriesModifier id="Unsteady_update_inflows" name="Input time series">
+		<timeSeries>
+			<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+			<moduleInstanceId>HEC-RAS_ForecastPre</moduleInstanceId>
+			<parameterId>QR.obs</parameterId>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_inputs_QR</locationSetId>
+			<timeStep unit="hour" multiplier="1"/>
+		</timeSeries>
+		<defaultStartTime>start run</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>true</resolveInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="Unsteady_forecast_inflows" name="MMH20 Input series">
+		<timeSeries>
+			<moduleInstanceId>MMH20Ens_ForecastPos_Perfect</moduleInstanceId>
+			<moduleInstanceId>MMH20Ens_ForecastPos_REPS</moduleInstanceId>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<ensembleId>Perfect</ensembleId>
+			<ensembleMemberId>0</ensembleMemberId>
+		</timeSeries>
+		<defaultStartTime>start run</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>true</resolveInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="Steady_forecast_inflows" name="Input time series">
+		<timeSeries>
+			<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_Steady_inputs</locationSetId>
+			<timeStep id="EST_6hourly"/>
+		</timeSeries>
+		<defaultStartTime>start run</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>true</resolveInPlots>
+	</timeSeriesModifier>
+	<moduleParameterModifier id="Unsteady_parameters" name="HEC-RAS parameters">
+		<expiryTime unit="day" multiplier="30"/>
+	</moduleParameterModifier>
+	<moduleParameterModifier id="Steady_parameters" name="HEC-RAS parameters">
+		<expiryTime unit="day" multiplier="30"/>
+	</moduleParameterModifier>
+	<attributeModifiers>
+		<locationAttributeModifier id="Lateral_ungauged_inflows" name="Ungauged inflows parameters">
+			<modifiableGroup name="Time step shift and weight">
+				<timeSeries>
+					<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+					<moduleInstanceId>HEC-RAS_ForecastPre</moduleInstanceId>
+					<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+					<locationId>RIFT_023402</locationId>
+					<locationId>RIFT_LI-BVA</locationId>
+					<locationId>RIFT_ULI</locationId>
+				</timeSeries>
+				<attribute id="Shift"/>
+				<attribute id="Weight"/>
+			</modifiableGroup>
+		</locationAttributeModifier>
+	</attributeModifiers>
+	
+	<modifiersGroup id="EstimateHEC-RAS">
+		<modifierId>Unsteady_Estimate_inflows</modifierId>
+		<modifierId>Unsteady_parameters</modifierId>
+	</modifiersGroup>	
+	
+	<modifiersGroup id="UnsteadyHEC-RAS">
+		<modifierId>Lateral_ungauged_inflows</modifierId>
+		<modifierId>Unsteady_parameters</modifierId>
+		<modifierId>Unsteady_update_inflows</modifierId>
+<!--		<modifierId>Unsteady_forecast_inflows</modifierId>-->
+	</modifiersGroup>
+	<modifiersGroup id="SteadyHEC-RAS">
+		<modifierId>Lateral_ungauged_inflows</modifierId>
+		<modifierId>Steady_parameters</modifierId>
+		<modifierId>Steady_forecast_inflows</modifierId>
+	</modifiersGroup>	
+</modifierTypes>

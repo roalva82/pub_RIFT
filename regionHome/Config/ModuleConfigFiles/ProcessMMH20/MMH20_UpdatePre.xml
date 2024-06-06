@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>P_1hr_CLIMATO</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<qualifierId>total</qualifierId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_1hr_ECCC</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCSpecial</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFT_ECCC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFTStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_3hr_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFTStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<aggregationPeriod unit="hour" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_3hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFTStations</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<aggregationPeriod unit="hour" start="-3" end="0"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_3hr_interpolated</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFTStations</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_3hr_kriging_tmp1</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.obs</parameterId>
+			<qualifierId>temp1</qualifierId>
+			<locationId>RIFT_grid</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_3hr_kriging</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationId>RIFT_grid</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_3hr_kriging_Average</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmin_CLIMATO_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmin_CLIMATO_3hr_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<aggregationPeriod unit="hour" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmin_CLIMATO_3hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<aggregationPeriod unit="hour" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmin_CLIMATO_3hr_interpolated</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmin_at_sea_level</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmin_CLIMATO_3hr_kriging_sea_level</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationId>RIFT_grid</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmin_CLIMATO_3hr_kriging_sea_level_Average</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmax_CLIMATO_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmax_CLIMATO_3hr_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<aggregationPeriod unit="hour" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmax_CLIMATO_3hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<aggregationPeriod unit="hour" start="-3" end="0"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmax_CLIMATO_3hr_interpolated</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmax_at_sea_level</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmax_CLIMATO_3hr_kriging_sea_level</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationId>RIFT_grid</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmax_CLIMATO_3hr_kriging_sea_level_Average</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmax_Daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmax_Threshold</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Acc_Tmax</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>IceThickness_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>River_ice.thickness</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmin_Daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmin_Threshold</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Acc_Tmin</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<qualifierId>acc</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>IceThickness_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>River_ice.thickness</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod unit="day" start="-180" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T.corr.3h</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.corr</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>EEN.corr.3h</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>EEN.corr</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P.corr.3h</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.corr</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P.fact.3h</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.fact</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>QObs</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ProcessBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-12" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>QObs_Copy</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-12" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>QObs_Copy_3hour</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-12" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="Copy_Q">
+		<user>
+			<simple>
+				<expression>QObs</expression>
+				<outputVariable>
+					<variableId>QObs_Copy</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Q 1 to 3 hours">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>QObs_Copy</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>QObs_Copy_3hour</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Merge P.obs">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>P_1hr_CLIMATO</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>P_1hr_ECCC</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_1hr</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="P.obs from 1hr to 3hr">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>P_1hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_3hr</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+	<!--	<transformation id="Merge_P_3hr">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>P_CLIMATO_3hr</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>P_CLIMATO_3hr_temp</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_CLIMATO_3hr</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+-->
+	<transformation id="Interpolate_P">
+		<interpolationSerial>
+			<default>
+				<inputVariable>
+					<variableId>P_3hr</variableId>
+				</inputVariable>
+				<maxGapLength>8</maxGapLength>
+				<defaultValue>0</defaultValue>
+				<outputVariable>
+					<variableId>P_3hr_interpolated</variableId>
+				</outputVariable>
+			</default>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="P.obs Kriging">
+		<interpolationSpatial>
+			<kriging>
+				<inputVariable>
+					<variableId>P_3hr_interpolated</variableId>
+				</inputVariable>
+				<interpolationType>seriesgeneration</interpolationType>
+				<valueOption>normal</valueOption>
+				<variogram>
+					<type>exponential</type>
+					<nugget>0.1</nugget>
+					<sill>0.8</sill>
+					<range>180</range>
+				</variogram>
+				<numberOfPoints>8</numberOfPoints>
+				<distanceParameters>
+					<g1>73</g1>
+					<g2>111</g2>
+					<g3>0</g3>
+					<g4>0</g4>
+				</distanceParameters>
+				<outputVariable>
+					<variableId>P_3hr_kriging_tmp1</variableId>
+				</outputVariable>
+			</kriging>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="P.obs check">
+		<user>
+			<simple>
+				<expression>max(P_3hr_kriging_tmp1,0)</expression>
+				<outputVariable>
+					<variableId>P_3hr_kriging</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="InterpolateSerial_PC">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>P_3hr_kriging</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_3hr_kriging_Average</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="T.obs Min from 1hr to 3hr">
+		<statisticsSerial>
+			<min>
+				<inputVariable>
+					<variableId>Tmin_CLIMATO_1hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmin_CLIMATO_3hr_temp</variableId>
+				</outputVariable>
+			</min>
+		</statisticsSerial>
+	</transformation>
+	<transformation id="Merge_Tmin_3hr">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Tmin_CLIMATO_3hr</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>Tmin_CLIMATO_3hr_temp</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmin_CLIMATO_3hr</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="Interpolate_TMin">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Tmin_CLIMATO_3hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmin_CLIMATO_3hr_interpolated</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Tmin_at_sea_level">
+		<user>
+			<simple>
+				<expression>Tmin_CLIMATO_3hr_interpolated - gradient_per_100m * altitude/100</expression>
+				<coefficientSetFunctions>
+					<coefficient id="altitude" value="@Altitude@"/>
+					<coefficient id="gradient_per_100m" value="-0.5"/>
+				</coefficientSetFunctions>
+				<outputVariable>
+					<variableId>Tmin_at_sea_level</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="T.obs Min Kriging">
+		<interpolationSpatial>
+			<kriging>
+				<inputVariable>
+					<variableId>Tmin_at_sea_level</variableId>
+				</inputVariable>
+				<interpolationType>seriesgeneration</interpolationType>
+				<valueOption>normal</valueOption>
+				<variogram>
+					<type>exponential</type>
+					<nugget>0.1</nugget>
+					<sill>1</sill>
+					<range>360</range>
+				</variogram>
+				<numberOfPoints>10</numberOfPoints>
+				<distanceParameters>
+					<g1>73</g1>
+					<g2>111</g2>
+					<g3>0</g3>
+					<g4>0</g4>
+				</distanceParameters>
+				<outputVariable>
+					<variableId>Tmin_CLIMATO_3hr_kriging_sea_level</variableId>
+				</outputVariable>
+			</kriging>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="InterpolateSerial_Tmin">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Tmin_CLIMATO_3hr_kriging_sea_level</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmin_CLIMATO_3hr_kriging_sea_level_Average</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="T.obs Max from 1hr to 3hr">
+		<statisticsSerial>
+			<max>
+				<inputVariable>
+					<variableId>Tmax_CLIMATO_1hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmax_CLIMATO_3hr_temp</variableId>
+				</outputVariable>
+			</max>
+		</statisticsSerial>
+	</transformation>
+	<transformation id="Merge_Tmin_3hr">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Tmax_CLIMATO_3hr</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>Tmax_CLIMATO_3hr_temp</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmax_CLIMATO_3hr</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="Interpolate_TMax">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>Tmax_CLIMATO_3hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmax_CLIMATO_3hr_interpolated</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Tmax_at_sea_level">
+		<user>
+			<simple>
+				<expression>Tmax_CLIMATO_3hr - gradient_per_100m * altitude/100</expression>
+				<coefficientSetFunctions>
+					<coefficient id="altitude" value="@Altitude@"/>
+					<coefficient id="gradient_per_100m" value="-0.5"/>
+				</coefficientSetFunctions>
+				<outputVariable>
+					<variableId>Tmax_at_sea_level</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="T.obs Max Kriging">
+		<interpolationSpatial>
+			<kriging>
+				<inputVariable>
+					<variableId>Tmax_at_sea_level</variableId>
+				</inputVariable>
+				<interpolationType>seriesgeneration</interpolationType>
+				<valueOption>normal</valueOption>
+				<variogram>
+					<type>exponential</type>
+					<nugget>0.1</nugget>
+					<sill>1</sill>
+					<range>360</range>
+				</variogram>
+				<numberOfPoints>10</numberOfPoints>
+				<distanceParameters>
+					<g1>73</g1>
+					<g2>111</g2>
+					<g3>0</g3>
+					<g4>0</g4>
+				</distanceParameters>
+				<outputVariable>
+					<variableId>Tmax_CLIMATO_3hr_kriging_sea_level</variableId>
+				</outputVariable>
+			</kriging>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="InterpolateSerial_Tmax">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Tmax_CLIMATO_3hr_kriging_sea_level</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmax_CLIMATO_3hr_kriging_sea_level_Average</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="AverageTmax">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>Tmax_CLIMATO_3hr_kriging_sea_level_Average</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmax_Daily</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+	<transformation id="CDDF_max">
+		<user>
+			<simple>
+				<expression>if(Tmax_Daily &gt;-5,0,-5-Tmax_Daily)</expression>
+				<outputVariable>
+					<variableId>Tmax_Threshold</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="AccumulatedTempMax">
+		<accumulation>
+			<sum>
+				<inputVariable>
+					<variableId>Tmax_Threshold</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Acc_Tmax</variableId>
+				</outputVariable>
+			</sum>
+		</accumulation>
+	</transformation>
+	<transformation id="StephansEq_maxT">
+		<user>
+			<simple>
+				<expression>coef_a*Acc_Tmax^0.5</expression>
+				<coefficientSet>
+					<coefficient id="coef_a" value="0.017"/>
+				</coefficientSet>
+				<outputVariable>
+					<variableId>IceThickness_min</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="AverageTmin">
+		<aggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>Tmin_CLIMATO_3hr_kriging_sea_level_Average</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmin_Daily</variableId>
+				</outputVariable>
+			</meanToMean>
+		</aggregation>
+	</transformation>
+	<transformation id="CDDF_min">
+		<user>
+			<simple>
+				<expression>if(Tmin_Daily &gt;-5,0,-5-Tmin_Daily)</expression>
+				<outputVariable>
+					<variableId>Tmin_Threshold</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="AccumulatedTempMin">
+		<accumulation>
+			<sum>
+				<inputVariable>
+					<variableId>Tmin_Threshold</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Acc_Tmin</variableId>
+				</outputVariable>
+			</sum>
+		</accumulation>
+	</transformation>
+	<transformation id="StephansEq_minT">
+		<user>
+			<simple>
+				<expression>coef_a*Acc_Tmin^0.5</expression>
+				<coefficientSet>
+					<coefficient id="coef_a" value="0.017"/>
+				</coefficientSet>
+				<outputVariable>
+					<variableId>IceThickness_max</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="EEN.corr.3h">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>EEN.corr.3h</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="P.corr.3h">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>P.corr.3h</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="P.fact.3h">
+		<user>
+			<simple>
+				<expression>1</expression>
+				<outputVariable>
+					<variableId>P.fact.3h</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="T.corr.3h">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>T.corr.3h</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

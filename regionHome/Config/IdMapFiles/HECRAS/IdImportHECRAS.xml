@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<parameter external="FLOW" internal="QR.sim"/>
+	<parameter external="STAGE" internal="N.sim"/>
+	<location external="Chaudiere_aval 1/25.602" internal="RIFT_023402"/>
+	<location external="Chaudiere_aval 1/52.0249" internal="RIFT_C9"/>	<!--THIS IS NOT THE EXACT LOCATION!-->
+	<location external="Chaudiere_aval 1/62.6909" internal="RIFT_C8"/>	<!--THIS IS NOT THE EXACT LOCATION!-->
+	<location external="Chaudiere_aval 1/71.5347" internal="RIFT_C7"/>	<!--THIS IS NOT THE EXACT LOCATION!-->
+	<location external="Chaudiere_aval 1/87.3242" internal="RIFT_C6"/>	<!--THIS IS NOT THE EXACT LOCATION!-->
+	<location external="Chaudiere_aval 1/106.78" internal="RIFT_023429"/>
+	<location external="Chaudiere_aval 1/101.3963" internal="RIFT_023422"/>
+</idMap>

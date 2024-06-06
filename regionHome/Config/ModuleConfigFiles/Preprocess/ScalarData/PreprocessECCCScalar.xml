@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Pre-processing of WISKI data from non-equidistant to equidistant data-->
+	<!--Input-->
+	<variable>
+		<variableId>TA_hourly_nonequi</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>WS_hourly_nonequi</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>WS.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>WD_hourly_nonequi</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>WD.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_max_daily_nonequi</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_min_daily_nonequi</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PC_daily_nonequi</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Output-->
+	<variable>
+		<variableId>TA_hourly_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_hourly_final</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>WS_hourly_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>WS.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>WS_hourly_final</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>WS.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>WD_hourly_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>WD.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>WD_hourly_final</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>WD.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_max_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_max_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_min_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_min_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PC_daily_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PC_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--spatial average-->
+	<variable>
+		<variableId>TA_spatial_avg_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>OPG_allsheds</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_spatial_avg</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>OPG_allsheds</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_spatial_day</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>OPG_allsheds</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_spatial_day_min_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>OPG_allsheds</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_spatial_day_max_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>OPG_allsheds</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_spatial_day_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>OPG_allsheds</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_spatial_day_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>OPG_allsheds</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="-10" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Remove after bug with selectiondisplay is solved-->
+	<variable>
+		<variableId>TA_spatial_avg_copy</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>copy</qualifierId>
+			<locationSetId>OPG_allsheds</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_spatial_day_copy</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<qualifierId>copy</qualifierId>
+			<locationSetId>OPG_allsheds</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_EST"/>
+			<relativeViewPeriod startOverrulable="true" unit="day" start="$STARTTIME$" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="TA_hourly_sample">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>TA_hourly_nonequi</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>linearOrClosest</interpolationType>
+				<maxGapLength unit="hour" multiplier="1"/>
+				<outputVariable>
+					<variableId>TA_hourly_temp</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+	<transformation id="TA_merge_hourly">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>TA_hourly_temp</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>TA_hourly_final</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>TA_hourly_final</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="WS_hourly_sample">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>WS_hourly_nonequi</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>linearOrClosest</interpolationType>
+				<maxGapLength unit="hour" multiplier="1"/>
+				<outputVariable>
+					<variableId>WS_hourly_temp</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+	<transformation id="WS_merge_hourly">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>WS_hourly_temp</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>WS_hourly_final</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>WS_hourly_final</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="WD_hourly_sample">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>WD_hourly_nonequi</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>linearOrClosest</interpolationType>
+				<maxGapLength unit="hour" multiplier="1"/>
+				<outputVariable>
+					<variableId>WD_hourly_temp</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+	<transformation id="WD_merge_hourly">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>WD_hourly_temp</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>WD_hourly_final</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>WD_hourly_final</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="TA_max_daily_sample">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>TA_max_daily_nonequi</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>previousTimeStep</interpolationType>
+				<maxGapLength unit="day" multiplier="1"/>
+				<outputVariable>
+					<variableId>TA_max_temp</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+	<transformation id="TA_max_daily_merge">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>TA_max_temp</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>TA_max_daily</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>TA_max_daily</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="TA_min_daily_sample">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>TA_min_daily_nonequi</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>previousTimeStep</interpolationType>
+				<maxGapLength unit="day" multiplier="1"/>
+				<outputVariable>
+					<variableId>TA_min_temp</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+	<transformation id="TA_min_daily_merge">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>TA_min_temp</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>TA_min_daily</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>TA_min_daily</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="PC_daily_sample">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>PC_daily_nonequi</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>previousTimeStep</interpolationType>
+				<maxGapLength unit="day" multiplier="1"/>
+				<outputVariable>
+					<variableId>PC_daily_temp</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+	<transformation id="PC_daily_merge">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>PC_daily_temp</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>PC_daily</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>PC_daily</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="TA_hourly_basin_AVG">
+		<interpolationSpatial>
+			<inverseDistance>
+				<inputVariable>
+					<variableId>TA_hourly_final</variableId>
+				</inputVariable>
+				<includeMissingValues>false</includeMissingValues>
+				<searchRadius>800000</searchRadius>
+				<inverseDistancePower>1</inverseDistancePower>
+				<numberOfPoints>4</numberOfPoints>
+				<outputVariable>
+					<variableId>TA_spatial_avg_temp</variableId>
+				</outputVariable>
+			</inverseDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="TA_hourly_basin_merge">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>TA_spatial_avg_temp</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>TA_spatial_avg</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>TA_spatial_avg</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="TA_daily_basin_AVG">
+		<aggregation>
+			<instantaneousToMean>
+				<inputVariable>
+					<variableId>TA_spatial_avg</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>TA_spatial_day</variableId>
+				</outputVariable>
+			</instantaneousToMean>
+		</aggregation>
+	</transformation>
+	<transformation id="TA_daily_basin_max_temp">
+		<statisticsSerial>
+			<max>
+				<inputVariable>
+					<variableId>TA_spatial_avg</variableId>
+				</inputVariable>
+				<validationRule>
+					<inputMissingPercentage>30</inputMissingPercentage>
+					<outputValueFlag>reliable</outputValueFlag>
+				</validationRule>
+				<validationRule>
+					<inputMissingPercentage>100</inputMissingPercentage>
+					<outputValueFlag>missing</outputValueFlag>
+				</validationRule>
+				<outputVariable>
+					<variableId>TA_spatial_day_max_temp</variableId>
+				</outputVariable>
+			</max>
+		</statisticsSerial>
+	</transformation>
+	<transformation id="TA_daily_basin_min_temp">
+		<statisticsSerial>
+			<min>
+				<inputVariable>
+					<variableId>TA_spatial_avg</variableId>
+				</inputVariable>
+				<validationRule>
+					<inputMissingPercentage>30</inputMissingPercentage>
+					<outputValueFlag>reliable</outputValueFlag>
+				</validationRule>
+				<validationRule>
+					<inputMissingPercentage>100</inputMissingPercentage>
+					<outputValueFlag>missing</outputValueFlag>
+				</validationRule>
+				<outputVariable>
+					<variableId>TA_spatial_day_min_temp</variableId>
+				</outputVariable>
+			</min>
+		</statisticsSerial>
+	</transformation>
+	<transformation id="TA_daily_basin_max">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>TA_spatial_day_max</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>TA_spatial_day_max_temp</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>TA_spatial_day_max</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="TA_daily_basin_min">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>TA_spatial_day_min</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>TA_spatial_day_min_temp</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>TA_spatial_day_min</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<!--Remove after bug with selectiondisplay is solved-->
+	<transformation id="TA_spatial_avg_copy">
+		<user>
+			<simple>
+				<expression>TA_spatial_avg</expression>
+				<outputVariable>
+					<variableId>TA_spatial_avg_copy</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="TA_spatial_day_copy">
+		<user>
+			<simple>
+				<expression>TA_spatial_day</expression>
+				<outputVariable>
+					<variableId>TA_spatial_day_copy</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

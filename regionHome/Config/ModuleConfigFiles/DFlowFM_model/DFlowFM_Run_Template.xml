@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<description>D-Flow FM Model</description>
+		<rootDir>%REGION_HOME%/Modules/DFlowFM/$RIVER$</rootDir>
+		<workDir>%ROOT_DIR%</workDir>
+		<exportDir>%ROOT_DIR%</exportDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+		<exportIdMap>DFlowFM_Export</exportIdMap>
+		<importDir>%ROOT_DIR%/results</importDir>
+		<importIdMap>DFlowFM_Import</importIdMap>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%TEMP_DIR%</dumpDir>
+		<diagnosticFile>%WORK_DIR%/diagnostic.xml</diagnosticFile>
+		<convertDatum>true</convertDatum>
+		<timeZone>
+			<timeZoneOffset>+00:00</timeZoneOffset>
+		</timeZone>
+		<endDateTimeFormat>yyyyMMdd_HHmmss</endDateTimeFormat>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/results/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportStateActivity>
+				<moduleInstanceId>DFlowFM_$RIVER$_Update</moduleInstanceId>
+				<stateExportDir>%ROOT_DIR%</stateExportDir>
+				<stateSelection>
+					<warmState>
+						<stateSearchPeriod unit="hour" start="-192" end="$STATE_SEARCHPERIOD_END$"/>
+					</warmState>
+				</stateSelection>
+			</exportStateActivity>
+			<exportTimeSeriesActivity>
+				<exportFile>export_pi.xml</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.obs</parameterId>
+						<locationSetId>DFlowFM_$RIVER$_QBC</locationSetId>
+						<timeSeriesType>$TIMESERIESTYPE_INPUT$</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="hour" end="0" endOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>HG.obs</parameterId>
+						<locationSetId>DFlowFM_$RIVER$_HBC</locationSetId>
+						<timeSeriesType>$TIMESERIESTYPE_INPUT$</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="hour" end="0" endOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportTimeSeriesActivity>
+			<exportDataSetActivity>
+				<moduleInstanceId>DFlowFM_$RIVER$_Update</moduleInstanceId>
+			</exportDataSetActivity>
+			<exportDataSetActivity>
+				<moduleInstanceId>DFlowFM_$RIVER$_Update</moduleInstanceId>
+				<coldStateDataSetName>DFlowFM_$RIVER$_Update_coldstate</coldStateDataSetName>
+			</exportDataSetActivity>
+			<exportNetcdfActivity>
+				<exportFile>river_ice_area_fraction.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>River_ice.area.fraction</parameterId>
+						<locationId>DFlowFM_$RIVER$_river_ice</locationId>
+						<timeSeriesType>$TIMESERIESTYPE_INPUT$</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="hour" end="0" endOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>river_ice_thickness.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>River_ice.thickness</parameterId>
+						<locationId>DFlowFM_$RIVER$_river_ice</locationId>
+						<timeSeriesType>$TIMESERIESTYPE_INPUT$</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="hour" end="0" endOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportRunFileActivity>
+				<exportFile>pi-run.xml</exportFile>
+				<properties>
+					<string key="dimrConfigFile" value="dimr.xml"/>
+					<string key="piFileForFm" value="inputtimeseriesfile-1"/>
+					<string key="restartIntervalForFm" value="3600"/>
+				</properties>
+			</exportRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<description>D-Flow FM pre-Adapter</description>
+				<command>
+					<className>nl.deltares.dimr.DimrPreAdapter</className>
+					<binDir>$DIMRADAPTERPATH$</binDir>
+				</command>
+				<arguments>
+					<argument>%ROOT_DIR%/pi-run.xml</argument>
+				</arguments>
+				<logFile>
+					<file>%WORK_DIR%/dimr_pre_adapter.log</file>
+					<errorLinePattern>*ERROR*</errorLinePattern>
+					<errorLinePattern>*Error*</errorLinePattern>
+					<errorLinePattern>*FATAL*</errorLinePattern>
+					<errorLinePattern>*Fatal*</errorLinePattern>
+					<warningLinePattern>*WARN*</warningLinePattern>
+					<warningLinePattern>*Warn*</warningLinePattern>
+					<infoLinePattern>*INFO*</infoLinePattern>
+					<infoLinePattern>*Info*</infoLinePattern>
+					<debugLinePattern>*DEBUG*</debugLinePattern>
+					<debugLinePattern>*Debug*</debugLinePattern>
+					<debugLinePattern>*</debugLinePattern>
+				</logFile>
+				<timeOut>10800000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+			<executeActivity>
+				<description>Running D-Flow FM in parallel</description>
+				<command>
+					<executable>$RUNSCRIPTSPATH$/runsimulation.$DFLOWFM_OS_EXTENSION$</executable>
+				</command>
+				<arguments>
+					<argument>-mdu</argument>
+					<argument>$RIVER$.mdu</argument>
+					<argument>-dimrxml</argument>
+					<argument>dimr.xml</argument>
+				</arguments>
+				<environmentVariables>
+					<environmentVariable>
+						<name>DIMRBINPATH</name>
+						<value>$DIMRBINPATH$</value>
+					</environmentVariable>
+					<environmentVariable>
+						<name>MPIPATH</name>
+						<value>$MPIPATH$</value>
+					</environmentVariable>
+					<environmentVariable>
+						<name>NDOMAIN</name>
+						<value>$NDOMAINS$</value>
+					</environmentVariable>
+				</environmentVariables>
+				<logFile>
+					<file>%WORK_DIR%/runsimulation.log</file>
+					<errorLinePattern>*ERROR*</errorLinePattern>
+					<errorLinePattern>*Error*</errorLinePattern>
+					<errorLinePattern>*FATAL*</errorLinePattern>
+					<errorLinePattern>*Fatal*</errorLinePattern>
+					<warningLinePattern>*WARN*</warningLinePattern>
+					<warningLinePattern>*Warn*</warningLinePattern>
+					<infoLinePattern>*INFO*</infoLinePattern>
+					<infoLinePattern>*Info*</infoLinePattern>
+					<debugLinePattern>*DEBUG*</debugLinePattern>
+					<debugLinePattern>*Debug*</debugLinePattern>
+					<debugLinePattern>*</debugLinePattern>
+				</logFile>
+				<timeOut>10800000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+			<executeActivity>
+				<description>Merging rst and map files</description>
+				<command>
+					<executable>$RUNSCRIPTSPATH$/mergemaps.$DFLOWFM_OS_EXTENSION$</executable>
+				</command>
+				<arguments>
+					<argument>%ROOT_DIR%/results</argument>
+					<argument>%END_DATE_TIME%</argument>
+				</arguments>
+				<environmentVariables>
+					<environmentVariable>
+						<name>DIMRBINPATH</name>
+						<value>$DIMRBINPATH$</value>
+					</environmentVariable>
+					<environmentVariable>
+						<name>NDOMAIN</name>
+						<value>$NDOMAINS$</value>
+					</environmentVariable>
+				</environmentVariables>
+				<logFile>
+					<file>%WORK_DIR%/mergemaps.log</file>
+					<errorLinePattern>*ERROR*</errorLinePattern>
+					<errorLinePattern>*Error*</errorLinePattern>
+					<errorLinePattern>*FATAL*</errorLinePattern>
+					<errorLinePattern>*Fatal*</errorLinePattern>
+					<warningLinePattern>*WARN*</warningLinePattern>
+					<warningLinePattern>*Warn*</warningLinePattern>
+					<infoLinePattern>*INFO*</infoLinePattern>
+					<infoLinePattern>*Info*</infoLinePattern>
+					<debugLinePattern>*DEBUG*</debugLinePattern>
+					<debugLinePattern>*Debug*</debugLinePattern>
+					<debugLinePattern>*</debugLinePattern>
+				</logFile>
+				<timeOut>10800000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

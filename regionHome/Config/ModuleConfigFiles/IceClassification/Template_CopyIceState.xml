@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>InputGrid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MI_IN$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAM$</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-14" end="0"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>	<variable>
+		<variableId>OutputGrid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MI_IN$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAM$</parameterId>
+			<locationId>RCM_Total</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-14" end="0"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+		  <transformation id="example">
+<sample>
+   <sampleSingleTimeStep>
+      <inputVariable>
+         <variableId>InputGrid</variableId>
+      </inputVariable>
+      <outputVariable>
+         <variableId>OutputGrid</variableId>
+      </outputVariable>
+   </sampleSingleTimeStep>
+</sample>
+   </transformation>
+<!--	<transformation id="OutputGrid">
+			<user>
+			<simple>
+				<expression>InputGrid</expression>
+				<outputVariable>
+					<variableId>OutputGrid</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>-->
+</transformationModule>

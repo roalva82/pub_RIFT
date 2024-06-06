@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by AppsPortables.com (AppsPortables.com) -->
+<timeSeriesExportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesExportRun.xsd">
+	<export>
+		<general>
+			<exportTypeStandard>pi 1.31</exportTypeStandard>
+			<folder>$EXPORT_FOLDER$/</folder>
+			<exportFileName>
+				<name>ExportObservations.xml</name>
+			</exportFileName>
+			<idMapId>IdExport</idMapId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ProcessBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<locationId>RIFT_023422</locationId>
+			<locationId>RIFT_023429</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</export>
+</timeSeriesExportRun>

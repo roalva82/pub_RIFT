@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forecastLengthEstimator xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/forecastLengthEstimator.xsd">
+	<stateModuleInstanceId>DFlowFM_$RIVER$_Update</stateModuleInstanceId>
+	<stateSelection>
+		<stateSearchPeriod unit="hour" start="-192" end="$STATE_SEARCHPERIOD_END$"/>
+	</stateSelection>
+</forecastLengthEstimator>

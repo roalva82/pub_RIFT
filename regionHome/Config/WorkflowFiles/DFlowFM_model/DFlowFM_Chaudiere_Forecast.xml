@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<properties>
+		<string key="RIVER" value="Chaudiere"/>
+		<string key="STARTTIME_UPDATE" value="-192"/>
+		<string key="STARTTIME_FORECAST" value="-24"/>
+		<string key="ENDTIME_FORECAST" value="120"/>
+		<string key="TIMESERIESTYPE_INPUT" value="simulated forecasting"/>
+		<string key="TIMESERIESTYPE_OUTPUT" value="simulated forecasting"/>
+		<string key="STATE_SEARCHPERIOD_END" value="0"/>
+		<string key="EXPIRYTIME_D_GRID" value="2"/>
+		<string key="EXPIRYTIME_D_SCALAR" value="7"/>
+		<string key="EXPIRYTIME_D_LONGPROF" value="7"/>
+		<string key="READWRITEMODE_POST" value="read complete forecast"/>
+		<string key="DIMRBINPATH" value="$DFLOWFM_CHAUDIERE_DIMRBINPATH$"/>
+		<string key="NDOMAINS" value="$DFLOWFM_CHAUDIERE_NDOMAINS$"/>
+	</properties>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>DFlowFM_Chaudiere_Forecast</moduleInstanceId>
+		<moduleConfigFileName>DFlowFM_ForecastLengthEstimator_Template</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="MODULE_INSTANCE_ID_FOR_OBS" value="ImportCEHQ"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>DFlowFM_Chaudiere_Forecast</moduleInstanceId>
+		<moduleConfigFileName>DFlowFM_Prep_Template</moduleConfigFileName>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>DFlowFM_Chaudiere_Forecast</moduleInstanceId>
+		<moduleConfigFileName>DFlowFM_Run_Template</moduleConfigFileName>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>DFlowFM_Chaudiere_Forecast</moduleInstanceId>
+		<moduleConfigFileName>DFlowFM_Import_Template</moduleConfigFileName>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>DFlowFM_Chaudiere_Forecast</moduleInstanceId>
+		<moduleConfigFileName>DFlowFM_Post_Template</moduleConfigFileName>
+	</activity>
+</workflow>

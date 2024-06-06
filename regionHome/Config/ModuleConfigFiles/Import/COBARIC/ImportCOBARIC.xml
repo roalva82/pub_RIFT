@@ -1,0 +1,31 @@
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>%REGION_HOME%/Import/COBARIC/</folder>
+			<table>
+				<dateTimeColumn name="Timestamp" pattern="yyyy-MM-dd HH:mm"/>
+				<locationColumn name="Station ID"/>
+				<valueColumn name="Water Level" unit="m" parameterId="N.obs"/>
+				<valueColumn name="Discharge" unit="m3/s" parameterId="Q.obs"/>
+			</table>
+			<idMapId>IdImportCOBARIC</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+			<expiryTime unit="day" multiplier="365"/>
+			<skipFirstLinesCount>0</skipFirstLinesCount>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCOBARIC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.obs</parameterId>
+			<locationSetId>COBARIC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

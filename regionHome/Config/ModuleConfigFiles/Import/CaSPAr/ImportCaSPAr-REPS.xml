@@ -1,0 +1,38 @@
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<folder>$IMPORT_FOLDER$/CaSPAr/REPS</folder>
+			<fileNameEnsembleMemberIndexPattern>##########_???.nc</fileNameEnsembleMemberIndexPattern>
+			<fileNameForecastCreationDateTimePattern>yyyyMMddHH'_???.nc'</fileNameForecastCreationDateTimePattern>
+			<idMapId>IdImportCaSPAr</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+<!--			<gridStartPoint>NW</gridStartPoint>
+-->		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCaSPAr-REPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>CaSPAr-REPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCaSPAr-REPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>CaSPAr-REPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="m" cumulativeSum="true"/>
+		<externUnit parameterId="TA.nwp" unit="oC"/>
+	</import>
+</timeSeriesImportRun>

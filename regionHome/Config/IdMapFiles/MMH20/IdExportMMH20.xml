@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<parameter internal="P.corr" external="precipitationAdditif"/>
+	<parameter internal="TAmin.obs" internalQualifier="Z0" external="tasmax"/>
+	<parameter internal="TAmax.obs" internalQualifier="Z0" external="tasmin"/>
+	<parameter internal="TAmin.for" internalQualifier="Z0" external="tasmax"/>
+	<parameter internal="TAmax.for" internalQualifier="Z0" external="tasmin"/>
+	<parameter internal="TAmax.for" external="tasmax"/>
+	<parameter internal="TAmin.for" external="tasmin"/>
+	<parameter internal="P.fact" external="precipitationMultiplicatif"/>
+	<parameter internal="EEN.corr" external="eenAdditif"/>
+	<parameter internal="PC.obs" external="pr"/>
+	<parameter internal="PC.sim" external="pr"/>
+	<parameter internal="T.corr" external="temperatureAdditif"/>
+	<parameter internal="QR.obs" external="Q_obs"/>
+	<enableOneToOneMapping/>
+</idMap>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<parameter internal="Gamma0_HH" external="Gamma0_HH"/>
+<!--<parameter internal="Gamma0_HV" external="Gamma0_HV"/>
+	<parameter internal="Gamma0_RCH" external="Gamma0"/>
+	<parameter internal="Gamma0_RCV" external="Gamma0_2"/>
+	<parameter internal="Sigma0_RCH" external="Sigma0_RCH"/>
+	<parameter internal="Sigma0_RCV" external="Sigma0_RCV"/>-->
+	<parameter internal="Gamma0_HH_dB" external="Gamma0_HH_db"/>
+<!--<parameter internal="Gamma0_HV_dB" external="Gamma0_HV_db"/>
+	<parameter internal="Gamma0_RCH_dB" external="Gamma0_db"/>
+	<parameter internal="Gamma0_RCV_dB" external="Gamma0_2_db"/>
+	<parameter internal="Sigma0_RCH_dB" external="Sigma0_RCH_db"/>
+	<parameter internal="Sigma0_RCV_dB" external="Sigma0_RCV_db"/>-->
+	<parameter internal="Inc_Angle" external="incidenceAngleFromEllipsoid"/>
+	<!--<parameter internal="Inc_Angle" external="localIncidenceAngle"/>
+	<parameter internal="Inc_Angle" external="projectedLocalIncidenceAngle"/>-->
+	<enableOneToOneMapping/>
+</idMap>

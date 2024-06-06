@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modifierDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/modifierDisplay.xsd">
+	<showImportButton>false</showImportButton>
+	<showExportButton>false</showExportButton>
+	<showCreateModifierButton>true</showCreateModifierButton>
+	<showApplyToButton>false</showApplyToButton>
+	<showReRunButton>false</showReRunButton>
+	<createModifierButtons>
+		<!-- MMH20 modifiers-->
+		<modifierId>Precipitation</modifierId>
+		<modifierId>MaxTemperature</modifierId>
+		<modifierId>MinTemperature</modifierId>
+		<!-- HEC-RAS modifiers-->
+		<modifierId>Lateral_ungauged_inflows</modifierId>
+
+		<modifierId>Unsteady_Estimate_inflows</modifierId>
+		<modifierId>Unsteady_parameters</modifierId>
+		<modifierId>Unsteady_update_inflows</modifierId>
+		<modifierId>Unsteady_forecast_inflows</modifierId>
+
+		<modifierId>Steady_parameters</modifierId>
+		<modifierId>Steady_forecast_inflows</modifierId>
+	</createModifierButtons>
+	<timeSeriesModifiersDisplayConfig>
+		<showTimeShiftModifierButtons>true</showTimeShiftModifierButtons>
+		<showTablePanel>true</showTablePanel>
+		<showChartPanel>true</showChartPanel>
+	</timeSeriesModifiersDisplayConfig>
+</modifierDisplay>

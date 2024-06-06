@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<parameter internal="TA.obs" external="air_temperature"/>
+	<parameter internal="PC.obs" external="total_precipitation"/>
+	<parameter internal="TA.obs" internalQualifier="max" external="air_temperature_yesterday_high"/>
+	<parameter internal="TA.obs" internalQualifier="min" external="air_temperature_yesterday_low"/>
+	<parameter internal="WS.obs" external="wind_speed"/>
+	<parameter internal="WD.obs" external="wind_direction"/>
+	<parameter internal="WG.obs" external="wind_gust_speed"/>
+	<enableOneToOneMapping/>
+</idMap>

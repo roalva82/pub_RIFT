@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Pre-processing of WISKI data from non-equidistant to equidistant data-->
+	<!--Input-->
+	<variable>
+		<variableId>COBARIC_Level</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCOBARIC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.obs</parameterId>
+			<locationSetId>COBARIC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>COBARIC_Level_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ProcessCOBARIC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.obs</parameterId>
+			<locationSetId>COBARIC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="Interpolate_N">
+		<interpolationSerial>
+			<linear>
+				<inputVariable>
+					<variableId>COBARIC_Level</variableId>
+				</inputVariable>
+				<maxGapLength>60</maxGapLength>
+				<outputVariable>
+					<variableId>COBARIC_Level</variableId>
+				</outputVariable>
+			</linear>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="Process_N">
+		<aggregation>
+			<instantaneous>
+				<inputVariable>
+					<variableId>COBARIC_Level</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>COBARIC_Level_1hr</variableId>
+				</outputVariable>
+			</instantaneous>
+		</aggregation>
+	</transformation>
+</transformationModule>

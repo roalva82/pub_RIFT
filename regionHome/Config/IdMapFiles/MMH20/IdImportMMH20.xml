@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- édité avec XMLSpy v2017 rel. 3 (http://www.altova.com) par Simon Lachance-Cloutier (MIN. DU DEV. DURABLE, DE L'ENV) -->
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<parameter internal="QR.sim" external="q01" internalQualifier="MM01"/>
+	<parameter internal="QR.sim" external="q02" internalQualifier="MM02"/>
+	<parameter internal="QR.sim" external="q03" internalQualifier="MM03"/>
+	<parameter internal="QR.sim" external="q04" internalQualifier="MM04"/>
+	<parameter internal="QR.sim" external="q05" internalQualifier="MM05"/>
+	<parameter internal="QR.sim" external="q06" internalQualifier="MM06"/>
+	<parameter internal="QR.sim" external="q07" internalQualifier="MM07"/>
+	<parameter internal="QR.sim" external="q08" internalQualifier="MM08"/>
+	<parameter internal="QR.sim" external="q09" internalQualifier="MM09"/>
+	<parameter internal="QR.sim" external="q10" internalQualifier="MM10"/>
+	<parameter internal="QR.sim" external="q11" internalQualifier="MM11"/>
+	<parameter internal="QR.sim" external="q12" internalQualifier="MM12"/>
+	<parameter internal="QR.sim" external="q13" internalQualifier="MM13"/>
+	<parameter internal="QR.sim" external="q14" internalQualifier="MM14"/>
+	<parameter internal="QR.sim" external="q15" internalQualifier="MM15"/>
+	<parameter internal="QR.sim" external="q16" internalQualifier="MM16"/>
+	<parameter internal="QR.sim" external="q17" internalQualifier="MM17"/>
+	<parameter internal="QR.sim" external="q18" internalQualifier="MM18"/>
+	<parameter internal="QR.sim" external="q19" internalQualifier="MM19"/>
+	<parameter internal="QR.sim" external="q20" internalQualifier="MM20"/>
+	<parameter internal="PC.sim" internalQualifier="solid" external="ps"/>
+	<parameter internal="PC.sim" internalQualifier="liquid" external="pl"/>
+	<parameter internal="SWE.sim" external="een"/>
+	<enableOneToOneMapping/>
+</idMap>

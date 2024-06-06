@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<!--for 2D grid import-->
+	<map internalLocation="DFlowFM_$RIVER$" externalParameter="Mesh2D_s1" internalParameter="HG.sim" externalLocation="dummy"/>
+	<map internalLocation="DFlowFM_$RIVER$" externalParameter="Mesh2D_waterdepth" internalParameter="D.sim" externalLocation="dummy"/>
+	<map internalLocation="DFlowFM_$RIVER$" externalParameter="Mesh2D_ucx" internalParameter="V.u.sim" externalLocation="dummy"/>
+	<map internalLocation="DFlowFM_$RIVER$" externalParameter="Mesh2D_ucy" internalParameter="V.v.sim" externalLocation="dummy"/>
+	<map internalLocation="DFlowFM_$RIVER$" externalParameter="Mesh2D_pice" internalParameter="Pressure.river_ice.sim" externalLocation="dummy"/>
+	<enableCaseInsensitivity/>
+</idMap>

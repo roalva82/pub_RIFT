@@ -1,0 +1,106 @@
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>%REGION_HOME%/Import/ECCCSpecial/</folder>
+			<fileNamePatternFilter>en_climate_daily_*</fileNamePatternFilter>
+			<table>
+				<dateTimeColumn name="Date/Time" pattern="yyyy-MM-dd"/>
+				<locationColumn name="Climate ID"/>
+				<valueColumn name="Total Precip (mm)" unit="m3/s" parameterId="PC.obs"/>
+				<valueColumn name="Mean Temp (&#176;C)" unit="m" parameterId="TAmean.obs"/>
+				<valueColumn name="Max Temp (&#176;C)" unit="m" parameterId="TAmax.obs"/>
+				<valueColumn name="Min Temp (&#176;C)" unit="m" parameterId="TAmin.obs"/>
+			</table>
+			<idMapId>IdImportECCCSpecial</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+			<expiryTime unit="day" multiplier="365"/>
+			<skipFirstLinesCount>0</skipFirstLinesCount>
+		</general>
+		<tolerance timeUnit="minute" unitCount="1" parameterId="TAmax.obs"/>
+		<tolerance timeUnit="minute" unitCount="1" parameterId="TAmin.obs"/>
+		<tolerance timeUnit="minute" unitCount="1" parameterId="TAmean.obs"/>
+		<tolerance timeUnit="minute" unitCount="1" parameterId="PC.obs"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCSpecial</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>RIFT_ECCC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCSpecial</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>RIFT_ECCC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCSpecial</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmean.obs</parameterId>
+			<locationSetId>RIFT_ECCC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCSpecial</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFT_ECCC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>%REGION_HOME%/Import/ECCCSpecial/</folder>
+			<fileNamePatternFilter>en_climate_hourly_*</fileNamePatternFilter>
+			<table>
+				<dateColumn name="Date/Time (LST)" pattern="yyyy-MM-dd"/>
+				<timeColumn name="Time (LST)" pattern="HH:mm"/>
+				<locationColumn name="Climate ID"/>
+				<valueColumn name="Precip. Amount (mm)" unit="m3/s" parameterId="PC.obs"/>
+				<valueColumn name="Temp (&#176;C)" unit="m" parameterId="TAmean.obs"/>
+			</table>
+			<idMapId>IdImportECCCSpecial</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+04:00</timeZoneOffset>
+			</importTimeZone>
+			<expiryTime unit="day" multiplier="365"/>
+			<skipFirstLinesCount>0</skipFirstLinesCount>
+		</general>
+		<tolerance timeUnit="minute" unitCount="1" parameterId="TAmean.obs"/>
+		<tolerance timeUnit="minute" unitCount="1" parameterId="PC.obs"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCSpecial</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmean.obs</parameterId>
+			<locationSetId>RIFT_ECCC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep multiplier="1" unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCSpecial</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFT_ECCC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep multiplier="1" unit="hour"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topology xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/topology.xsd">
+	<enableAutoRun>false</enableAutoRun>
+	<enableAutoSelectParameters>true</enableAutoSelectParameters>
+	<enableSelectNodesFromMap>false</enableSelectNodesFromMap>
+	<nodes id="ImportHIS" name="Import Historical Data">
+		<nodes id="ImportHISOBS" name="Observations">
+			<node id="ImportBDH" name="BDH">
+				<workflowId>ImportBDH</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ImportCLIMATO" name="CLIMATO">
+				<workflowId>ImportCLIMATO</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ImportECCC" name="ECCC">
+				<workflowId>ImportECCCSpecial</workflowId>
+				<localRun>false</localRun>
+			</node>
+			<node id="ImportCOBARIC" name="COBARIC">
+				<workflowId>ImportCOBARIC</workflowId>
+				<localRun>false</localRun>
+			</node>
+		</nodes>
+		<nodes id="ImportHISFOR" name="Forecasts">
+			<node id="ImportCaSPAr" name="CaSPAr Data">
+				<workflowId>ImportCaSPAr</workflowId>
+				<localRun>false</localRun>
+			</node>
+		</nodes>
+	</nodes>
+	<nodes id="MMH20">
+		<node id="MMH20_UpdateRun" name="Update Run">
+			<workflowId>MMH20_Update</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="MMH20_ForecastRun" name="Perfect Forecast Run">
+			<workflowId>MMH20_ForecastPerfect</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="MMH20_REPSForecastRun" name="REPS Forecast Run">
+			<workflowId>MMH20_ForecastREPS</workflowId>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="MMH20_ENS">
+		<node id="MMH20Ens_UpdateRun" name="Update Ensemble Run">
+			<workflowId>MMH20Ens_Update</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="MMH20Ens_PerfectForecastRun" name="Perfect Forecast Run">
+			<workflowId>MMH20Ens_ForecastPerfect</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="MMH20Ens_REPSForecastRun" name="REPS Forecast Run">
+			<workflowId>MMH20Ens_ForecastREPS</workflowId>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	
+	<nodes id="HEC-RAS Estimate">
+		<node id="HEC-RAS_Estimate" name="Estimate">
+			<workflowId>HEC-RAS_Estimate</workflowId>
+			<visibleModifierGroup>EstimateHEC-RAS</visibleModifierGroup>
+			<localRun>false</localRun>
+		</node>
+		<node id="HEC-RAS_Estimate Forecast" name="Estimate Perfect Forecast">
+			<workflowId>HEC-RAS_Estimate_Forecast</workflowId>
+			<visibleModifierGroup>EstimateHEC-RAS</visibleModifierGroup>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="HEC-RAS">
+		<node id="HEC-RAS_UpdateRun" name="Update Run">
+			<workflowId>HEC-RAS_Update</workflowId>
+			<visibleModifierGroup>UnsteadyHEC-RAS</visibleModifierGroup>
+			<localRun>false</localRun>
+		</node>
+		<node id="HEC-RAS_ForecastRun" name="Perfect Forecast Run">
+			<workflowId>HEC-RAS_Forecast</workflowId>
+			<visibleModifierGroup>UnsteadyHEC-RAS</visibleModifierGroup>
+			<localRun>false</localRun>
+		</node>
+		<node id="HEC-RAS_REPSForecastRun" name="REPS Forecast Run">
+			<workflowId>HEC-RAS_ForecastREPS</workflowId>
+			<visibleModifierGroup>UnsteadyHEC-RAS</visibleModifierGroup>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="HEC-RAS Steady">
+		<node id="HEC-RAS_Steady" name="Perfect Steady Run">
+			<workflowId>HEC-RAS_Steady_Forecast</workflowId>
+			<visibleModifierGroup>SteadyHEC-RAS</visibleModifierGroup>
+			<localRun>false</localRun>
+		</node>
+		<node id="HEC-RAS_SteadyREPS" name="REPS Steady Run">
+			<workflowId>HEC-RAS_Steady_ForecastREPS</workflowId>
+			<visibleModifierGroup>SteadyHEC-RAS</visibleModifierGroup>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+<!--
+	<nodes id="Import Real-Time Data">
+		<node id="ImportWSCHourly" name="Import WSC Hydrological Data (Past Day)">
+			<workflowId>ImportWSCHourly</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportWSCDaily" name="Import WSC Hydrological Data (Past Month)">
+			<workflowId>ImportWSCDaily</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportHRDPA" name="Import HRDPA">
+			<workflowId>ImportHRDPAGrids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+NOT WORKING DUE TO INVALID FILES
+		<node id="ImportHRDPS" name="Import HRDPS">
+			<workflowId>ImportHRDPSGrids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportRDPA" name="Import RDPA">
+			<workflowId>ImportRDPAGrids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportRDPS" name="Import RDPS">
+			<workflowId>ImportRDPSGrids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportREPS" name="Import REPS">
+			<workflowId>ImportREPSGrids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportGDPS" name="Import GDPS">
+			<workflowId>ImportGDPSGrids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportGEPS" name="Import GEPS">
+			<workflowId>ImportGEPSGrids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="Import Sentinel/RCM">
+		<node id="Retrieve_Sentinel1_Chaudiere" name="Sentinel-1: Download">
+			<workflowId>RetrieveSentinel1_Chaudiere</workflowId>
+			<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="Import_Sentinel1_Chaudiere" name="Sentinel-1: Process &amp; Import">
+			<workflowId>ImportSentinel1_Chaudiere</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="Retrieve_Sentinel2_Chaudiere" name="Sentinel-2: Download">
+			<workflowId>RetrieveSentinel2_Chaudiere</workflowId>
+			<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="Import_Sentinel2_Chaudiere" name="Sentinel-2: Process &amp; Import">
+			<workflowId>ImportSentinel2_Chaudiere</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="RetrieveImport_Sentinel2_FastInternet_Chaudiere" name="Sentinel-2: Download, Process &amp; Import (fast internet)">
+			<workflowId>RetrieveImportSentinel2_FastInternet_Chaudiere</workflowId>
+			<relativePeriod unit="hour" start="-$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="Retrieve_RCM_Chaudiere" name="RCM: Download">
+			<workflowId>RetrieveRCM_Chaudiere</workflowId>
+			<relativePeriod unit="hour" start="-$RCM_DEFAULT_SEARCH_PERIOD_HRS$" end="0"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="Import_RCM_Chaudiere" name="RCM: Process &amp; Import">
+			<workflowId>ImportRCM_Chaudiere</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="Interpolate_RCM_Chaudiere" name="RCM: Interpolate to Fixed Grid">
+			<workflowId>InterpolateRCM_Chaudiere</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="Classify_RCM_Chaudiere" name="RCM: River Ice Classification">
+			<workflowId>RiverIceClassification_IceBC_Chaudiere</workflowId>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+		<node id="ImportECCCStations" name="Import ECCC Meteo Station Data (Last 2 days)">
+			<workflowId>ImportECCCScalar</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+		</node>
+
+	<nodes id="Run Delft-3D Model">
+		<node id="DFlowFM_Chaudiere_Update" name="DFlow-FM Update / Historical Run">
+			<workflowId>DFlowFM_Chaudiere_Update</workflowId>
+		</node>
+		<node id="DFlowFM_Chaudiere_Forecast" name="DFlow-FM Forecast Run">
+			<workflowId>DFlowFM_Chaudiere_Forecast</workflowId>
+		</node>
+	</nodes>
+-->
+</topology>

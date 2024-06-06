@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
+	<!--Import Scalar Data-->
+	<moduleInstanceDescriptor id="ImportCOBARIC"/>
+	<moduleInstanceDescriptor id="ProcessCOBARIC"/>
+	<moduleInstanceDescriptor id="ImportGPM"/>
+	<moduleInstanceDescriptor id="ImportECMWF-fc"/>
+	<moduleInstanceDescriptor id="ImportECMWF-pf"/>
+	<moduleInstanceDescriptor id="ImportCEHQ">
+		<description>Import CEHQ Station data from Local Directory</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCLocal">
+		<description>Import meteo data from Local Directory</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportWSCHistoric">
+		<description>Import Station data from Local Directory</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportWSCHourly">
+		<description>Import Station data from http://dd.weather.gc.ca server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportWSCDaily">
+		<description>Import Station data from http://dd.weather.gc.ca server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportWSC">
+		<description>ID assigned  to WSC imports</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCScalar">
+		<description>Import Station data from dd.meteo.gc.ca server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCSpecial">
+		<description>Import Station Data from Local CSV</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportBDH">
+		<description>Import Station Data BDH</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ProcessBDH">
+		<description>Process Data BDH</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportCLIMATO">
+		<description>Import Station Data CLIMATO</description>
+	</moduleInstanceDescriptor>
+	<!--MMH20-->
+	<moduleInstanceDescriptor id="ForecastLenghtEstimatorREPS"/>
+	<moduleInstanceDescriptor id="MMH20_UpdatePre"/>
+	<moduleInstanceDescriptor id="MMH20_ForecastPre_Perfect"/>
+	<moduleInstanceDescriptor id="MMH20_ForecastPre_REPS"/>
+	<moduleInstanceDescriptor id="MMH20_ForecastPos_REPS"/>
+	<moduleInstanceDescriptor id="MMH20_forecastREPS"/>
+	<moduleInstanceDescriptor id="MMH20_update"/>
+	<moduleInstanceDescriptor id="MMH20_023402"/>
+	<moduleInstanceDescriptor id="MMH20_023422"/>
+	<moduleInstanceDescriptor id="MMH20_023429"/>
+	<moduleInstanceDescriptor id="MMH20_forecast"/>
+	<moduleInstanceDescriptor id="MMH20_Forecast_023402"/>
+	<moduleInstanceDescriptor id="MMH20_Forecast_023422"/>
+	<moduleInstanceDescriptor id="MMH20_Forecast_023429"/>
+
+	<moduleInstanceDescriptor id="MMH20Ens_update"/>
+	<moduleInstanceDescriptor id="MMH20Ens_023402"/>
+	<moduleInstanceDescriptor id="MMH20Ens_023422"/>
+	<moduleInstanceDescriptor id="MMH20Ens_023429"/>
+	<!--<moduleInstanceDescriptor id="MMH20Ens_forecast"/>-->
+	<moduleInstanceDescriptor id="MMH20Ens_forecastPerfect"/>
+	<moduleInstanceDescriptor id="MMH20Ens_forecastREPS"/>
+	<moduleInstanceDescriptor id="MMH20Ens_Forecast_023402"/>
+	<moduleInstanceDescriptor id="MMH20Ens_Forecast_023422"/>
+	<moduleInstanceDescriptor id="MMH20Ens_Forecast_023429"/>
+	<moduleInstanceDescriptor id="MMH20Ens_ForecastPos_Perfect"/>
+	<moduleInstanceDescriptor id="MMH20Ens_ForecastPos_REPS"/>
+	<!--HEC-RAS-->
+	<moduleInstanceDescriptor id="HEC-RAS_EstimatePre"/>
+	<moduleInstanceDescriptor id="HEC-RAS_Estimate"/>
+	<moduleInstanceDescriptor id="HEC-RAS_EstimatePos"/>
+	
+	<moduleInstanceDescriptor id="HEC-RAS_Estimate_ForecastPre"/>
+	<moduleInstanceDescriptor id="HEC-RAS_Estimate_Forecast"/>
+	<moduleInstanceDescriptor id="HEC-RAS_Estimate_ForecastPos"/>
+	
+	<moduleInstanceDescriptor id="HEC-RAS_UpdatePre"/>
+	<moduleInstanceDescriptor id="HEC-RAS_Update"/>
+	<moduleInstanceDescriptor id="HEC-RAS_UpdatePos"/>
+	<moduleInstanceDescriptor id="HEC-RAS_ForecastPre"/>
+	<moduleInstanceDescriptor id="HEC-RAS_Forecast"/>
+	<moduleInstanceDescriptor id="HEC-RAS_ForecastREPSPre"/>
+	<moduleInstanceDescriptor id="HEC-RAS_ForecastREPS"/>
+	<moduleInstanceDescriptor id="HEC-RAS_SteadyPre"/>
+	<moduleInstanceDescriptor id="HEC-RAS_Steady"/>
+	<!--Export modules-->
+	<moduleInstanceDescriptor id="ExportObservations"/>
+	<moduleInstanceDescriptor id="ExportForecasts_Perfect"/>
+	<moduleInstanceDescriptor id="ExportForecasts_Ensemble"/>
+	<!--Preprocess Scalar Data-->
+	<moduleInstanceDescriptor id="PreprocessECCCScalar">
+		<description>Preprocess Station data from dd.meteo.gc.ca server</description>
+	</moduleInstanceDescriptor>
+	<!--ModuleDataSets-->
+	<moduleInstanceDescriptor id="SnowDownload">
+		<description>Snow Download module - for purpose of maintaining single moduleDataSet file</description>
+	</moduleInstanceDescriptor>
+	<!--Download Snow Products-->
+	<moduleInstanceDescriptor id="RetrieveSNODAS">
+		<description>Download SNODAS grib2 files</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveGLOBSNOW">
+		<description>Download GlobSnow netcdf files</description>
+	</moduleInstanceDescriptor>
+	<!--Imports Gridded Data - GeoMet-->
+	<moduleInstanceDescriptor id="ImportCaSPAr-HRDPS"/>
+	<moduleInstanceDescriptor id="ImportCaSPAr-REPS"/>
+	<moduleInstanceDescriptor id="ImportRDPA">
+		<description>Import for ECCC Precipitation Re-Analysis</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportHRDPA">
+		<description>Import for ECCC Precipitation Re-Analysis</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportRDPS">
+		<description>Import for Regional Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportHRDPS">
+		<description>Import for High Resolution Regional Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportGDPS">
+		<description>Import for Global Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportGEPS">
+		<description>Import for Global Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ReduceGridSizeGDPS"/>
+	<moduleInstanceDescriptor id="ReduceGridSizeREPS"/>
+	<moduleInstanceDescriptor id="ReduceGridSizeRDPA"/>
+	<moduleInstanceDescriptor id="ReduceGridSizeRDPS"/>
+	<moduleInstanceDescriptor id="ReduceGridSizeGEPS"/>
+	<moduleInstanceDescriptor id="ReduceGridSizeHRDPA"/>
+	<moduleInstanceDescriptor id="ImportREPS">
+		<description>Import for Regional Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveRDPA">
+		<description>Import for ECCC Precipitation Re-Analysis</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveHRDPA">
+		<description>Import for ECCC Precipitation Re-Analysis</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveRDPS">
+		<description>Import for Regional Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveHRDPS">
+		<description>Import for High Resolution Regional Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveGDPS">
+		<description>Import for Global Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveREPS">
+		<description>Import for Regional Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveGEPS">
+		<description>Import for Global Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCC">
+		<description>Import for All ECCC (GeoMet)</description>
+	</moduleInstanceDescriptor>
+	<!--Post-process Model Results -->
+	<moduleInstanceDescriptor id="PostprocessREPS">
+		<description>Calculate Ensemble Statistics for REPS</description>
+	</moduleInstanceDescriptor>
+	<!-- Import NOAA NWP forecast grids-->
+	<moduleInstanceDescriptor id="ImportGFS">
+		<description>Import Global Forecast System from NOAA</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportNAM">
+		<description>Import North American Meso-scale Data from NOAA</description>
+	</moduleInstanceDescriptor>
+	<!-- Import Preprocess  NWP Inputs-->
+	<moduleInstanceDescriptor id="PreprocessRDPA">
+		<description>Preprocess for ECCC Precipitation Re-Analysis</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessRDPS">
+		<description>Preprocess for Regional Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessGDPS">
+		<description>Preprocess for Global Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessREPS">
+		<description>Preprocess for Global Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<!-- Import Snow grids-->
+	<moduleInstanceDescriptor id="ImportSNODAS">
+		<description>Import for SNODAS grids from NOHRSC</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportGLOBSNOW">
+		<description>Import for GlobSnow grids from Finnish Meteorological Institute</description>
+	</moduleInstanceDescriptor>
+	<!--Import and Process Sentinel and RCM data-->
+	<moduleInstanceDescriptor id="RetrieveSentinel_Chaudiere">
+		<description>Sentinel Import ModuleDataSetFile for Saint Francois</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveSentinel1">
+		<description>Retrieve Sentinel-1 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveSentinel2">
+		<description>Retrieve Sentinel-2 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveRCM">
+		<description>Retrieve RCM imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PurgeFolderSentinel">
+		<description>Purge the processed or raw folders for Sentinel images</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PurgeFolderSentinel_work">
+		<description>Purge the workdir for Sentinel images</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveProcessSentinel2">
+		<description>Retrieve and Process Sentinel-2 imagery (fast internet method)</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessSentinel1">
+		<description>Pre-Process Sentinel-1 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessSentinel2">
+		<description>Pre-Process Sentinel-2 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RCM_Subfolders">
+		<description>Moduledataset file that creates the RCM subdirectories</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PurgeFolderRCM">
+		<description>Purge the processed or raw folders for RCM images</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PurgeFolderRCM_work">
+		<description>Purge the workdir for RCM images</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessRCM">
+		<description>Pre-Process RCM imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RenameSentinel2">
+		<description>Rename Processed Sentinel-2 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RenameRCM">
+		<description>Rename Processed RCM imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportSentinel1">
+		<description>Import for Sentinel-1 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportSentinel2">
+		<description>Import for Sentinel-2 imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportRCM">
+		<description>Import RCM imagery</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="InterpolateRCM">
+		<description>Interpolate RCM imagery to fixed grid</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="InterpolateSentinel1">
+		<description>Interpolate Sentinel-1 imagery to fixed grid</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RiverIceClassification_IceBC">
+		<description>River ice classification (IceBC algorithm)</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RiverIceClassification_IceState">
+		<description>River ice classification for River Ice State (IceBC algorithm)</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="pyscripts">
+		<description>ModuleDataSetFile for python scripts and templates</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="Python38">
+		<description>Python Binaries</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="snap_gpt">
+		<description>ModuleDataSetFile for SNAP GPT scripts and templates</description>
+	</moduleInstanceDescriptor>
+	<!--D-Flow FM-->
+	<moduleInstanceDescriptor id="DFlowFM_Chaudiere_Update">
+		<description>D-Flow FM Chaudiere (historical)</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DFlowFM_Chaudiere_Forecast">
+		<description>D-Flow FM Chaudiere (forecast)</description>
+	</moduleInstanceDescriptor>
+</moduleInstanceDescriptors>

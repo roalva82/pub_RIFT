@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="BASIN" value="023402"></string>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>MMH20Ens_023402</moduleInstanceId>
+		<moduleConfigFileName>MMH20Ens_update</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="BASIN" value="023422"></string>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>MMH20Ens_023422</moduleInstanceId>
+		<moduleConfigFileName>MMH20Ens_update</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="BASIN" value="023429"></string>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>MMH20Ens_023429</moduleInstanceId>
+		<moduleConfigFileName>MMH20Ens_update</moduleConfigFileName>
+	</activity>
+</workflow>

@@ -1,0 +1,4 @@
+HEC-RAS_Adapter.zip filter=lfs diff=lfs merge=lfs -text
+HEC-RAS_Estimate.zip filter=lfs diff=lfs merge=lfs -text
+HEC-RAS_Software.zip filter=lfs diff=lfs merge=lfs -text
+HEC-RAS_Update.zip filter=lfs diff=lfs merge=lfs -text

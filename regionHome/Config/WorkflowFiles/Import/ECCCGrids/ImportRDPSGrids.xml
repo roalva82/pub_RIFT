@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!--Define Properties for Templates-->
+	<properties>
+		<string key="INPUTMODULEINSTANCE" value="ImportRDPS"/>
+		<string key="INPUTGRID" value="RDPS"/>
+		<string key="TIMESTEP" value="1"/>
+		<string key="STARTTIME" value="-1"/>
+		<string key="ENDTIME" value="3"/>
+	</properties>
+	<!-- Retrieve NWP grids from Environment Canada -->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveRDPS</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportRDPS</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ReduceGridSizeRDPS</moduleInstanceId>
+	</activity>
+</workflow>

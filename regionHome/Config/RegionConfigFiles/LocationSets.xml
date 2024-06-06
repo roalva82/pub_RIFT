@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<locationSets version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locationSets.xsd">
+	<!-- All Location Sets Built from csv and shp files. See MapLayerFiles for source-->
+	<!--- Water Survey of Canada Hydrometric Stations - Available at https://dd.weather.gc.ca/hydrometric/doc/ -->
+	<locationSet id="WSCStations">
+		<sortingLocationAttributeId>ID</sortingLocationAttributeId>
+		<csvFile>
+			<file>hydrometric_StationList.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%ID%</id>
+			<name>%Name / Nom%</name>
+			<x>%Longitude%</x>
+			<y>%Latitude%</y>
+			<attribute id="ID" name="Station Code">
+				<text>%ID%</text>
+			</attribute>
+			<attribute id="Region" name="Region">
+				<text>%Prov/Terr%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<!--- ECCC Meteo Stations - Available at https://dd.weather.gc.ca/hydrometric/doc/ -->
+	<locationSet id="ECCCStations">
+		<csvFile>
+			<file>swob-xml_station_list.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%MSC_ID%</id>
+			<name>%Name%</name>
+			<x>%Longitude%</x>
+			<y>%Latitude%</y>
+			<z>%Elevation(m)%</z>
+			<attribute id="ID" name="Station Code">
+				<text>%MSC_ID%</text>
+			</attribute>
+			<attribute id="Region" name="Region">
+				<text>%Province/Territory%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="RIFTStations">
+		<csvFile>
+			<file>StationsRIFT.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>RIFT_%ID%</id>
+			<name>%Name%</name>
+			<x>%Long%</x>
+			<y>%Lat%</y>
+			<z>%Altitude%</z>
+			<attribute id="Type">
+				<text>%Type%</text>
+			</attribute>
+			<attribute id="System">
+				<text>%System%</text>
+			</attribute>
+			<attribute id="Weight">
+				<number>%Weight%</number>
+			</attribute>
+			<attribute id="Shift">
+				<number>%Shift%</number>
+			</attribute>
+			<attribute id="Altitude">
+				<number>%Altitude%</number>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="RIFT_CLIMATO">
+		<locationSetId>RIFTStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="System" equals="CLIMATO"/>
+				<attributeTextEquals id="System" equals="ECCC-AUTO"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="RIFT_ECCC">
+		<locationSetId>RIFTStations</locationSetId>
+		<constraints>
+			<attributeTextEquals id="System" equals="ECCC"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="RIFT_FADQ">
+		<locationSetId>RIFTStations</locationSetId>
+		<constraints>
+			<attributeTextEquals id="System" equals="FADQ"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="RIFT_BDH">
+		<locationSetId>RIFTStations</locationSetId>
+		<constraints>
+			<attributeTextEquals id="System" equals="BDH"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="RIFT_Meteo">
+		<locationSetId>RIFTStations</locationSetId>
+		<constraints>
+			<attributeTextEquals id="Type" equals="Meteo"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="RIFT_Hydro">
+		<locationSetId>RIFTStations</locationSetId>
+		<constraints>
+			<attributeTextEquals id="Type" equals="Hydro"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="RIFT_Basins_temp">
+		<esriShapeFile>
+			<file>Modelled_Catchments.shp</file>
+			<id>RIFT_BASIN_%STATION%</id>
+			<name>RIFT_BASIN_%STATION%</name>
+		</esriShapeFile>
+	</locationSet>
+	<locationSet id="PreMMH20">
+		<locationId>RIFT_BASIN_023402</locationId>
+		<locationId>RIFT_BASIN_023422</locationId>
+		<locationId>RIFT_BASIN_023429</locationId>
+	</locationSet>
+	<locationSet id="MMH20_output">
+		<locationId>RIFT_023402</locationId>
+		<locationId>RIFT_023422</locationId>
+		<locationId>RIFT_023429</locationId>
+	</locationSet>
+	<locationSet id="HEC-RAS_output">
+		<locationId>RIFT_023402</locationId>
+		<locationId>RIFT_C9</locationId>
+		<locationId>RIFT_C8</locationId>
+		<locationId>RIFT_C7</locationId>
+		<locationId>RIFT_C6</locationId>
+		<locationId>RIFT_023429</locationId>
+	</locationSet>
+	<locationSet id="RIFT_StLambert">
+		<esriShapeFile>
+			<file>Saint_Lambert.shp</file>
+			<id>RIFT_BASIN_%ID%</id>
+			<name>RIFT_BASIN_%ID%</name>
+		</esriShapeFile>
+	</locationSet>
+	<locationSet id="RIFT_Basins">
+		<locationSetId>RIFT_Basins_temp</locationSetId>
+		<locationSetId>RIFT_StLambert</locationSetId>
+	</locationSet>
+	<!--- ECCC Meteo Stations from Partners - Available at https://dd.weather.gc.ca/hydrometric/doc/ -->
+	<locationSet id="ECCCPartnerStations">
+		<csvFile>
+			<file>swob-xml_partner_station_list.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%MSC%</id>
+			<name>%EN name%</name>
+			<x>%Longitude%</x>
+			<y>%Latitude%</y>
+			<z>%Elevation%</z>
+			<attribute id="ID" name="Station Code">
+				<text>%MSC%</text>
+			</attribute>
+			<attribute id="Region" name="Region">
+				<text>%Province%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<!--- COBARIC -->
+	<locationSet id="COBARIC">
+		<locationId>RIFT_023402</locationId>
+		<locationId>RIFT_023429</locationId>
+		<csvFile>
+			<file>COBARIC.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%ID%</id>
+			<name>%Name%</name>
+			<x>%X%</x>
+			<y>%Y%</y>
+		</csvFile>
+	</locationSet>
+	<!-- CEHQ stations -->
+	<locationSet id="CEHQStations">
+		<csvFile>
+			<file>CEHQ_locations_list.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%ID%</id>
+			<name>%Name / Nom%</name>
+			<x>%Longitude%</x>
+			<y>%Latitude%</y>
+			<z>%Z%</z>
+			<attribute id="ID" name="Station Code">
+				<text>%ID%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<!-- CEHQ stations -->
+	<locationSet id="ECCCStationsSpecial">
+		<locationId>7028442</locationId>
+		<locationId>7023681</locationId>
+		<locationId>7028754</locationId>
+	</locationSet>
+	<!-- Create LocationSets based on Attributes-->
+	<locationSet id="\StationsByRegion">
+		<subLocationSetIdFunction>WSCStations@Region@</subLocationSetIdFunction>
+		<locationSetId>WSCStations</locationSetId>
+	</locationSet>
+	<!--Build additional LocationSets-->
+	<locationSet id="ECCCAllStations">
+		<locationSetId>ECCCPartnerStations</locationSetId>
+		<locationSetId>ECCCStations</locationSetId>
+	</locationSet>
+	<!--Comment-->
+	<locationSet id="ECCCStationsON">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Ontario"/>
+				<attributeTextEquals id="Region" equals="ON"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsQC">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Quebec"/>
+				<attributeTextEquals id="Region" equals="QC"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsNS">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Nova Scotia"/>
+				<attributeTextEquals id="Region" equals="NS"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsNB">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="New Brunswick"/>
+				<attributeTextEquals id="Region" equals="NB"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsMB">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Manitoba"/>
+				<attributeTextEquals id="Region" equals="MB"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsBC">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="British Columbia"/>
+				<attributeTextEquals id="Region" equals="BC"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsSK">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Saskatoon"/>
+				<attributeTextEquals id="Region" equals="SK"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsAB">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Alberta"/>
+				<attributeTextEquals id="Region" equals="AB"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsNL">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Newfoundland and Labrador"/>
+				<attributeTextEquals id="Region" equals="NL"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsNT">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Northwest Territories"/>
+				<attributeTextEquals id="Region" equals="NT"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsYT">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Yukon"/>
+				<attributeTextEquals id="Region" equals="YT"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsNU">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Nunavut"/>
+				<attributeTextEquals id="Region" equals="NU"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<!--Sentinel and RCM Grid Dummies-->
+	<locationSet id="RS_Tiles">
+		<csvFile>
+			<file>tiles_remote_sensing.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%FEWS_ID%</id>
+			<name>%FEWS_ID%</name>
+			<shortName>%FEWS_ID%</shortName>
+			<x>%X%</x>
+			<y>%Y%</y>
+			<attribute id="RIVER">
+				<text>%REGION%</text>
+			</attribute>
+			<attribute id="X_MIN">
+				<number>%EXT_MIN_X%</number>
+			</attribute>
+			<attribute id="X_MAX">
+				<number>%EXT_MAX_X%</number>
+			</attribute>
+			<attribute id="Y_MIN">
+				<number>%EXT_MIN_Y%</number>
+			</attribute>
+			<attribute id="Y_MAX">
+				<number>%EXT_MAX_Y%</number>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="RS_Tiles_Chaudiere">
+		<locationSetId>RS_Tiles</locationSetId>
+		<constraints>
+			<attributeTextEquals id="RIVER" equals="Chaudiere"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="RCM_Tiles">
+		<csvFile>
+			<file>tiles_rcm.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%COMBO%</id>
+			<name>%COMBO%</name>
+			<shortName>%COMBO%</shortName>
+			<x>%X%</x>
+			<y>%Y%</y>
+			<attribute id="RIVER">
+				<text>%REGION%</text>
+			</attribute>
+			<attribute id="REMOTE_SENSING_TILE">
+				<text>%FEWS_ID%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="RCM_Tiles_Chaudiere">
+		<locationSetId>RCM_Tiles</locationSetId>
+		<constraints>
+			<attributeTextEquals id="RIVER" equals="Chaudiere"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="Sentinel2_Tiles">
+		<csvFile>
+			<file>tiles_sentinel2.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%COMBO%</id>
+			<name>%COMBO%</name>
+			<shortName>%COMBO%</shortName>
+			<x>%X%</x>
+			<y>%Y%</y>
+			<attribute id="RIVER">
+				<text>%REGION%</text>
+			</attribute>
+			<attribute id="REMOTE_SENSING_TILE">
+				<text>%FEWS_ID%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="Sentinel2_Tiles_Chaudiere">
+		<locationSetId>Sentinel2_Tiles</locationSetId>
+		<constraints>
+			<attributeTextEquals id="RIVER" equals="Chaudiere"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="RS_Tiles_S1_fixed">
+		<csvFile>
+			<file>tiles_remote_sensing.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%FEWS_ID%_S1</id>
+			<name>Sentinel-1 %FEWS_ID%</name>
+			<shortName>S1 %FEWS_ID%</shortName>
+			<x>%X%</x>
+			<y>%Y%</y>
+			<attribute id="RIVER">
+				<text>%REGION%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="RCM_Tiles_fixed">
+		<csvFile>
+			<file>tiles_rcm.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%COMBO%_RCM</id>
+			<name>RCM %COMBO%</name>
+			<shortName>RCM %COMBO%</shortName>
+			<x>%X%</x>
+			<y>%Y%</y>
+			<attribute id="RIVER">
+				<text>%REGION%</text>
+			</attribute>
+			<attribute id="REMOTE_SENSING_TILE">
+				<text>%FEWS_ID%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="RS_Tiles_RCM_fixed">
+		<csvFile>
+			<file>tiles_remote_sensing.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%FEWS_ID%_RCM</id>
+			<name>RCM %FEWS_ID%</name>
+			<shortName>RCM %FEWS_ID%</shortName>
+			<x>%X%</x>
+			<y>%Y%</y>
+			<attribute id="RIVER">
+				<text>%REGION%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="Sentinel1_Tiles_Chaudiere_fixed">
+		<locationSetId>RS_Tiles_S1_fixed</locationSetId>
+		<constraints>
+			<attributeTextEquals id="RIVER" equals="Chaudiere"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="RCM_Tiles_Chaudiere_fixed">
+		<locationSetId>RCM_Tiles_fixed</locationSetId>
+		<constraints>
+			<attributeTextEquals id="RIVER" equals="Chaudiere"/>
+		</constraints>
+	</locationSet>
+	<!--D-Flow FM-->
+	<locationSet id="DFlowFM_Chaudiere_river_ice_dummy_polygons">
+		<esriShapeFile>
+			<file>River_ice_dummy_polygons</file>
+			<id>%ID%</id>
+			<attribute id="AREA_FRACTION">
+				<number>%ICE_FRACTI%</number>
+			</attribute>
+		</esriShapeFile>
+	</locationSet>
+	<locationSet id="DFlowFM_Chaudiere_QBC">
+		<locationId>CEHQ_023422</locationId>
+	</locationSet>
+	<locationSet id="DFlowFM_Chaudiere_HBC">
+		<locationId>CEHQ_023402</locationId>
+	</locationSet>
+	<locationSet id="HEC-RAS_inputs_QR">
+		<locationId>RIFT_023402</locationId>
+		<locationId>RIFT_023429</locationId>
+		<locationId>RIFT_023422</locationId>
+		<locationId>RIFT_LI-BVA</locationId>
+		<locationId>RIFT_ULI</locationId>
+	</locationSet>
+	<locationSet id="HEC-RAS_inputs_N">
+		<locationId>RIFT_023402</locationId>
+	</locationSet>
+	<locationSet id="RIFT_ULI_RED">
+		<locationSetId>RIFTStations</locationSetId>
+		<constraints>
+			<attributeTextEquals id="System" equals="Ungauged"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="HEC-RAS_Steady_inputs">
+		<locationId>RIFT_023429</locationId>
+		<locationId>RIFT_023422</locationId>
+		<locationId>RIFT_LI-BVA</locationId>
+		<locationId>RIFT_SS_1</locationId>
+		<locationId>RIFT_SS_2</locationId>
+		<locationId>RIFT_SS_3</locationId>
+		<locationId>RIFT_SS_4</locationId>
+		<locationId>RIFT_SS_5</locationId>
+		<locationId>RIFT_SS_6</locationId>
+		<locationId>RIFT_SS_7</locationId>
+		<locationId>RIFT_SS_8</locationId>
+		<locationId>RIFT_SS_9</locationId>
+	</locationSet>
+	<locationSet id="HEC-RAS_Estimate_inputs_QR">
+		<locationId>RIFT_023402</locationId>
+		<locationId>RIFT_023429</locationId>
+		<locationId>RIFT_023422</locationId>
+	</locationSet>
+	<locationSet id="HEC-RAS_Estimate_inputs_N">
+		<locationId>RIFT_023402</locationId>
+	</locationSet>
+</locationSets>

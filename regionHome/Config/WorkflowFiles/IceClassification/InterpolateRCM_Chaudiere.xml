@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<activity>
+		<properties>
+			<string key="MI_IN" value="ImportRCM"/>
+			<string key="MI_OUT" value="InterpolateRCM"/>
+			<string key="SOURCE" value="RCM"/>
+			<string key="PARAM" value="Gamma0_HH"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>InterpolateRCM</moduleInstanceId>
+		<moduleConfigFileName>Template_InterpolateEO</moduleConfigFileName>
+		<loopLocationSetId>RCM_Tiles_Chaudiere</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="MI_IN" value="ImportRCM"/>
+			<string key="MI_OUT" value="InterpolateRCM"/>
+			<string key="SOURCE" value="RCM"/>
+			<string key="PARAM" value="Inc_Angle"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>InterpolateRCM</moduleInstanceId>
+		<moduleConfigFileName>Template_InterpolateEO</moduleConfigFileName>
+		<loopLocationSetId>RCM_Tiles_Chaudiere</loopLocationSetId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="MI_IN" value="InterpolateRCM"/>
+			<string key="MI_OUT" value="InterpolateRCM"/>
+			<string key="PARAM" value="Gamma0_HH"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>InterpolateRCM</moduleInstanceId>
+		<moduleConfigFileName>Template_ConvertDecibel</moduleConfigFileName>
+		<loopLocationSetId>RCM_Tiles_Chaudiere_fixed</loopLocationSetId>
+	</activity>
+</workflow>

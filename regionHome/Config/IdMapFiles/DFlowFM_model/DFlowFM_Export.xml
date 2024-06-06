@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<!--Chaudiere-->
+	<map internalLocation="CEHQ_023422" internalParameter="QR.obs" externalLocation="Q St Georges_0001" externalParameter="dischargebnd"/>
+	<map internalLocation="CEHQ_023402" internalParameter="HG.obs" externalLocation="St Lambert de Lauzon_0001" externalParameter="waterlevelbnd"/>
+	<parameter internal="River_ice.area.fraction" external="river_ice_area_fraction"/>
+	<parameter internal="River_ice.thickness" external="river_ice_thickness"/>
+	<enableOneToOneMapping/>
+</idMap>

@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
+	<!--
+	<filter id="Real-Time Data">
+		<mapExtentId>ChaudiereRiver</mapExtentId>
+		<child foreignKey="RTDWSC"/>
+	</filter>
+-->
+	<filter id="Historical Data">
+		<mapExtentId>ChaudiereRiver</mapExtentId>
+		<child foreignKey="HISBDH"/>
+		<child foreignKey="HISCLIMATO"/>
+		<child foreignKey="HISECCC"/>
+		<child foreignKey="HISCOBARIC"/>
+		<child foreignKey="HISWSC"/>
+	</filter>
+	<filter id="Processed Data">
+		<mapExtentId>ChaudiereRiver</mapExtentId>
+		<child foreignKey="PROCLIMATO_Interpolated"/>
+		<child foreignKey="PROCLIMATO_BASINS"/>
+	</filter>
+	<filter id="MMH20">
+		<mapExtentId>ChaudiereRiver</mapExtentId>
+		<child foreignKey="MMH20_Update"/>
+		<child foreignKey="MMH20_Forecast"/>
+	</filter>
+	<filter id="MMH20_Update" name="Update">
+		<child foreignKey="MMH20_Update_input"/>
+		<child foreignKey="MMH20_Update_output"/>
+	</filter>
+	<filter id="MMH20_Forecast" name="Forecast">
+		<child foreignKey="MMH20_Forecast_Perfect"/>
+		<child foreignKey="MMH20_Forecast_REPS"/>
+	</filter>
+	<filter id="MMH20_Forecast_Perfect" name="Perfect forecast">
+		<child foreignKey="MMH20_inputDet"/>
+		<child foreignKey="MMH20_outputDet"/>
+	</filter>
+	<filter id="MMH20_Forecast_REPS" name="REPS forecast">
+		<child foreignKey="MMH20_inputEnsREPS"/>
+		<child foreignKey="MMH20_outputEnsREPS"/>
+	</filter>
+	
+	<filter id="HEC-RAS_Estimate">
+		<mapExtentId>ChaudiereRiver</mapExtentId>
+		<child foreignKey="HEC_Estimate"/>
+		<child foreignKey="HEC_EstimateForecast"/>
+	</filter>
+	<filter id="HEC_Estimate" name="Estimate">
+		<child foreignKey="HEC_Estimate_input"/>
+		<child foreignKey="HEC_Estimate_output"/>
+	</filter>
+	<filter id="HEC_EstimateForecast" name="Estimate_Forecast">
+		<child foreignKey="HEC_EstimateForecast_input"/>
+		<child foreignKey="HEC_EstimateForecast_output"/>
+	</filter>
+	<filter id="HEC_Estimate_input" name="Input data">
+		<timeSeriesSet>
+			<moduleInstanceId>ProcessBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_EstimatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>HEC-RAS_Estimate_inputs_QR</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="HEC_Estimate_output" name="Output data">
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_Estimate</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_Estimate</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.sim</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="HEC_EstimateForecast_input" name="Input data">
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_Estimate_ForecastPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_Estimate_inputs_QR</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<!--<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_EstimateForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_Estimate_inputs_QR</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>-->
+	</filter>
+	<filter id="HEC_EstimateForecast_output" name="Output data">
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_Estimate_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_Estimate_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.sim</parameterId>
+			<locationSetId>HEC-RAS_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<!--<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_EstimateForecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+		</timeSeriesSet>-->
+		<!--<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_EstimateForecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.sim</parameterId>
+			<locationSetId>HEC-RAS_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+		</timeSeriesSet>-->
+	</filter>
+	
+	<filter id="HEC-RAS">
+		<mapExtentId>ChaudiereRiver</mapExtentId>
+		<child foreignKey="HEC_Update"/>
+		<child foreignKey="HEC_Forecast"/>
+	</filter>
+	<filter id="HEC_Update" name="Update">
+		<child foreignKey="HEC_Update_input"/>
+		<child foreignKey="HEC_Update_output"/>
+	</filter>
+	<filter id="HEC_Forecast" name="Forecast">
+		<child foreignKey="HEC_Forecast_input"/>
+		<child foreignKey="HEC_Forecast_output"/>
+	</filter>
+	<filter id="HEC_Update_input" name="Input data">
+		<timeSeriesSet>
+			<moduleInstanceId>ProcessBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>HEC-RAS_inputs_QR</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="HEC_Update_output" name="Output data">
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_Update</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_Update</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.sim</parameterId>
+			<locationId>RIFT_023402</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="0" startOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="HEC_Forecast_input" name="Input data">
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_inputs_QR</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPSPre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_inputs_QR</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="HEC_Forecast_output" name="Output data">
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_Forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.sim</parameterId>
+			<locationSetId>HEC-RAS_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>HEC-RAS_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>HEC-RAS_ForecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.sim</parameterId>
+			<locationSetId>HEC-RAS_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>REPS-statistics</ensembleId>
+		</timeSeriesSet>
+	</filter>
+	<filter id="MMH20_Update_input" name="Input data">
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-360" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="MMH20_Update_output" name="Output data">
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_update</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="360"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>MMH20</ensembleId>
+		</timeSeriesSet>
+	</filter>
+	<!--	<filter id="RTDWSC">
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationSetId>WSCStations$REGION$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>WSCStations$REGION$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+-->
+	<filter id="MMH20_inputDet" name="Input data">
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_Perfect</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="360"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_Perfect</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.for</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="360"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_Perfect</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.for</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="360"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="MMH20_outputDet" name="Output data">
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="15"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>MMH20</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_update</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>MMH20</ensembleId>
+		</timeSeriesSet>
+	</filter>
+	<filter id="MMH20_inputEnsREPS" name="Input data (1st member)">
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+			<ensembleMemberIndex>0</ensembleMemberIndex>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.for</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+			<ensembleMemberIndex>0</ensembleMemberIndex>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.for</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+			<ensembleMemberIndex>0</ensembleMemberIndex>
+		</timeSeriesSet>
+	</filter>
+	<filter id="MMH20_outputEnsREPS" name="Output data">
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc100</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc090</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>perc010</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM01</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM02</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM03</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM04</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM05</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM06</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM07</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM08</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM09</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM10</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM11</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM12</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM13</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM14</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM15</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM16</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM17</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM18</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM19</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_forecastREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<qualifierId>MM20</qualifierId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="0" end="10"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</filter>
+	<filter id="PROCLIMATO_BASINS" name="Basins">
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmean.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<qualifierId>Z0</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="PROCLIMATO_Interpolated" name="Interpolated">
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFTStations</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="HISECCC" name="ECCC">
+		<mapExtentId>ChaudiereRiver</mapExtentId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCSpecial</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmean.obs</parameterId>
+			<locationSetId>RIFT_ECCC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep multiplier="1" unit="hour"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCSpecial</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFT_ECCC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep multiplier="1" unit="hour"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="HISCLIMATO" name="Climato">
+		<mapExtentId>ChaudiereRiver</mapExtentId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmean.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>RIFT_CLIMATO</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="HISBDH" name="BDH">
+		<mapExtentId>ChaudiereRiver</mapExtentId>
+		<timeSeriesSet>
+			<moduleInstanceId>ProcessBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.obs</parameterId>
+			<locationSetId>RIFT_BDH</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ProcessBDH</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>Q.obs</parameterId>
+			<locationSetId>RIFT_BDH</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="HISWSC" name="WSC">
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationSetId>WSCStations$REGION$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>WSCStations$REGION$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+	<filter id="HISCOBARIC" name="COBARIC">
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCOBARIC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>N.obs</parameterId>
+			<locationSetId>COBARIC</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-365" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</filter>
+</filters>

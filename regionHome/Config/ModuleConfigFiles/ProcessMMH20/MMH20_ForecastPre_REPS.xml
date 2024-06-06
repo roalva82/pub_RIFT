@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>P_NWP_CaSPAr_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCaSPAr-REPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>CaSPAr-REPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_NWP_CaSPAr_1hr_Average</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<qualifierId>temp1</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_NWP_CaSPAr_3hr_Average_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<qualifierId>temp1</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_NWP_CaSPAr_3hr_Average</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<qualifierId>temp1</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_NWP_RTD</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportREPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>REPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_NWP_Average_RTD</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<qualifierId>temp2</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_NWP_Average</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_NWP_RTD</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportREPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>REPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_NWP_RTD_Average</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.sim</parameterId>
+			<qualifierId>temp1</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_NWP_CaSPAr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportCaSPAr-REPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>CaSPAr-REPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_NWP_CaSPAr_Average_1hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.sim</parameterId>
+			<qualifierId>temp1</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_NWP_CaSPAr_Average_3hr_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.sim</parameterId>
+			<qualifierId>temp2</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_NWP_CaSPAr_Average_3hr</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.sim</parameterId>
+			<qualifierId>temp2</qualifierId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_NWP_Average</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.sim</parameterId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmin_NWP_Average</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.for</parameterId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Tmax_NWP_Average</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.for</parameterId>
+			<locationSetId>RIFT_Basins</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P.corr.3h</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.corr</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P.fact.3h</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>P.fact</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T.corr.3h</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>T.corr</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>EEN.corr.3h</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>EEN.corr</parameterId>
+			<locationSetId>PreMMH20</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>QObs_dummy</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>MMH20_ForecastPre_REPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>MMH20_output</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="3HR_EST"/>
+			<relativeViewPeriod unit="hour" start="-48" end="360"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="InterpolateSpatial_P_CaSPAr">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>P_NWP_CaSPAr_1hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_NWP_CaSPAr_1hr_Average</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Min_P_CaSPAr">
+		<user>
+			<simple>
+				<expression>if(P_NWP_CaSPAr_1hr_Average &lt; 0.0, 0.0, P_NWP_CaSPAr_1hr_Average)</expression>
+				<outputVariable>
+					<variableId>P_NWP_CaSPAr_1hr_Average</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Accumulate_P_CaSPAr">
+		<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>P_NWP_CaSPAr_1hr_Average</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_NWP_CaSPAr_3hr_Average</variableId>
+				</outputVariable>
+			</accumulative>
+		</aggregation>
+	</transformation>
+<!--	<transformation id="Merge_P3hr">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>P_NWP_CaSPAr_3hr_Average</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>P_NWP_CaSPAr_3hr_Average_temp</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_NWP_CaSPAr_3hr_Average</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+-->	<transformation id="InterpolateSpatial_P_RTD">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>P_NWP_RTD</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_NWP_Average_RTD</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Merge_P">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>P_NWP_Average_RTD</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>P_NWP_CaSPAr_3hr_Average</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>P_NWP_Average</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="P.corr.3h">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>P.corr.3h</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="P.fact.3h">
+		<user>
+			<simple>
+				<expression>1</expression>
+				<outputVariable>
+					<variableId>P.fact.3h</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="T.corr.3h">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>T.corr.3h</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="EEN.corr.3h">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>EEN.corr.3h</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="InterpolateSpatial_T_RTD">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>T_NWP_RTD</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>T_NWP_RTD_Average</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="InterpolateSpatial_T_CaSPAr">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>T_NWP_CaSPAr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>T_NWP_CaSPAr_Average_1hr</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="InterpolationSerial_T_CaSPAr">
+		<aggregation>
+			<instantaneous>
+				<inputVariable>
+					<variableId>T_NWP_CaSPAr_Average_1hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>T_NWP_CaSPAr_Average_3hr</variableId>
+				</outputVariable>
+			</instantaneous>
+		</aggregation>
+	</transformation>
+<!--	<transformation id="Merge_TNWP">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>T_NWP_CaSPAr_Average_3hr</variableId>
+				</inputVariable>	
+				<inputVariable>
+					<variableId>T_NWP_CaSPAr_Average_3hr_temp</variableId>
+				</inputVariable>	
+				<outputVariable>
+					<variableId>T_NWP_CaSPAr_Average_3hr</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+-->
+	<transformation id="Merge_T">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>T_NWP_RTD_Average</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>T_NWP_CaSPAr_Average_3hr</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>T_NWP_Average</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="TMin Ensemble">
+		<statisticsEnsemble>
+			<min>
+				<inputVariable>
+					<variableId>T_NWP_Average</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmin_NWP_Average</variableId>
+				</outputVariable>
+			</min>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="TMax Ensemble">
+		<statisticsEnsemble>
+			<max>
+				<inputVariable>
+					<variableId>T_NWP_Average</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Tmax_NWP_Average</variableId>
+				</outputVariable>
+			</max>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="QObs_dummy">
+		<user>
+			<simple>
+				<expression>1</expression>
+				<outputVariable>
+					<variableId>QObs_dummy</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

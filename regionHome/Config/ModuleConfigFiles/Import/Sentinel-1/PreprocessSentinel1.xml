@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.8</piVersion>
+		<rootDir>%REGION_HOME%\modules\snap_gpt</rootDir>
+		<workDir>%ROOT_DIR%\work\Sentinel-1\$REGION$</workDir>
+		<exportDir>$EXPORT_FOLDER$</exportDir>
+		<exportDataSetDir>%WORK_DIR%</exportDataSetDir>
+		<importDir>$IMPORT_FOLDER_EO_DATA$</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%WORK_DIR%</dumpDir>
+		<diagnosticFile>%WORK_DIR%\diag.xml</diagnosticFile>
+		<convertDatum>false</convertDatum>
+	</general>
+	<activities>
+		<exportActivities>
+			<exportCustomFormatRunFileActivity>
+				<templateFile>%ROOT_DIR%\bin\sentinel1_gpt_template.xml</templateFile>
+				<exportFile>%WORK_DIR%\sentinel1_gpt_$LOOP_LOCATION_ID$.xml</exportFile>
+				<locationId>$LOOP_LOCATION_ID$</locationId>
+			</exportCustomFormatRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<description>Run GPT via .bat file</description>
+				<command>
+					<executable>%ROOT_DIR%\bin\sentinel1_processing.bat</executable>
+				</command>
+				<!--Make sure all arguments use back slashes, and that paths end in a backslash	-->
+				<arguments>
+					<argument>$SNAP_GPT_EXE$</argument>
+					<argument>%WORK_DIR%\sentinel1_gpt_$LOOP_LOCATION_ID$.xml</argument>
+					<argument>$IMPORT_FOLDER_EO_DATA$\Sentinel-1\raw\$REGION$\</argument>
+					<argument>$IMPORT_FOLDER_EO_DATA$\Sentinel-1\processed\$REGION$\</argument>
+					<argument>$LOOP_LOCATION_ID$</argument>
+				</arguments>
+				<timeOut>60000000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+				<ignoreExitCode>true</ignoreExitCode>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

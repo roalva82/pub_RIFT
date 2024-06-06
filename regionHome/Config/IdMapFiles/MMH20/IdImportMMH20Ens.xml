@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<parameter internal="QR.sim" external="q1" internalEnsembleMemberId="0"/>
+	<parameter internal="QR.sim" external="q2" internalEnsembleMemberId="1"/>
+	<parameter internal="QR.sim" external="q3" internalEnsembleMemberId="2"/>
+	<parameter internal="QR.sim" external="q4" internalEnsembleMemberId="3"/>
+	<parameter internal="QR.sim" external="q5" internalEnsembleMemberId="4"/>
+	<parameter internal="QR.sim" external="q6" internalEnsembleMemberId="5"/>
+	<parameter internal="QR.sim" external="q7" internalEnsembleMemberId="6"/>
+	<parameter internal="QR.sim" external="q8" internalEnsembleMemberId="7"/>
+	<parameter internal="QR.sim" external="q9" internalEnsembleMemberId="8"/>
+	<parameter internal="QR.sim" external="q10" internalEnsembleMemberId="9"/>
+	<parameter internal="QR.sim" external="q11" internalEnsembleMemberId="10"/>
+	<parameter internal="QR.sim" external="q12" internalEnsembleMemberId="11"/>
+	<parameter internal="QR.sim" external="q13" internalEnsembleMemberId="12"/>
+	<parameter internal="QR.sim" external="q14" internalEnsembleMemberId="13"/>
+	<parameter internal="QR.sim" external="q15" internalEnsembleMemberId="14"/>
+	<parameter internal="QR.sim" external="q16" internalEnsembleMemberId="15"/>
+	<parameter internal="QR.sim" external="q17" internalEnsembleMemberId="16"/>
+	<parameter internal="QR.sim" external="q18" internalEnsembleMemberId="17"/>
+	<parameter internal="QR.sim" external="q19" internalEnsembleMemberId="18"/>
+	<parameter internal="QR.sim" external="q20" internalEnsembleMemberId="19"/>
+	<parameter internal="QR.sim" external="av" internalQualifier="average"/>
+	<parameter internal="PC.sim" internalQualifier="solid" external="ps"/>
+	<parameter internal="PC.sim" internalQualifier="liquid" external="pl"/>
+	<parameter internal="SWE.sim" external="een"/>
+	<enableOneToOneMapping/>
+</idMap>

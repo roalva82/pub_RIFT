@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
+	<!--Import Scalar Data Workflows-->
+	<workflowDescriptor id="ExportObservations" name="Export Observations" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportCOBARIC" name="Import COBARIC" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportBDH" name="Import BDH" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportCLIMATO" name="Import CLIMATO" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportECCCSpecial" name="Import ECCC Meteo Station Data (Special)" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportCEHQ" name="Import CEHQ Daily Hydro Data (Local)" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportECCCLocal" name="Import ECCC Meteo Station Data (Local)" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<!--Import Gridded Data Workflows-->
+	<workflowDescriptor id="ImportGPM" name="Import GPM" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportCaSPAr" name="Import CaSPAr" forecast="false" allowApprove="false" visible="true">
+		<description>Import CaSPAr Historical Forecasting Data (Local)</description>
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportECMWF-fc" name="Import ECMWF-fc" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportECMWF-pf" name="Import ECMWF-pf" visible="true" forecast="true" autoApprove="true" allowApprove="true"/>
+	<!--MMH20 Workflows-->
+	<workflowDescriptor id="MMH20_Update" name="Run MMH20 Update" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="MMH20Ens_Update" name="Run MMH20 Ensemble Update" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="MMH20_ForecastPerfect" name="Run MMH20 Forecast" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="MMH20_ForecastREPS" name="Run MMH20 Forecast REPS" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="MMH20Ens_ForecastREPS" name="Run MMH20 Ensemble Forecast REPS" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="MMH20Ens_ForecastPerfect" name="Run MMH20 Ensemble Forecast Perfect" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<!--HEC-RAS Workflows-->
+	<workflowDescriptor id="HEC-RAS_Estimate" name="Run HEC-RAS Estimate" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	
+	<workflowDescriptor id="HEC-RAS_Estimate_Forecast" name="Run HEC-RAS Estimate Forecast" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>	
+	
+	<workflowDescriptor id="HEC-RAS_Update" name="Run HEC-RAS Update" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="HEC-RAS_Forecast" name="Run HEC-RAS Forecast" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="HEC-RAS_ForecastREPS" name="Run HEC-RAS Forecast REPS" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="HEC-RAS_Steady_Forecast" name="Run HEC-RAS Steady Perfect" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="HEC-RAS_Steady_ForecastREPS" name="Run HEC-RAS Steady REPS" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<!--Combined Workflows-->
+	<workflowDescriptor id="UpdateForecast" name="MMH20 / HEC-RAS Update and Forecast" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="00EST"/>
+	</workflowDescriptor>
+	<!--Import real-time data Workflows-->
+	<workflowDescriptor id="ImportWSCDaily" name="Import WSC Daily Hydro Station Data" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="ImportWSCHourly" name="Import WSC Hourly Hydro Station Data " visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
+	<workflowDescriptor id="ImportECCCScalar" name="Import ECCC Meteo Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<!-- Retrieve and Import ECCC  from GeoMet WebCoverage Service -->
+	<workflowDescriptor id="ImportRDPAGrids" name="Import RDPA" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportHRDPAGrids" name="Import HRDPA" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportRDPSGrids" name="Import RDPS" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportHRDPSGrids" name="Import HRDPS" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportGDPSGrids" name="Import GDPS" forecast="true" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
+		<cardinalTimeStep id="GMT_12hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportREPSGrids" name="Import REPS" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
+		<cardinalTimeStep id="GMT_12hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportGEPSGrids" name="Import GEPS" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
+		<cardinalTimeStep id="GMT_12hourly"/>
+	</workflowDescriptor>
+	<!--Additional Gridded Data Imports -->
+	<workflowDescriptor id="ImportSNODASGrids" name="Import SNODAS" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
+	<workflowDescriptor id="ImportGLOBSNOWGrids" name="Import GlobSnow" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
+	<!--Import and Process Sentinel and RCM data-->
+	<workflowDescriptor id="RetrieveImportSentinel1_Scheduled" name="Download and Import Sentinel-1 (Scheduled Task)" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import Sentinel-1 (for scheduled task) (using ingestion date/time)</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportSentinel2_Scheduled" name="Download and Import Sentinel-2 (Scheduled Task)" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import Sentinel-2 (for scheduled task) (using ingestion date/time)</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportSentinel2_Scheduled_FastInternet" name="Download and Import Sentinel-2 (Scheduled Task) - fast internet" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import Sentinel-2 (for scheduled task) (using ingestion date/time) - fast internet</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportRCM_Scheduled" name="Download and Import RCM (Scheduled Task)" forecast="false" allowApprove="false" visible="false">
+		<description>Download, process, and import RCM (for scheduled task) (using ingestion date/time)</description>
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveSentinel1_Chaudiere" name="Download Sentinel-1" forecast="false" allowApprove="false" visible="true"/>
+	<workflowDescriptor id="ImportSentinel1_Chaudiere" name="Process and Import Sentinel-1" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveSentinel2_Chaudiere" name="Download Sentinel-2" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportSentinel2_Chaudiere" name="Process and Import Sentinel-2" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveImportSentinel2_FastInternet_Chaudiere" name="Download, Process, Import Sentinel-2 (fast internet)" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RetrieveRCM_Chaudiere" name="Download RCM" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportRCM_Chaudiere" name="Process and Import RCM" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="InterpolateRCM_Chaudiere" name="Interpolate RCM onto fixed grid" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RiverIceClassification_IceBC_Chaudiere" name="Classify river ice (IceBC)" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RiverIceClassification_IceState_Chaudiere" name="Classify river ice State" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="CreateIceState" name="Create river ice State" forecast="false" allowApprove="false" visible="true">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="CreateIceState_Template" name="Create river ice State" forecast="false" allowApprove="false" visible="false">
+		<timeOut unit="hour" multiplier="23"/>
+	</workflowDescriptor>
+	<!--D-Flow FM Chaudiere-->
+	<workflowDescriptor id="DFlowFM_Chaudiere_Update" name="D-Flow FM Chaudiere (historical)" forecast="true" allowApprove="true" visible="true">
+		<timeOut unit="hour" multiplier="4"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="DFlowFM_Chaudiere_Forecast" name="D-Flow FM Chaudiere (forecast)" forecast="true" allowApprove="true" visible="true">
+		<timeOut unit="hour" multiplier="4"/>
+	</workflowDescriptor>
+	<!--Workflow structure-->
+	<rootNode>
+		<node name="Export Observations">
+			<workflowId>ExportObservations</workflowId>
+		</node>
+		<node name="Import Historical Data">
+			<node name="Observations">
+				<workflowId>ImportBDH</workflowId>
+				<workflowId>ImportCLIMATO</workflowId>
+				<workflowId>ImportECCCSpecial</workflowId>
+				<workflowId>ImportCEHQ</workflowId>
+				<workflowId>ImportCOBARIC</workflowId>
+				<workflowId>ImportCEHQ</workflowId>
+			</node>
+			<node name="Forecasts">
+				<workflowId>ImportCaSPAr</workflowId>
+				<workflowId>ImportECMWF-fc</workflowId>
+				<workflowId>ImportECMWF-pf</workflowId>
+			</node>
+		</node>
+		<node name="MMH20">
+			<workflowId>MMH20_Update</workflowId>
+			<workflowId>MMH20_ForecastPerfect</workflowId>
+			<workflowId>MMH20_ForecastREPS</workflowId>
+		</node>
+		<node name="MMH20_Ens">
+			<workflowId>MMH20Ens_Update</workflowId>
+			<workflowId>MMH20Ens_ForecastPerfect</workflowId>
+			<workflowId>MMH20Ens_ForecastREPS</workflowId>
+		</node>
+		<node name="HEC-RAS runs">
+			<workflowId>HEC-RAS_Estimate</workflowId>
+			<workflowId>HEC-RAS_Estimate_Forecast</workflowId>
+			<workflowId>HEC-RAS_Update</workflowId>
+			<workflowId>HEC-RAS_Forecast</workflowId>
+			<workflowId>HEC-RAS_ForecastREPS</workflowId>
+			<workflowId>HEC-RAS_Steady_Forecast</workflowId>
+			<workflowId>HEC-RAS_Steady_ForecastREPS</workflowId>
+		</node>
+		<node name="Update and Forecast Runs">
+			<workflowId>UpdateForecast</workflowId>
+		</node>
+		<node name="Import Real-Time Data">
+			<node name="Observations">
+				<workflowId>ImportWSCHourly</workflowId>
+				<workflowId>ImportWSCDaily</workflowId>
+				<workflowId>ImportRDPAGrids</workflowId>
+				<workflowId>ImportHRDPAGrids</workflowId>
+			</node>
+			<node name="Forecasts">
+				<workflowId>ImportRDPSGrids</workflowId>
+				<workflowId>ImportGDPSGrids</workflowId>
+				<workflowId>ImportREPSGrids</workflowId>
+				<workflowId>ImportGEPSGrids</workflowId>
+			</node>
+		</node>
+<!--
+		<node name="Import Current Forecasts">
+				<workflowId>ImportRDPAGrids</workflowId>
+				<workflowId>ImportRDPSGrids</workflowId>
+				<workflowId>ImportREPSGrids</workflowId>
+				<workflowId>ImportRDPAGrids</workflowId>
+		</node>
+		<node name="Near Real Time Data Import (MSC Datamart)">
+			<workflowId>ImportWSCDaily</workflowId>
+			<workflowId>ImportWSCHourly</workflowId>
+			<workflowId>ImportECCCScalar</workflowId>
+		</node>
+		<node name="Gridded Data Import (GeoMet WCS)">
+			<workflowId>ImportCaSPAr</workflowId>
+			<workflowId>ImportRDPAGrids</workflowId>
+			<workflowId>ImportRDPSGrids</workflowId>
+			<workflowId>ImportGDPSGrids</workflowId>
+			<workflowId>ImportREPSGrids</workflowId>
+		</node>
+		<node name="Import Snow Data">
+			<workflowId>ImportSNODASGrids</workflowId>
+			<workflowId>ImportGLOBSNOWGrids</workflowId>
+		</node>
+		<node name="Import Sentinel Data">
+			<workflowId>RetrieveImportSentinel1_Scheduled</workflowId>
+			<workflowId>RetrieveImportSentinel2_Scheduled</workflowId>
+			<workflowId>RetrieveImportSentinel2_Scheduled_FastInternet</workflowId>
+			<workflowId>RetrieveSentinel1_Chaudiere</workflowId>
+			<workflowId>ImportSentinel1_Chaudiere</workflowId>
+			<workflowId>RetrieveSentinel2_Chaudiere</workflowId>
+			<workflowId>ImportSentinel2_Chaudiere</workflowId>
+			<workflowId>RetrieveImportSentinel2_FastInternet_Chaudiere</workflowId>
+		</node>
+		<node name="Import RCM Data">
+			<workflowId>RetrieveImportRCM_Scheduled</workflowId>
+			<workflowId>RetrieveRCM_Chaudiere</workflowId>
+			<workflowId>ImportRCM_Chaudiere</workflowId>
+		</node>
+		<node name="River Ice Classification">
+			<workflowId>InterpolateRCM_Chaudiere</workflowId>
+			<workflowId>RiverIceClassification_IceBC_Chaudiere</workflowId>
+			<workflowId>RiverIceClassification_IceState_Chaudiere</workflowId>
+			<workflowId>CreateIceState</workflowId>
+		</node>
+		<node name="D-Flow FM model(s)">
+			<workflowIdPattern>DFlowFM_*</workflowIdPattern>
+		</node>
+-->
+	</rootNode>
+</workflowDescriptors>

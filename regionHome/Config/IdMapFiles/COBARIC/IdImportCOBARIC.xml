@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+<!--	<parameter internal="Q.obs" external="Total_precipitation_rate_surface_Mixed_intervals_Accumulation"/>
+	<parameter internal="N.obs" external="Total_precipitation_rate_surface_Mixed_intervals_Accumulation_ens"/>
+-->
+	<location internal="RIFT_023429" external="2"/>
+	<location internal="RIFT_023402" external="11"/>
+	<location internal="RIFT_C6" external="6"/>
+	<location internal="RIFT_C7" external="7"/>
+	<location internal="RIFT_C8" external="8"/>
+	<location internal="RIFT_C9" external="9"/>
+</idMap>

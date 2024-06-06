@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<description>D-HYDRO Model</description>
+		<rootDir>%REGION_HOME%/Modules/DFlowFM/$RIVER$</rootDir>
+		<workDir>%ROOT_DIR%</workDir>
+		<exportDir>%ROOT_DIR%</exportDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+		<exportIdMap>DFlowFM_Export</exportIdMap>
+		<importDir>%ROOT_DIR%/results</importDir>
+		<importIdMap>DFlowFM_Import</importIdMap>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%TEMP_DIR%</dumpDir>
+		<diagnosticFile>%WORK_DIR%/logs/diagnostic.xml</diagnosticFile>
+		<convertDatum>true</convertDatum>
+		<timeZone>
+			<timeZoneOffset>+00:00</timeZoneOffset>
+		</timeZone>
+		<endDateTimeFormat>yyyyMMdd_HHmmss</endDateTimeFormat>
+	</general>
+	<activities>
+		<importActivities>
+			<importStateActivity>
+				<stateFile>
+					<importFile>%ROOT_DIR%/results/$RIVER$_merged_%END_DATE_TIME%_rst.nc</importFile>
+					<relativeExportFile>$RIVER$_merged_20190101_000000_rst.nc</relativeExportFile>
+				</stateFile>
+				<expiryTime unit="day" multiplier="7"/>
+			</importStateActivity>
+		</importActivities>
+	</activities>
+</generalAdapterRun>

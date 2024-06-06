@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<displayGroups xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/displayGroups.xsd" version="1.0">
+	<plot id="ImportWSC">
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>solid;thick</lineStyle>
+			<timeSeriesSet>
+				<moduleInstanceId>ImportWSC</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>HG.obs</parameterId>
+				<locationSetId>WSCStations$REGION$</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="minute" multiplier="5"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>solid;thick</lineStyle>
+			<timeSeriesSet>
+				<moduleInstanceId>ImportWSC</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>QR.obs</parameterId>
+				<locationSetId>WSCStations$REGION$</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="minute" multiplier="5"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+	</plot>
+	<plot id="ImportBDH">
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>solid;thick</lineStyle>
+			<timeSeriesSet>
+				<moduleInstanceId>ProcessBDH</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>Q.obs</parameterId>
+				<locationSetId>RIFT_BDH</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>solid;thick</lineStyle>
+			<timeSeriesSet>
+				<moduleInstanceId>ProcessBDH</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>N.obs</parameterId>
+				<locationSetId>RIFT_BDH</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+		<!--		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>solid;thick</lineStyle>
+			<timeSeriesSet>
+				<moduleInstanceId>ImportBDH</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>Refoulement</parameterId>
+				<locationSetId>RIFT_BDH</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="minute" multiplier="15"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+-->
+	</plot>
+	<plot id="ImportCLIMATO">
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>solid;thick</lineStyle>
+			<timeSeriesSet>
+				<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>TAmin.obs</parameterId>
+				<locationSetId>RIFT_CLIMATO</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+			<timeSeriesSet>
+				<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>TAmax.obs</parameterId>
+				<locationSetId>RIFT_CLIMATO</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+			<timeSeriesSet>
+				<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>TAmean.obs</parameterId>
+				<locationSetId>RIFT_CLIMATO</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+		<!--		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>bar</lineStyle>
+			<timeSeriesSet>
+				<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>PC.obs</parameterId>
+				<locationSetId>RIFT_CLIMATO</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+-->
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>bar</lineStyle>
+			<timeSeriesSet>
+				<moduleInstanceId>ImportCLIMATO</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>PC.obs</parameterId>
+				<qualifierId>total</qualifierId>
+				<locationSetId>RIFT_CLIMATO</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+	</plot>
+	<plot id="ImportECCC">
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>solid;thick</lineStyle>
+			<timeSeriesSet>
+				<moduleInstanceId>ImportECCCSpecial</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>TAmean.obs</parameterId>
+				<locationSetId>RIFT_ECCC</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep multiplier="1" unit="hour"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>bar</lineStyle>
+			<timeSeriesSet>
+				<moduleInstanceId>ImportECCCSpecial</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>PC.obs</parameterId>
+				<locationSetId>RIFT_ECCC</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep multiplier="1" unit="hour"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+	</plot>
+	<plot id="ImportCOBARIC">
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>solid;thick</lineStyle>
+			<timeSeriesSet>
+				<moduleInstanceId>ProcessCOBARIC</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>N.obs</parameterId>
+				<locationSetId>COBARIC</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+	</plot>
+	<plot id="MMH20_template">
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>bar</lineStyle>
+			<label>Precipitation</label>
+			<timeSeriesSet>
+				<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>PC.obs</parameterId>
+				<locationSetId>PreMMH20</locationSetId>
+				<timeSeriesType>simulated historical</timeSeriesType>
+				<timeStep id="3HR_EST"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+			<timeSeriesSet>
+				<moduleInstanceId>MMH20_ForecastPre_Perfect</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>PC.sim</parameterId>
+				<locationSetId>PreMMH20</locationSetId>
+				<timeSeriesType>simulated forecasting</timeSeriesType>
+				<timeStep id="3HR_EST"/>
+				<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+				<readWriteMode>read only</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<line>
+				<label>Min Temperature</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmin.obs</parameterId>
+					<qualifierId>Z0</qualifierId>
+					<locationSetId>PreMMH20</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Max Temperature</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmax.obs</parameterId>
+					<qualifierId>Z0</qualifierId>
+					<locationSetId>PreMMH20</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Max Temperature</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_ForecastPre_Perfect</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmax.for</parameterId>
+					<qualifierId>Z0</qualifierId>
+					<locationSetId>PreMMH20</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Min Temperature</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_ForecastPre_Perfect</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmin.for</parameterId>
+					<qualifierId>Z0</qualifierId>
+					<locationSetId>PreMMH20</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<line>
+				<lineStyle>solid;thick</lineStyle>
+				<label>Max Ice Thickness</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>River_ice.thickness</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>RIFT_Basins</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="day_EST"/>
+					<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<lineStyle>solid;thick</lineStyle>
+				<label>Min Ice Thickness</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>River_ice.thickness</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>RIFT_Basins</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="day_EST"/>
+					<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<lineStyle>dotted</lineStyle>
+				<axis>right</axis>
+				<label>Accumulated max temperature</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmax.obs</parameterId>
+					<qualifierId>acc</qualifierId>
+					<locationSetId>RIFT_Basins</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="day_EST"/>
+					<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<lineStyle>dotted</lineStyle>
+				<axis>right</axis>
+				<label>Accumulated min temperature</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmin.obs</parameterId>
+					<qualifierId>acc</qualifierId>
+					<locationSetId>RIFT_Basins</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="day_EST"/>
+					<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<plotWeight>2</plotWeight>
+			<line>
+				<label>Observation</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ProcessBDH</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.obs</parameterId>
+					<locationSetId>RIFT_BDH</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Update</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_update</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>MMH20_output</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>MMH20</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>orange</color>
+				<lineStyle>solid</lineStyle>
+				<label>Perfect Forecast</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_forecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>MMH20_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>MMH20</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<lineStyle>solid;thick</lineStyle>
+				<label>REPS Forecast - perc50</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>perc050</qualifierId>
+					<locationSetId>MMH20_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<label>REPS Forecast - full range</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>perc100</qualifierId>
+					<locationSetId>MMH20_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>perc000</qualifierId>
+					<locationSetId>MMH20_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>REPS Forecast - perc 80-20</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>perc080</qualifierId>
+					<locationSetId>MMH20_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_ForecastPos_REPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<qualifierId>perc020</qualifierId>
+					<locationSetId>MMH20_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<plot id="MMH20Ens_template">
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<lineStyle>bar</lineStyle>
+			<label>Precipitation</label>
+			<timeSeriesSet>
+				<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>PC.obs</parameterId>
+				<locationSetId>PreMMH20</locationSetId>
+				<timeSeriesType>simulated historical</timeSeriesType>
+				<timeStep id="3HR_EST"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+		</subplot>
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<line>
+				<label>Min Temperature</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmin.obs</parameterId>
+					<qualifierId>Z0</qualifierId>
+					<locationSetId>PreMMH20</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Max Temperature</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmax.obs</parameterId>
+					<qualifierId>Z0</qualifierId>
+					<locationSetId>PreMMH20</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<plotWeight>1</plotWeight>
+			<line>
+				<lineStyle>solid;thick</lineStyle>
+				<label>Max Ice Thickness</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>River_ice.thickness</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>RIFT_Basins</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="day_EST"/>
+					<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<lineStyle>solid;thick</lineStyle>
+				<label>Min Ice Thickness</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>River_ice.thickness</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>RIFT_Basins</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="day_EST"/>
+					<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<lineStyle>dotted</lineStyle>
+				<axis>right</axis>
+				<label>Accumulated max temperature</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmax.obs</parameterId>
+					<qualifierId>acc</qualifierId>
+					<locationSetId>RIFT_Basins</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="day_EST"/>
+					<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<lineStyle>dotted</lineStyle>
+				<axis>right</axis>
+				<label>Accumulated min temperature</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmin.obs</parameterId>
+					<qualifierId>acc</qualifierId>
+					<locationSetId>RIFT_Basins</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="day_EST"/>
+					<relativeViewPeriod unit="hour" start="-360" end="0" startOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<plotWeight>2</plotWeight>
+			<line>
+				<lineStyle>solid</lineStyle>
+				<label>Perfect Forecast</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20Ens_forecastPerfect</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>MMH20_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>Perfect</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<lineStyle>solid</lineStyle>
+				<label>REPS Forecast</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20Ens_forecastREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>MMH20_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Observation</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ProcessBDH</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.obs</parameterId>
+					<locationSetId>RIFT_BDH</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Percentiles</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20Ens_ForecastPos_Perfect</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>MMH20_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+					<ensembleId>Perfect</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Percentiles</label>
+				<timeSeriesSet>
+					<moduleInstanceId>MMH20Ens_ForecastPos_REPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>MMH20_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="3HR_EST"/>
+					<relativeViewPeriod unit="hour" start="0" end="120" endOverrulable="true"/>
+					<readWriteMode>add originals</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
+	<plot id="HEC-RAS_input_template">
+		<subplot>
+			<line>
+				<label>Observation</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ProcessBDH</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.obs</parameterId>
+					<locationSetId>RIFT_BDH</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>update</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_UpdatePre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<locationSetId>HEC-RAS_inputs_QR</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="day" start="-14" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>forecast</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_ForecastPre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>HEC-RAS_inputs_QR</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="day" start="0" end="10"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>Perfect</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>forecast</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_ForecastPre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>HEC-RAS_inputs_QR</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="day" start="0" end="10"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>steady</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>HEC-RAS_Steady_inputs</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="EST_6hourly"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>Perfect</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>steady</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_SteadyPre</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>HEC-RAS_Steady_inputs</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="EST_6hourly"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
+	<plot id="HEC-RAS_output_template">
+		<subplot>
+			<!--			<line>
+				<label>Operator's new estimate</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_UpdatePos</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="day" start="-2" end="2"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+-->
+			<line>
+				<label>Perfect Steady</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_Steady</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="EST_6hourly"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>Perfect</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>REPS Steady</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_Steady</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="EST_6hourly"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>REPS Forecast</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_Forecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Perfect Forecast</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_Forecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="day" start="-14" end="0"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>Perfect</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Update</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_Update</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>BDH</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ProcessBDH</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>Q.obs</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Difference</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_UpdatePos</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationId>RIFT_023402</locationId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<label>Perfect Steady</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_Steady</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>N.sim</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="EST_6hourly"/>
+					<readWriteMode>add originals</readWriteMode>
+					<ensembleId>Perfect</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>REPS Steady</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_Steady</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>N.sim</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="EST_6hourly"/>
+					<readWriteMode>add originals</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>REPS Forecast</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_Forecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>N.sim</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Perfect Forecast</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_Forecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>N.sim</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>Perfect</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Update</label>
+				<timeSeriesSet>
+					<moduleInstanceId>HEC-RAS_Update</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>N.sim</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>black</color>
+				<lineStyle>solid</lineStyle>
+				<timeSeriesSet>
+					<moduleInstanceId>ProcessCOBARIC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>N.obs</parameterId>
+					<locationSetId>HEC-RAS_output</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="day" start="-365" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
+	<displayGroup id="ImportCLIMATO" name="CLIMATO data">
+		<nodeId>ImportCLIMATO</nodeId>
+		<display id="ImportCLIMATO" name="Beauséjour">
+			<locationId>RIFT_7020567</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Lac-Mégantic-2">
+			<locationId>RIFT_7023677</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Laurierville">
+			<locationId>RIFT_7024250</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Lingwick">
+			<locationId>RIFT_7024320</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Côme-de-Linière">
+			<locationId>RIFT_7027083</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Éphrem">
+			<locationId>RIFT_7027200</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Georges">
+			<locationId>RIFT_7027283</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Honoré">
+			<locationId>RIFT_7027315</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Ludger">
+			<locationId>RIFT_7027516</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Pierre-de-Broughton">
+			<locationId>RIFT_7027656</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Prosper">
+			<locationId>RIFT_7027660</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Sébastien">
+			<locationId>RIFT_7027725</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Séverin">
+			<locationId>RIFT_7027733</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Théophile">
+			<locationId>RIFT_7027750</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Scott">
+			<locationId>RIFT_7027840</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Thetford-Mines">
+			<locationId>RIFT_7028441</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Vallée-Jonction">
+			<locationId>RIFT_7028676</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Armagh-2">
+			<locationId>RIFT_7050241</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Frampton-2">
+			<locationId>RIFT_7052554</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Camille">
+			<locationId>RIFT_7056930</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Léon">
+			<locationId>RIFT_233010</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Lac-Mégantic-2">
+			<locationId>RIFT_234011</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Samuel">
+			<locationId>RIFT_234015</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Ludger">
+			<locationId>RIFT_234020</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Hilaire-Dorset">
+			<locationId>RIFT_234025</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Théophile">
+			<locationId>RIFT_234030</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Petit-Lac">
+			<locationId>RIFT_234032</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Lac-Poulin">
+			<locationId>RIFT_234035</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Lac-Abenakis">
+			<locationId>RIFT_234036</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Vallée-Jonction">
+			<locationId>RIFT_234040</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Étienne">
+			<locationId>RIFT_234060</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Sainte-Rose">
+			<locationId>RIFT_234070</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Lyster">
+			<locationId>RIFT_236510</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Black-Lake">
+			<locationId>RIFT_240020</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Lambton">
+			<locationId>RIFT_302050</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Milan">
+			<locationId>RIFT_302060</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="La Patrie">
+			<locationId>RIFT_7022010</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Saint-Hilaire-de-Dorset">
+			<locationId>RIFT_7023130</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+		<display id="ImportCLIMATO" name="Barrage Jules-Allard">
+			<locationId>RIFT_7020M48</locationId>
+			<plotId>ImportCLIMATO</plotId>
+		</display>
+	</displayGroup>
+	<displayGroup id="ImportECCC" name="ECCC data">
+		<nodeId>ImportECCC</nodeId>
+		<display id="ImportECCC" name="Nantes">
+			<locationId>RIFT_7023681</locationId>
+			<plotId>ImportECCC</plotId>
+		</display>
+		<display id="ImportECCC" name="Thetford-Mines RCS">
+			<locationId>RIFT_7028442</locationId>
+			<plotId>ImportECCC</plotId>
+		</display>
+		<display id="ImportECCC" name="Beauceville">
+			<locationId>RIFT_7028754</locationId>
+			<plotId>ImportECCC</plotId>
+		</display>
+	</displayGroup>
+	<displayGroup id="BDH" name="BDH data">
+		<nodeId>ImportBDH</nodeId>
+		<display id="ImportBDH" name="Beaurivage">
+			<locationId>RIFT_023401</locationId>
+			<plotId>ImportBDH</plotId>
+		</display>
+		<display id="ImportBDH" name="Saint-Lambert">
+			<locationId>RIFT_023402</locationId>
+			<plotId>ImportBDH</plotId>
+		</display>
+		<display id="ImportBDH" name="Famine">
+			<locationId>RIFT_023422</locationId>
+			<plotId>ImportBDH</plotId>
+		</display>
+		<display id="ImportBDH" name="Megantic">
+			<locationId>RIFT_023427</locationId>
+			<plotId>ImportBDH</plotId>
+		</display>
+		<display id="ImportBDH" name="Du Loup">
+			<locationId>RIFT_023428</locationId>
+			<plotId>ImportBDH</plotId>
+		</display>
+		<display id="ImportBDH" name="Sartigan">
+			<locationId>RIFT_023429</locationId>
+			<plotId>ImportBDH</plotId>
+		</display>
+		<display id="ImportBDH" name="Bras d'Henri">
+			<locationId>RIFT_023432</locationId>
+			<plotId>ImportBDH</plotId>
+		</display>
+		<display id="ImportBDH" name="Saint-Martin">
+			<locationId>RIFT_023448</locationId>
+			<plotId>ImportBDH</plotId>
+		</display>
+		<display id="ImportBDH" name="Des Fermes">
+			<locationId>RIFT_023449</locationId>
+			<plotId>ImportBDH</plotId>
+		</display>
+		<display id="ImportBDH" name="Beaurivage">
+			<locationId>RIFT_023450</locationId>
+			<plotId>ImportBDH</plotId>
+		</display>
+		<display id="ImportBDH" name="Bras Saint-Victor">
+			<locationId>RIFT_023451</locationId>
+			<plotId>ImportBDH</plotId>
+		</display>
+	</displayGroup>
+	<displayGroup id="ImportCOBARIC" name="COBARIC data">
+		<nodeId>ImportCOBARIC</nodeId>
+		<display id="RIFT_023402" name="Saint-Lambert">
+			<locationId>RIFT_023402</locationId>
+			<plotId>ImportCOBARIC</plotId>
+		</display>
+		<display id="RIFT_023429" name="Sartigan">
+			<locationId>RIFT_023429</locationId>
+			<plotId>ImportCOBARIC</plotId>
+		</display>
+		<display id="RIFT_C6" name="Beauceville">
+			<locationId>RIFT_C6</locationId>
+			<plotId>ImportCOBARIC</plotId>
+		</display>
+		<display id="RIFT_C7" name="St.Joseph">
+			<locationId>RIFT_C7</locationId>
+			<plotId>ImportCOBARIC</plotId>
+		</display>
+		<display id="RIFT_C8" name="Valee Junction">
+			<locationId>RIFT_C8</locationId>
+			<plotId>ImportCOBARIC</plotId>
+		</display>
+		<display id="RIFT_C9" name="Saint Marie">
+			<locationId>RIFT_C9</locationId>
+			<plotId>ImportCOBARIC</plotId>
+		</display>
+	</displayGroup>
+	<!--	<displayGroup id="WSC" name="WSC">
+		<nodeId>ImportWSCHourly</nodeId>
+		<display id="02JE025" name="TEMISCAMINGUE (LAC) A TEMISCAMING">
+			<locationId>02JE025</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02JE026" name="TEMISCAMINGUE (LAC) A VILLE-MARIE">
+			<locationId>02JE026</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02LA015" name="OUTAOUAIS (RIVIERE DES) A HULL">
+			<locationId>02LA015</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02MC005" name="SAINT-LAURENT (FLEUVE) A POINTE-DES-CASCADES">
+			<locationId>02MC005</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OA003" name="MILLE ILES (RIVIERE DES) A BOIS-DES-FILION">
+			<locationId>02OA003</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OA013" name="OUTAOUAIS (RIVIERE DES) A SAINTE-ANNE-DE-BELLEVUE">
+			<locationId>02OA013</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OA016" name="SAINT-LAURENT (FLEUVE) A LASALLE">
+			<locationId>02OA016</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OA033" name="OUTAOUAIS (RIVIERE DES) A LA MARINA DE SAINTE-ANNE-DE-BELLEVUE">
+			<locationId>02OA033</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OA039" name="SAINT-LOUIS (LAC) A POINTE-CLAIRE">
+			<locationId>02OA039</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OA041" name="SAINT-LAURENT (FLEUVE) A LA PRAIRIE">
+			<locationId>02OA041</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OA107" name="OUTAOUAIS (RIVIERE DES) A TERRASSE-VAUDREUIL">
+			<locationId>02OA107</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OAX03" name="MILLE ILES (RIVIERE DES) A BOIS-DES-FILION (JAUGE AUXILIAIRE)">
+			<locationId>02OAX03</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OB011" name="SAINT-LAURENT (FLEUVE) A LANORAIE">
+			<locationId>02OB011</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OE012" name="MEMPHREMAGOG (LAC) A MAGOG">
+			<locationId>02OE012</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OH001" name="CHAMPLAIN (LAC) A PHILIPSBURG">
+			<locationId>02OH001</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OJ007" name="RICHELIEU (RIVIERE) AUX RAPIDES FRYERS">
+			<locationId>02OJ007</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+		<display id="02OJ016" name="RICHELIEU (RIVIERE) A LA MARINA DE SAINT-JEAN">
+			<locationId>02OJ016</locationId>
+			<plotId>ImportWSC</plotId>
+		</display>
+	</displayGroup>
+-->
+	<displayGroup id="MMH20" name="MMH20 runs">
+		<nodeId>MMH20_UpdateRun</nodeId>
+		<display id="RIFT_023429" name="Sartigan">
+			<locationId>RIFT_BASIN_023429</locationId>
+			<locationId>RIFT_023429</locationId>
+			<plotId>MMH20_template</plotId>
+		</display>
+		<display id="RIFT_023422" name="Famine">
+			<locationId>RIFT_BASIN_023422</locationId>
+			<locationId>RIFT_023422</locationId>
+			<plotId>MMH20_template</plotId>
+		</display>
+		<display id="RIFT_023402" name="St. Lambert">
+			<locationId>RIFT_BASIN_023402</locationId>
+			<locationId>RIFT_023402</locationId>
+			<plotId>MMH20_template</plotId>
+		</display>
+	</displayGroup>
+	<displayGroup id="MMH20Ens" name="MMH20 Ensemble runs">
+		<nodeId>MMH20Ens_UpdateRun</nodeId>
+		<display id="RIFT_023429_Ens" name="Sartigan">
+			<locationId>RIFT_BASIN_023429</locationId>
+			<locationId>RIFT_023429</locationId>
+			<plotId>MMH20Ens_template</plotId>
+		</display>
+		<display id="RIFT_023422_Ens" name="Famine">
+			<locationId>RIFT_BASIN_023422</locationId>
+			<locationId>RIFT_023422</locationId>
+			<plotId>MMH20Ens_template</plotId>
+		</display>
+		<display id="RIFT_023402_Ens" name="St. Lambert">
+			<locationId>RIFT_BASIN_023402</locationId>
+			<locationId>RIFT_023402</locationId>
+			<plotId>MMH20Ens_template</plotId>
+		</display>
+	</displayGroup>
+	<displayGroup id="HEC-RAS" name="HEC-RAS">
+		<nodeId>HEC-RAS_UpdateRun</nodeId>
+		<displayGroup name="Inputs">
+			<display id="HEC-RAS_input_template" name="Sartigan">
+				<locationId>RIFT_023429</locationId>
+				<plotId>HEC-RAS_input_template</plotId>
+			</display>
+			<display id="HEC-RAS_input_template" name="Famine">
+				<locationId>RIFT_023422</locationId>
+				<plotId>HEC-RAS_input_template</plotId>
+			</display>
+			<display id="HEC-RAS_input_template" name="St. Lambert">
+				<locationId>RIFT_023402</locationId>
+				<plotId>HEC-RAS_input_template</plotId>
+			</display>
+			<display id="HEC-RAS_input_template" name="Bras Victor">
+				<locationId>RIFT_LI-BVA</locationId>
+				<plotId>HEC-RAS_input_template</plotId>
+			</display>
+			<display id="HEC-RAS_input_template" name="Uniform Lateral">
+				<locationId>RIFT_ULI</locationId>
+				<plotId>HEC-RAS_input_template</plotId>
+			</display>
+		</displayGroup>
+		<display id="HEC-RAS_output_template" name="Beauceville">
+			<locationId>RIFT_C6</locationId>
+			<plotId>HEC-RAS_output_template</plotId>
+		</display>
+		<display id="HEC-RAS_output_template" name="St.Joseph">
+			<locationId>RIFT_C7</locationId>
+			<plotId>HEC-RAS_output_template</plotId>
+		</display>
+		<display id="HEC-RAS_output_template" name="Valee Junction">
+			<locationId>RIFT_C8</locationId>
+			<plotId>HEC-RAS_output_template</plotId>
+		</display>
+		<display id="HEC-RAS_output_template" name="Saint Marie">
+			<locationId>RIFT_C9</locationId>
+			<plotId>HEC-RAS_output_template</plotId>
+		</display>
+		<display id="HEC-RAS_output_template" name="Saint Lambert">
+			<locationId>RIFT_023402</locationId>
+			<plotId>HEC-RAS_output_template</plotId>
+		</display>
+	</displayGroup>
+</displayGroups>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.8</piVersion>
+		<rootDir>%REGION_HOME%\modules\pyscripts</rootDir>
+		<workDir>%ROOT_DIR%\work</workDir>
+		<exportDir>$EXPORT_FOLDER$</exportDir>
+		<exportDataSetDir>%WORK_DIR%</exportDataSetDir>
+		<importDir>$IMPORT_FOLDER_EO_DATA$</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%WORK_DIR%</dumpDir>
+		<diagnosticFile>%WORK_DIR%\diag.xml</diagnosticFile>
+		<convertDatum>false</convertDatum>
+		<timeZone>
+			<timeZoneName>GMT+0:00</timeZoneName>
+		</timeZone>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%WORK_DIR%\*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportStateActivity>
+				<moduleInstanceId>RetrieveSentinel2</moduleInstanceId>
+				<stateExportDir>%WORK_DIR%</stateExportDir>
+				<stateSelection>
+					<coldState>
+						<startDate unit="hour" multiplier="$SENTINEL_DEFAULT_SEARCH_PERIOD_HRS$"/>
+					</coldState>
+				</stateSelection>
+			</exportStateActivity>
+			<exportRunFileActivity>
+				<exportFile>%WORK_DIR%\get_sentinel2.xml</exportFile>
+				<properties>
+					<string key="destinationDir" value="$IMPORT_FOLDER_EO_DATA$\Sentinel-2\raw\$REGION$"/>
+					<string key="user" value="$USERNAME_COPERNICUS$"/>
+					<string key="secret" value="$PW_COPERNICUS$"/>
+					<string key="mission" value="Sentinel-2"/>
+					<string key="unzip" value="False"/>
+					<string key="download_type" value="$DOWNLOAD_TYPE$"/>
+					<string key="api_url" value="https://apihub.copernicus.eu/apihub"/>
+				</properties>
+			</exportRunFileActivity>
+			<exportCustomFormatRunFileActivity>
+				<templateFile>%ROOT_DIR%\bin\geojson_template.geojson</templateFile>
+				<exportFile>%WORK_DIR%\$LOOP_LOCATION_ID$.geojson</exportFile>
+				<locationId>$LOOP_LOCATION_ID$</locationId>
+			</exportCustomFormatRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<!--Uncomment to run through python rather than as an exe (then comment the exe block below)	-->
+			<executeActivity>
+				<!--				<command>
+					<executable>$PYTHON37_EXE$</executable>
+				</command>-->
+				<command>
+					<executable>%ROOT_DIR%\bin\get_sentinel.exe</executable>
+				</command>
+				<arguments>
+					<!--					<argument>%ROOT_DIR%\bin\get_sentinel.py</argument>-->
+					<argument>-r</argument>
+					<argument>%WORK_DIR%\get_sentinel2.xml</argument>
+				</arguments>
+				<logFile>
+					<file>%WORK_DIR%\log.txt</file>
+					<debugLinePattern>*DEBUG*</debugLinePattern>
+					<infoLinePattern>*INFO*</infoLinePattern>
+					<warningLinePattern>*WARNING*</warningLinePattern>
+					<errorLinePattern>*ERROR*</errorLinePattern>
+				</logFile>
+				<timeOut>14400000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+				<ignoreExitCode>true</ignoreExitCode>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

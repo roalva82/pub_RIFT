@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>Gamma_HH_dB</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>InterpolateRCM</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Gamma0_HH_dB</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-14" end="7"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Inc_Angle_deg</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>InterpolateRCM</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>Inc_Angle</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-14" end="7"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>River_Ice_Type</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>RiverIceClassification_IceBC</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>River_Ice_Type</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="-14" end="7"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="OutputGrid">
+		<user>
+			<simple>
+				<expression>if(((Gamma_HH_dB&lt;=0)&amp;&amp;(Gamma_HH_dB&gt;=-32)&amp;&amp;(Inc_Angle_deg&gt;=26.6)&amp;&amp;(Inc_Angle_deg&lt;=60)),if(Gamma_HH_dB&gt;=Inc_Angle_deg*(-0.1588)+(-5.3904),3,if(Gamma_HH_dB&lt;(-8.5417)+Inc_Angle_deg*(-0.2461),1,if(Inc_Angle_deg&gt;35.68,2,if(Gamma_HH_dB&gt;=25.3289+(-1.8876)*Inc_Angle_deg+(0.0194)*(Inc_Angle_deg^2),2,0)))),-1)</expression>
+				<outputVariable>
+					<variableId>River_Ice_Type</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

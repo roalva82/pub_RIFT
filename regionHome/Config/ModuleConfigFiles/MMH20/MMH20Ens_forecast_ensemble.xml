@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<description>MMH20Ens forecast run Ensemble $NWP$</description>
+		<piVersion>1.17</piVersion>
+		<rootDir>%REGION_HOME%/Modules/MMH20Ens</rootDir>
+		<workDir>%ROOT_DIR%</workDir>
+		<exportDir>%ROOT_DIR%/input</exportDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+		<exportIdMap>IdExportMMH20</exportIdMap>
+		<importDir>%ROOT_DIR%/output</importDir>
+		<importIdMap>IdImportMMH20Ens</importIdMap>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/diagnostics/diagnostic.xml</diagnosticFile>
+		<missVal>-999</missVal>
+		<timeZone>
+			<timeZoneName>EST</timeZoneName>
+		</timeZone>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/diagnostics/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/input/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/input/parameters/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/input/states/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/output/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/output/states/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/*.xml</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/*.nc</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportStateActivity>
+				<moduleInstanceId>MMH20Ens_$BASIN$</moduleInstanceId>
+				<stateExportDir>%ROOT_DIR%/input/states</stateExportDir>
+				<stateSelection>
+					<warmState>
+						<stateSearchPeriod start="0" end="0" unit="hour"/>
+					</warmState>
+				</stateSelection>
+			</exportStateActivity>
+			<exportDataSetActivity>
+				<moduleInstanceId>MMH20Ens_$BASIN$</moduleInstanceId>
+			</exportDataSetActivity>
+			<exportNetcdfActivity>
+				<exportFile>meteo.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>MMH20_ForecastPre_$NWP$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC.sim</parameterId>
+						<locationId>RIFT_BASIN_$BASIN$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="3HR_EST"/>
+						<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>MMH20_ForecastPre_$NWP$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TAmin.for</parameterId>
+						<locationId>RIFT_BASIN_$BASIN$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="3HR_EST"/>
+						<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>MMH20_ForecastPre_$NWP$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TAmax.for</parameterId>
+						<locationId>RIFT_BASIN_$BASIN$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="3HR_EST"/>
+						<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>corrections.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>MMH20_ForecastPre_$NWP$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>EEN.corr</parameterId>
+						<locationId>RIFT_BASIN_$BASIN$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="3HR_EST"/>
+						<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+						<ensembleId>main</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>MMH20_ForecastPre_$NWP$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>P.fact</parameterId>
+						<locationId>RIFT_BASIN_$BASIN$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="3HR_EST"/>
+						<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+						<ensembleId>main</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>MMH20_ForecastPre_$NWP$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>P.corr</parameterId>
+						<locationId>RIFT_BASIN_$BASIN$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="3HR_EST"/>
+						<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+						<ensembleId>main</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>MMH20_ForecastPre_$NWP$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>T.corr</parameterId>
+						<locationId>RIFT_BASIN_$BASIN$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="3HR_EST"/>
+						<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+						<ensembleId>main</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>debit.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>MMH20_ForecastPre_$NWP$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.obs</parameterId>
+						<locationId>RIFT_$BASIN$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="3HR_EST"/>
+						<relativeViewPeriod unit="hour" start="0" end="360" endOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+						<ensembleId>main</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportRunFileActivity>
+				<exportFile>%ROOT_DIR%/info_execution.xml</exportFile>
+				<properties>
+					<bool key="sauvegardeEtats" value="false"/>
+				</properties>
+			</exportRunFileActivity>
+			<exportNetcdfRunFileActivity>
+				<exportFile>%ROOT_DIR%/info_execution.nc</exportFile>
+				<properties>
+					<bool key="sauvegardeEtats" value="false"/>
+				</properties>
+			</exportNetcdfRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<description>run MMH20 ensemble model</description>
+				<command>
+					<executable>MainMMH20_ensemble.exe</executable>
+				</command>
+				<arguments>
+					<argument>%ROOT_DIR%/info_execution.nc</argument>
+				</arguments>
+				<logFile>
+					<file>%ROOT_DIR%/diagnostics/diagnostic.xml</file>
+					<infoLinePattern>*INFO*</infoLinePattern>
+					<warningLinePattern>*AVERTISSEMENT*</warningLinePattern>
+					<errorLinePattern>*ERREUR*</errorLinePattern>
+				</logFile>
+				<timeOut>300000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+		<importActivities>
+			<importNetcdfActivity>
+				<importFile>resultats.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>MMH20Ens_forecast$NWP$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationId>RIFT_$BASIN$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="3HR_EST"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>MMH20Ens_forecast$NWP$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<qualifierId>average</qualifierId>
+						<locationId>RIFT_$BASIN$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep id="3HR_EST"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>main</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+		</importActivities>
+	</activities>
+</generalAdapterRun>
